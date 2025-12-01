@@ -158,7 +158,6 @@ CREATE TABLE student (
   firstName       VARCHAR(50),
   lastName        VARCHAR(50),
   campus          VARCHAR(50),
-  memberType      VARCHAR(50),
   major           VARCHAR(100),
   minor           VARCHAR(100),
   age             INT,
@@ -263,6 +262,7 @@ CREATE TABLE studentJoins (
   studentID   INT,
   clubID      INT,
   joinDate    DATE,
+  memberType  VARCHAR(50) DEFAULT 'General Member',
   PRIMARY KEY (studentID, clubID),
   FOREIGN KEY (studentID) REFERENCES student(studentID)
       ON DELETE CASCADE
@@ -424,10 +424,10 @@ INSERT INTO adminContact (adminID, eboardID) VALUES
 -- STUDENT DATA
 
 
-INSERT INTO student (studentID, firstName, lastName, campus, memberType, major, minor, age, gender, race, gradYear) VALUES
-(1, 'Alex', 'Johnson', 'Boston', 'Undergraduate', 'Computer Science', 'Business Administration', 20, 'Non-binary', 'Asian', 2027),
-(2, 'Emma', 'Williams', 'Boston', 'Undergraduate', 'Data Science', 'Mathematics', 21, 'Female', 'White', 2026),
-(3, 'Marcus', 'Thompson', 'Boston', 'Undergraduate', 'Business Administration', 'Computer Science', 19, 'Male', 'Black', 2028);
+INSERT INTO student (studentID, firstName, lastName, campus, major, minor, age, gender, race, gradYear) VALUES
+(1, 'Alex', 'Johnson', 'Boston', 'Computer Science', 'Business Administration', 20, 'Non-binary', 'Asian', 2027),
+(2, 'Emma', 'Williams', 'Boston', 'Data Science', 'Mathematics', 21, 'Female', 'White', 2026),
+(3, 'Marcus', 'Thompson', 'Boston', 'Business Administration', 'Computer Science', 19, 'Male', 'Black', 2028);
 
 -- Student emails
 INSERT INTO studentEmails (studentID, email) VALUES
@@ -453,11 +453,11 @@ INSERT INTO eboardPermissions (eboardMemberID, permission) VALUES
 
 -- Student joins
 
-INSERT INTO studentJoins (studentID, clubID, joinDate) VALUES
-(1, 1, '2024-09-05'),  -- Alex joins CS Club
-(1, 2, '2024-09-08'),  -- Alex joins Entrepreneurship
-(2, 1, '2024-09-03'),  -- Emma joins CS Club
-(3, 2, '2024-09-04');  -- Marcus joins Entrepreneurship
+INSERT INTO studentJoins (studentID, clubID, joinDate, memberType) VALUES
+(1, 1, '2024-09-05', 'Active Member'),     -- Alex is active in CS Club
+(1, 2, '2024-09-08', 'General Member'),    -- Alex is general in Entrepreneurship
+(2, 1, '2024-09-03', 'Active Member'),     -- Emma is active in CS Club
+(3, 2, '2024-09-04', 'General Member');    -- Marcus is general in Entrepreneurship
 
 
 -- Student leaves
