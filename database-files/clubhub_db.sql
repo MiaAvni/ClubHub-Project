@@ -342,5 +342,8 @@ CREATE TABLE application (
       ON UPDATE CASCADE
 );
 
+
+-- ClubHub Database
+
 USE ClubHub;
 
