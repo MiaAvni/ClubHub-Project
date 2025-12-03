@@ -699,18 +699,28 @@ insert into event (eventID, location, date, description, name, startTime, endTim
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (12, 'Hayden Hall Lobby', '2025-04-02', 'Hear from distinguished alumni about their career paths.', 'Alumni Q&A', '2025-04-02 19:00:00', '2025-04-02 21:00:00', 128, 54, 0, 0, 'Open');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (13, 'Shillman Hall 215', '2025-04-08', 'Meet fellow club members in a casual setting.', 'Social Mixer', '2025-04-08 18:00:00', '2025-04-08 20:00:00', 136, 16, 0, 0, 'Open');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (14, 'Hurtig Hall 205', '2025-04-15', 'Welcome new members to the club!', 'Welcome Event', '2025-04-15 18:30:00', '2025-04-15 20:30:00', 121, 20, 0, 0, 'Open');
+<<<<<<< HEAD
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (15, 'Dodge Hall 150', '2024-12-10', 'Celebrate the end of the semester with your club.', 'End of Year Celebration', '2024-12-10 19:00:00', '2024-12-10 22:00:00', 124, 35, 0, 1, 'Open');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (16, 'Curry Student Center Room 420', '2025-01-28', 'Enjoy food from around the world.', 'Food Festival', '2025-01-28 18:00:00', '2025-01-28 20:30:00', 31, 45, 1, 0, 'Open');
+=======
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (15, 'Dodge Hall 150', '2024-12-10', 'Celebrate the end of the semester with your club.', 'End of Year Celebration', '2024-12-10 19:00:00', '2024-12-10 22:00:00', 124, 35, 0, 0, 'Open');
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (16, 'Curry Student Center Room 420', '2025-01-28', 'Enjoy food from around the world.', 'Food Festival', '2025-01-28 18:00:00', '2025-01-28 20:30:00', 31, 4, 0, 0, 'Open');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (17, 'Richards Hall 235', '2025-02-20', 'Hear from industry leaders about career opportunities.', 'Industry Panel', '2025-02-20 19:00:00', '2025-02-20 21:00:00', 59, 22, 0, 0, 'General Members Only');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (18, 'Snell Library Room 112', '2025-03-05', 'Prepare for the job market with expert guidance.', 'Career Fair Prep', '2025-03-05 17:00:00', '2025-03-05 19:00:00', 150, 27, 0, 0, 'Open');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (19, 'Ryder Hall 155', '2025-03-12', 'Distinguished speaker series featuring industry experts.', 'Guest Speaker Series', '2025-03-12 18:30:00', '2025-03-12 20:30:00', 73, 40, 0, 0, 'General Members Only');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (20, 'Churchill Hall 103', '2025-03-19', 'Give back to the community through service.', 'Volunteer Event', '2025-03-19 14:00:00', '2025-03-19 17:00:00', 100, 54, 0, 0, 'Open');
+<<<<<<< HEAD
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (21, 'Egan Research Center', '2025-03-26', 'Panel discussion with industry professionals.', 'Industry Panel', '2025-03-26 19:00:00', '2025-03-26 21:00:00', 51, 53, 1, 0, 'Active Members Only');
+=======
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (21, 'Egan Research Center', '2025-03-26', 'Panel discussion with industry professionals.', 'Industry Panel', '2025-03-26 19:00:00', '2025-03-26 21:00:00', 51, 50, 0, 0, 'Active Members Only');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (22, 'Marino Recreation Center', '2025-04-05', 'Enjoy international cuisine and connect with members.', 'Food Festival', '2025-04-05 18:00:00', '2025-04-05 20:30:00', 97, 55, 0, 0, 'Open');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (23, 'Behrakis Health Sciences Center', '2025-04-10', 'Hands-on training in key skills.', 'Training Workshop', '2025-04-10 17:30:00', '2025-04-10 19:30:00', 13, 12, 0, 0, 'Open');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (24, 'West Village H Common Room', '2025-04-16', 'Get ready for the hackathon season.', 'Hackathon Prep', '2025-04-16 18:00:00', '2025-04-16 20:30:00', 43, 40, 0, 0, 'Open');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (25, 'International Village Game Room', '2025-04-22', 'Learn from industry experts in an interactive panel.', 'Industry Panel', '2025-04-22 19:00:00', '2025-04-22 21:00:00', 124, 12, 0, 0, 'General Members Only');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (26, 'Forsyth Building 236', '2024-11-20', 'Introduction to Python programming fundamentals.', 'Python Basics', '2024-11-20 18:00:00', '2024-11-20 20:00:00', 51, 41, 0, 1, 'Open');
+<<<<<<< HEAD
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (27, 'Hayden Hall Lobby', '2025-01-30', 'Get your resume professionally reviewed.', 'Resume Review Session', '2025-01-30 17:00:00', '2025-01-30 19:00:00', 36, 52, 1, 0, 'Officers Only');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (28, 'Shillman Hall 215', '2025-02-14', 'Advanced machine learning techniques workshop.', 'ML Workshop', '2025-02-14 18:30:00', '2025-02-14 21:00:00', 55, 33, 0, 0, 'Active Members Only');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (29, 'Hurtig Hall 205', '2025-02-28', 'Learn about AI and its applications.', 'Info Session', '2025-02-28 18:00:00', '2025-02-28 20:00:00', 7, 22, 1, 0, 'Open');
@@ -719,6 +729,16 @@ insert into event (eventID, location, date, description, name, startTime, endTim
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (32, 'Richards Hall 235', '2025-03-21', 'Welcome new members and introduce the club.', 'Welcome Event', '2025-03-21 17:30:00', '2025-03-21 19:30:00', 52, 8, 0, 0, 'Open');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (33, 'Snell Library Room 112', '2025-03-28', 'Network with professionals in your field.', 'Networking Mixer', '2025-03-28 18:30:00', '2025-03-28 20:30:00', 38, 48, 1, 0, 'Open');
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (34, 'Ryder Hall 155', '2025-04-04', 'Panel featuring successful industry professionals.', 'Industry Panel', '2025-04-04 19:00:00', '2025-04-04 21:00:00', 41, 49, 1, 0, 'General Members Only');
+=======
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (27, 'Hayden Hall Lobby', '2025-01-30', 'Get your resume professionally reviewed.', 'Resume Review Session', '2025-01-30 17:00:00', '2025-01-30 19:00:00', 36, 5, 0, 0, 'Officers Only');
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (28, 'Shillman Hall 215', '2025-02-14', 'Advanced machine learning techniques workshop.', 'ML Workshop', '2025-02-14 18:30:00', '2025-02-14 21:00:00', 55, 33, 0, 0, 'Active Members Only');
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (29, 'Hurtig Hall 205', '2025-02-28', 'Learn about AI and its applications.', 'Info Session', '2025-02-28 18:00:00', '2025-02-28 20:00:00', 7, 2, 0, 0, 'Open');
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (30, 'Dodge Hall 150', '2025-03-07', 'Connect with alumni and hear their career stories.', 'Alumni Q&A', '2025-03-07 19:00:00', '2025-03-07 21:00:00', 130, 22, 0, 0, 'Open');
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (31, 'Curry Student Center Room 420', '2025-03-14', 'Develop leadership skills for your career.', 'Leadership Workshop', '2025-03-14 18:00:00', '2025-03-14 20:30:00', 104, 27, 0, 0, 'Open');
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (32, 'Richards Hall 235', '2025-03-21', 'Welcome new members and introduce the club.', 'Welcome Event', '2025-03-21 17:30:00', '2025-03-21 19:30:00', 52, 8, 0, 0, 'Open');
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (33, 'Snell Library Room 112', '2025-03-28', 'Network with professionals in your field.', 'Networking Mixer', '2025-03-28 18:30:00', '2025-03-28 20:30:00', 38, 8, 0, 0, 'Open');
+insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (34, 'Ryder Hall 155', '2025-04-04', 'Panel featuring successful industry professionals.', 'Industry Panel', '2025-04-04 19:00:00', '2025-04-04 21:00:00', 41, 9, 0, 0, 'General Members Only');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into event (eventID, location, date, description, name, startTime, endTime, capacity, numRegistered, isFull, isArchived, tierRequirement) values (35, 'Churchill Hall 103', '2024-12-05', 'Introduce new members to the club community.', 'Welcome Event', '2024-12-05 18:00:00', '2024-12-05 20:00:00', 132, 32, 0, 1, 'Open');
 
 -- 6. administrator
@@ -781,7 +801,10 @@ insert into eboard (eboardID, clubID, president, vicePresident, secretary, treas
 insert into eboard (eboardID, clubID, president, vicePresident, secretary, treasurer) values (15, 15, 'My Keats', 'Bengt Killiam', 'Edee Balsom', 'Skipper Wikey');
 insert into eboard (eboardID, clubID, president, vicePresident, secretary, treasurer) values (16, 16, 'Dyanne Labbez', 'Susan Bloxsome', 'Ann Asbury', 'Craig Marsland');
 insert into eboard (eboardID, clubID, president, vicePresident, secretary, treasurer) values (17, 17, 'Brendon Sheere', 'Tallie Crab', 'Mattie Bolingbroke', 'Oswell Gronauer');
+<<<<<<< HEAD
 insert into eboard (eboardID, clubID, president, vicePresident, secretary, treasurer) values (18, 18, 'Claudette Eccleston', 'Kellia Trett', 'Wandie Tuttle', 'Fleur Brazur');
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into eboard (eboardID, clubID, president, vicePresident, secretary, treasurer) values (19, 19, 'Franny Rose', 'Bob Zoren', 'Salomi Edon', 'Verine Jarrold');
 insert into eboard (eboardID, clubID, president, vicePresident, secretary, treasurer) values (20, 20, 'Demetra Eate', 'Elmira Humphrys', 'Eileen Bawme', 'Dav Fend');
 insert into eboard (eboardID, clubID, president, vicePresident, secretary, treasurer) values (21, 21, 'Rea Handley', 'Anselma Abbey', 'Roland Creaven', 'Freida Gilbank');
@@ -801,6 +824,7 @@ insert into eboard (eboardID, clubID, president, vicePresident, secretary, treas
 insert into eboard (eboardID, clubID, president, vicePresident, secretary, treasurer) values (35, 35, 'Davey Gorring', 'Wilbur Stihl', 'Yance Enticott', 'Anselma Oglevie');
 
 -- 8. studentEmails
+<<<<<<< HEAD
 insert into studentEmails (studentID, email) values (27, 'error: Field ''firstName'' not found');
 insert into studentEmails (studentID, email) values (157, 'error: Field ''firstName'' not found');
 insert into studentEmails (studentID, email) values (122, 'error: Field ''firstName'' not found');
@@ -1044,6 +1068,182 @@ insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, 
 insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (20, 'failed', '2025-01-09 15:04:42', '2025-08-20 21:47:30', '2025-06-03 07:26:55', 'API integration', 'testing', 8);
 insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (2, 'waiting for approval', '2025-07-21 12:17:42', '2025-10-03 10:59:16', '2025-01-29 01:18:32', 'Documentation update', 'cancelled', 8);
 insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (7, 'failed', '2025-12-16 15:04:36', '2025-08-10 05:23:08', '2025-07-03 23:37:02', 'Security patch', 'scheduled', 10);
+=======
+insert into studentEmails (studentID, email) values (9, 'bpallin0@census.gov');
+insert into studentEmails (studentID, email) values (10, 'pvial1@indiegogo.com');
+insert into studentEmails (studentID, email) values (19, 'ccolton2@moonfruit.com');
+insert into studentEmails (studentID, email) values (4, 'bmcilmorow3@businessweek.com');
+insert into studentEmails (studentID, email) values (24, 'mvanacci4@jalbum.net');
+insert into studentEmails (studentID, email) values (28, 'anares5@aol.com');
+insert into studentEmails (studentID, email) values (15, 'lanlay6@edublogs.org');
+insert into studentEmails (studentID, email) values (20, 'jbanghe7@themeforest.net');
+insert into studentEmails (studentID, email) values (18, 'timpy8@moonfruit.com');
+insert into studentEmails (studentID, email) values (19, 'mwooffinden9@imageshack.us');
+insert into studentEmails (studentID, email) values (24, 'clydona@bing.com');
+insert into studentEmails (studentID, email) values (15, 'owearnb@npr.org');
+insert into studentEmails (studentID, email) values (16, 'kdimitrovc@dailymotion.com');
+insert into studentEmails (studentID, email) values (17, 'sbowserd@phoca.cz');
+insert into studentEmails (studentID, email) values (26, 'rtitee@google.co.uk');
+insert into studentEmails (studentID, email) values (15, 'rwodelandf@cdc.gov');
+insert into studentEmails (studentID, email) values (28, 'sdabsg@reuters.com');
+insert into studentEmails (studentID, email) values (5, 'lcordreyh@dion.ne.jp');
+insert into studentEmails (studentID, email) values (34, 'gderingi@weebly.com');
+insert into studentEmails (studentID, email) values (7, 'jainleyj@slate.com');
+insert into studentEmails (studentID, email) values (1, 'clavallek@twitpic.com');
+insert into studentEmails (studentID, email) values (28, 'cbarrarl@discuz.net');
+insert into studentEmails (studentID, email) values (22, 'jhebbesm@msu.edu');
+insert into studentEmails (studentID, email) values (28, 'alemarchantn@redcross.org');
+insert into studentEmails (studentID, email) values (10, 'dminogueo@ft.com');
+insert into studentEmails (studentID, email) values (16, 'rbraneyp@google.ru');
+insert into studentEmails (studentID, email) values (2, 'hralestoneq@vimeo.com');
+insert into studentEmails (studentID, email) values (12, 'ddogetr@typepad.com');
+insert into studentEmails (studentID, email) values (32, 'treedicks@histats.com');
+insert into studentEmails (studentID, email) values (9, 'mfowldst@netvibes.com');
+insert into studentEmails (studentID, email) values (29, 'aocallaghanu@alexa.com');
+insert into studentEmails (studentID, email) values (20, 'uyellandv@vimeo.com');
+insert into studentEmails (studentID, email) values (2, 'aleverentzw@indiegogo.com');
+insert into studentEmails (studentID, email) values (14, 'ssummerillx@bloglines.com');
+insert into studentEmails (studentID, email) values (11, 'mbraidy@apple.com');
+insert into studentEmails (studentID, email) values (6, 'qkrolakz@japanpost.jp');
+insert into studentEmails (studentID, email) values (10, 'aogg10@admin.ch');
+insert into studentEmails (studentID, email) values (4, 'blinnard11@free.fr');
+insert into studentEmails (studentID, email) values (31, 'mflament12@jugem.jp');
+insert into studentEmails (studentID, email) values (24, 'jretchford13@liveinternet.ru');
+insert into studentEmails (studentID, email) values (30, 'speers14@google.com.hk');
+insert into studentEmails (studentID, email) values (25, 'rpay15@reference.com');
+insert into studentEmails (studentID, email) values (28, 'bskellen16@amazon.co.jp');
+insert into studentEmails (studentID, email) values (18, 'pdeinert17@cmu.edu');
+insert into studentEmails (studentID, email) values (20, 'mvanderweedenburg18@wikipedia.org');
+insert into studentEmails (studentID, email) values (15, 'mmcgeouch19@diigo.com');
+insert into studentEmails (studentID, email) values (7, 'nreskelly1a@last.fm');
+insert into studentEmails (studentID, email) values (21, 'cingree1b@jiathis.com');
+insert into studentEmails (studentID, email) values (16, 'dblankett1c@about.com');
+insert into studentEmails (studentID, email) values (25, 'cbuten1d@youtube.com');
+insert into studentEmails (studentID, email) values (33, 'smurray1e@earthlink.net');
+insert into studentEmails (studentID, email) values (19, 'bbuzza1f@booking.com');
+insert into studentEmails (studentID, email) values (22, 'dhubeaux1g@google.pl');
+insert into studentEmails (studentID, email) values (12, 'cfirth1h@wiley.com');
+insert into studentEmails (studentID, email) values (1, 'cgegg1i@biblegateway.com');
+insert into studentEmails (studentID, email) values (26, 'jgermain1j@mail.ru');
+insert into studentEmails (studentID, email) values (17, 'ldorman1k@europa.eu');
+insert into studentEmails (studentID, email) values (19, 'ajarmyn1l@prlog.org');
+insert into studentEmails (studentID, email) values (26, 'cscogin1m@latimes.com');
+insert into studentEmails (studentID, email) values (20, 'skingsland1n@naver.com');
+insert into studentEmails (studentID, email) values (15, 'lbasnett1o@techcrunch.com');
+insert into studentEmails (studentID, email) values (34, 'rtacon1p@mysql.com');
+insert into studentEmails (studentID, email) values (6, 'merickson1q@baidu.com');
+insert into studentEmails (studentID, email) values (22, 'bmurthwaite1r@51.la');
+insert into studentEmails (studentID, email) values (19, 'jnutton1s@simplemachines.org');
+insert into studentEmails (studentID, email) values (5, 'rblackadder1t@prnewswire.com');
+insert into studentEmails (studentID, email) values (15, 'gflegg1u@so-net.ne.jp');
+insert into studentEmails (studentID, email) values (2, 'fmcnickle1v@fotki.com');
+insert into studentEmails (studentID, email) values (35, 'rsilliman1w@craigslist.org');
+insert into studentEmails (studentID, email) values (4, 'tjoe1x@oakley.com');
+insert into studentEmails (studentID, email) values (5, 'dlubbock1y@smh.com.au');
+insert into studentEmails (studentID, email) values (5, 'lcaves1z@newyorker.com');
+insert into studentEmails (studentID, email) values (31, 'bbargery20@indiatimes.com');
+insert into studentEmails (studentID, email) values (22, 'gderr21@ucla.edu');
+insert into studentEmails (studentID, email) values (35, 'wipgrave22@paypal.com');
+insert into studentEmails (studentID, email) values (20, 'lcarrol23@usgs.gov');
+insert into studentEmails (studentID, email) values (8, 'goverpool24@fda.gov');
+insert into studentEmails (studentID, email) values (3, 'aivkovic25@usatoday.com');
+insert into studentEmails (studentID, email) values (12, 'dsimondson26@google.co.jp');
+insert into studentEmails (studentID, email) values (33, 'rwoollin27@chronoengine.com');
+insert into studentEmails (studentID, email) values (3, 'drushbrook28@utexas.edu');
+insert into studentEmails (studentID, email) values (5, 'nmortlock29@nsw.gov.au');
+insert into studentEmails (studentID, email) values (18, 'achamberlaine2a@rediff.com');
+insert into studentEmails (studentID, email) values (8, 'gmauger2b@wisc.edu');
+insert into studentEmails (studentID, email) values (28, 'zmorefield2c@walmart.com');
+insert into studentEmails (studentID, email) values (3, 'rtoopin2d@diigo.com');
+insert into studentEmails (studentID, email) values (11, 'cgreer2e@imageshack.us');
+insert into studentEmails (studentID, email) values (7, 'ebrokenshaw2f@miibeian.gov.cn');
+insert into studentEmails (studentID, email) values (21, 'nruggier2g@friendfeed.com');
+insert into studentEmails (studentID, email) values (10, 'jdunbabin2h@patch.com');
+insert into studentEmails (studentID, email) values (19, 'ebathoe2i@tamu.edu');
+insert into studentEmails (studentID, email) values (12, 'eschwandermann2j@nyu.edu');
+insert into studentEmails (studentID, email) values (26, 'dmulholland2k@taobao.com');
+insert into studentEmails (studentID, email) values (19, 'cdunmuir2l@artisteer.com');
+insert into studentEmails (studentID, email) values (1, 'cvertey2m@blogger.com');
+insert into studentEmails (studentID, email) values (4, 'dsaterweyte2n@dropbox.com');
+insert into studentEmails (studentID, email) values (2, 'gpapez2o@ehow.com');
+insert into studentEmails (studentID, email) values (32, 'jmcquilkin2p@arstechnica.com');
+insert into studentEmails (studentID, email) values (12, 'abeddows2q@smugmug.com');
+insert into studentEmails (studentID, email) values (2, 'lcarnew2r@paypal.com');
+insert into studentEmails (studentID, email) values (10, 'kwehden2s@naver.com');
+insert into studentEmails (studentID, email) values (3, 'cwhiskerd2t@skype.com');
+insert into studentEmails (studentID, email) values (23, 'bwind2u@reverbnation.com');
+insert into studentEmails (studentID, email) values (17, 'llyddon2v@clickbank.net');
+insert into studentEmails (studentID, email) values (5, 'nfrondt2w@amazon.de');
+insert into studentEmails (studentID, email) values (4, 'bhawking2x@sourceforge.net');
+insert into studentEmails (studentID, email) values (6, 'msteabler2y@businessweek.com');
+insert into studentEmails (studentID, email) values (30, 'ehull2z@bluehost.com');
+insert into studentEmails (studentID, email) values (26, 'oknath30@drupal.org');
+insert into studentEmails (studentID, email) values (15, 'ctort31@apache.org');
+insert into studentEmails (studentID, email) values (16, 'kpfertner32@deliciousdays.com');
+insert into studentEmails (studentID, email) values (10, 'ldavidesco33@vkontakte.ru');
+insert into studentEmails (studentID, email) values (9, 'agooley34@cornell.edu');
+insert into studentEmails (studentID, email) values (8, 'rsine35@scribd.com');
+insert into studentEmails (studentID, email) values (14, 'ahamil36@networkadvertising.org');
+insert into studentEmails (studentID, email) values (22, 'emorpeth37@rakuten.co.jp');
+insert into studentEmails (studentID, email) values (21, 'jchilcotte38@va.gov');
+insert into studentEmails (studentID, email) values (7, 'sluckey39@arstechnica.com');
+insert into studentEmails (studentID, email) values (14, 'amixer3a@yellowpages.com');
+insert into studentEmails (studentID, email) values (15, 'vfransoni3b@army.mil');
+insert into studentEmails (studentID, email) values (35, 'ccauldfield3c@sciencedirect.com');
+insert into studentEmails (studentID, email) values (10, 'mhopkynson3d@example.com');
+insert into studentEmails (studentID, email) values (12, 'rskokoe3e@cocolog-nifty.com');
+insert into studentEmails (studentID, email) values (14, 'lheardman3f@networkadvertising.org');
+insert into studentEmails (studentID, email) values (20, 'bboardman3g@disqus.com');
+insert into studentEmails (studentID, email) values (35, 'mfowells3h@bigcartel.com');
+insert into studentEmails (studentID, email) values (4, 'wmaudsley3i@epa.gov');
+insert into studentEmails (studentID, email) values (17, 'rlabroue3j@chicagotribune.com');
+insert into studentEmails (studentID, email) values (2, 'gcamden3k@google.co.jp');
+insert into studentEmails (studentID, email) values (15, 'blunk3l@blogs.com');
+;
+
+
+-- 9. update
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (10, 'pending', '2025-08-27 17:07:35', '2025-11-11 18:46:28', '2025-01-04 03:08:55', 'Database migration', 'completed', 1);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (12, 'in progress', '2025-07-06 10:58:53', '2025-03-01 11:58:52', '2025-08-14 00:05:42', 'Database migration', 'in progress', 2);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (18, 'approved', '2025-07-25 00:34:10', '2025-05-24 14:39:13', '2025-08-05 23:17:31', 'Security patch', 'testing', 3);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (16, 'approved', '2025-08-15 22:25:38', '2025-09-20 12:58:39', '2025-12-02 18:32:08', 'User interface update', 'completed', 4);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (5, 'pending', '2025-06-17 04:09:00', '2025-11-09 03:44:01', '2025-07-28 05:36:58', 'Documentation update', 'delayed', 5);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (13, 'waiting for approval', '2025-09-07 20:04:21', '2025-10-13 12:52:29', '2025-06-09 17:08:29', 'Feature enhancement', 'scheduled', 6);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (2, 'cancelled', '2025-02-03 19:56:11', '2025-08-13 19:36:57', '2025-03-15 00:51:50', 'User interface update', 'not available', 7);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (13, 'approved', '2025-06-27 20:25:11', '2025-07-14 10:42:13', '2025-03-06 05:16:41', 'User interface update', 'scheduled', 8);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (17, 'waiting for approval', '2025-08-02 13:44:20', '2025-12-18 01:10:59', '2025-04-03 01:07:48', 'Feature enhancement', 'completed', 9);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (9, 'waiting for approval', '2025-12-17 01:23:13', '2025-03-19 01:46:43', '2025-03-27 16:18:32', 'Code refactoring', 'completed', 10);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (4, 'cancelled', '2025-12-14 00:16:43', '2025-07-25 05:35:32', '2025-03-23 21:28:18', 'Server maintenance', 'not available', 11);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (9, 'in progress', '2025-03-16 00:48:43', '2025-10-14 12:52:24', '2025-11-27 04:59:19', 'Database migration', 'under review', 12);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (5, 'completed', '2025-05-13 04:44:29', '2025-04-06 18:04:06', '2025-04-12 03:00:21', 'API integration', 'under review', 13);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (9, 'on hold', '2025-02-24 22:26:56', '2025-10-08 03:08:51', '2025-06-01 03:47:07', 'Code refactoring', 'not available', 14);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (2, 'waiting for approval', '2025-10-27 21:58:11', '2025-12-22 22:00:26', '2025-06-04 11:21:15', 'Server maintenance', 'available', 15);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (12, 'completed', '2025-01-24 23:44:32', '2025-02-18 09:15:22', '2025-02-22 06:52:52', 'Documentation update', 'cancelled', 16);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (16, 'waiting for approval', '2025-04-09 03:10:25', '2025-04-18 11:21:52', '2025-11-24 00:22:36', 'Bug fix', 'available', 17);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (19, 'failed', '2025-08-17 14:34:54', '2025-10-15 15:05:27', '2025-11-08 04:16:17', 'Documentation update', 'pending', 18);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (11, 'pending', '2025-07-03 15:40:44', '2025-06-11 19:55:27', '2025-12-25 10:19:54', 'Database migration', 'available', 19);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (4, 'needs review', '2025-04-22 09:58:28', '2025-01-06 15:00:43', '2025-07-03 18:37:31', 'Code refactoring', 'testing', 20);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (3, 'failed', '2025-10-29 10:37:27', '2025-07-27 08:18:50', '2025-07-19 12:53:27', 'Database migration', 'testing', 21);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (15, 'pending', '2025-05-26 16:52:52', '2025-04-30 09:41:28', '2025-09-14 16:53:53', 'Performance optimization', 'pending', 22);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (9, 'approved', '2025-01-07 04:50:41', '2025-09-08 07:00:37', '2025-09-19 08:53:43', 'Bug fix', 'pending', 23);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (3, 'completed', '2025-04-15 01:20:01', '2025-02-09 22:30:05', '2025-11-02 04:08:54', 'Security patch', 'testing', 24);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (14, 'completed', '2025-12-16 09:24:54', '2025-09-24 13:04:15', '2025-11-13 02:21:15', 'Server maintenance', 'not available', 25);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (8, 'waiting for approval', '2025-05-04 06:03:37', '2025-07-04 11:48:33', '2025-09-01 02:49:49', 'Performance optimization', 'in progress', 26);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (13, 'on hold', '2025-12-11 20:05:29', '2025-02-01 05:48:26', '2025-02-21 14:14:15', 'Documentation update', 'available', 27);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (15, 'approved', '2025-08-31 07:19:48', '2025-06-05 11:05:47', '2025-06-04 03:39:52', 'Performance optimization', 'not available', 28);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (4, 'in progress', '2025-08-10 21:07:47', '2025-11-12 13:55:29', '2025-10-25 22:38:59', 'Code refactoring', 'available', 29);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (13, 'on hold', '2025-11-09 20:38:01', '2025-04-16 15:11:18', '2025-12-06 15:42:03', 'Database migration', 'under review', 30);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (2, 'waiting for approval', '2025-07-04 11:15:05', '2025-01-30 15:21:21', '2025-05-12 09:33:31', 'Bug fix', 'testing', 31);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (20, 'in progress', '2025-04-11 21:47:19', '2025-01-30 14:49:12', '2025-02-20 23:51:49', 'Database migration', 'completed', 32);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (6, 'on hold', '2025-02-25 19:27:31', '2025-09-12 07:14:56', '2025-06-13 23:24:33', 'Server maintenance', 'in progress', 33);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (14, 'cancelled', '2025-06-11 20:08:22', '2025-05-10 14:43:21', '2025-01-16 02:52:06', 'Documentation update', 'testing', 34);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (8, 'cancelled', '2025-06-09 22:37:13', '2025-01-11 09:20:26', '2024-12-31 01:34:46', 'Server maintenance', 'pending', 35);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (18, 'approved', '2025-02-20 07:07:10', '2025-07-13 19:16:56', '2025-12-05 07:28:20', 'Feature enhancement', 'testing', 36);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (3, 'needs review', '2025-10-21 14:59:50', '2025-11-20 09:51:47', '2025-01-05 02:52:11', 'Security patch', 'pending', 37);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (20, 'failed', '2025-01-09 15:04:42', '2025-08-20 21:47:30', '2025-06-03 07:26:55', 'API integration', 'testing', 38);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (2, 'waiting for approval', '2025-07-21 12:17:42', '2025-10-03 10:59:16', '2025-01-29 01:18:32', 'Documentation update', 'cancelled', 39);
+insert into `update` (adminID, updateStatus, scheduledTime, startTime, endTime, updateType, availability, updateID) values (7, 'failed', '2025-12-16 15:04:36', '2025-08-10 05:23:08', '2025-07-03 23:37:02', 'Security patch', 'scheduled', 40);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 
 -- 10. eboardMember
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (1, 12, 35, 'Secretary');
@@ -1060,7 +1260,10 @@ insert into eboardMember (eboardMemberID, studentID, eboardID, position) values 
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (12, 26, 8, 'Secretary');
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (13, 20, 20, 'Vice President');
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (14, 8, 5, 'Treasurer');
+<<<<<<< HEAD
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (15, 17, 18, 'Vice President');
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (16, 11, 26, 'Treasurer');
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (17, 35, 22, 'Vice President');
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (18, 22, 35, 'Treasurer');
@@ -1110,10 +1313,15 @@ insert into eboardMember (eboardMemberID, studentID, eboardID, position) values 
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (62, 31, 25, 'President');
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (63, 2, 35, 'Treasurer');
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (64, 11, 3, 'Treasurer');
+<<<<<<< HEAD
 insert into eboardMember (eboardMemberID, studentID, eboardID, position) values (65, 24, 18, 'Treasurer');
 
 -- 11. clubCategories
 insert into clubCategories (clubID, categoryID) values (30, 1);
+=======
+
+-- 11. clubCategories
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into clubCategories (clubID, categoryID) values (3, 6);
 insert into clubCategories (clubID, categoryID) values (10, 4);
 insert into clubCategories (clubID, categoryID) values (20, 11);
@@ -1245,10 +1453,17 @@ insert into clubCategories (clubID, categoryID) values (33, 4);
 insert into clubCategories (clubID, categoryID) values (34, 4);
 
 -- 12. clubEvents
+<<<<<<< HEAD
 insert into clubEvents (clubID, eventID) values (6, 18);
 insert into clubEvents (clubID, eventID) values (31, 23);
 insert into clubEvents (clubID, eventID) values (25, 17);
 insert into clubEvents (clubID, eventID) values (29, 3);
+=======
+insert into clubEvents (clubID, eventID) values (6, 19);
+insert into clubEvents (clubID, eventID) values (31, 24);
+insert into clubEvents (clubID, eventID) values (25, 17);
+insert into clubEvents (clubID, eventID) values (29, 4);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into clubEvents (clubID, eventID) values (4, 7);
 insert into clubEvents (clubID, eventID) values (30, 28);
 insert into clubEvents (clubID, eventID) values (18, 11);
@@ -1275,8 +1490,12 @@ insert into clubEvents (clubID, eventID) values (25, 15);
 insert into clubEvents (clubID, eventID) values (13, 17);
 insert into clubEvents (clubID, eventID) values (33, 12);
 insert into clubEvents (clubID, eventID) values (8, 8);
+<<<<<<< HEAD
 insert into clubEvents (clubID, eventID) values (33, 16);
 insert into clubEvents (clubID, eventID) values (29, 5);
+=======
+insert into clubEvents (clubID, eventID) values (29, 2);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into clubEvents (clubID, eventID) values (35, 33);
 insert into clubEvents (clubID, eventID) values (2, 21);
 insert into clubEvents (clubID, eventID) values (22, 3);
@@ -1289,7 +1508,10 @@ insert into clubEvents (clubID, eventID) values (29, 13);
 insert into clubEvents (clubID, eventID) values (26, 8);
 insert into clubEvents (clubID, eventID) values (11, 15);
 insert into clubEvents (clubID, eventID) values (16, 31);
+<<<<<<< HEAD
 insert into clubEvents (clubID, eventID) values (27, 29);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into clubEvents (clubID, eventID) values (20, 1);
 insert into clubEvents (clubID, eventID) values (15, 24);
 insert into clubEvents (clubID, eventID) values (6, 27);
@@ -1304,6 +1526,7 @@ insert into clubEvents (clubID, eventID) values (21, 34);
 insert into clubEvents (clubID, eventID) values (23, 15);
 insert into clubEvents (clubID, eventID) values (2, 22);
 insert into clubEvents (clubID, eventID) values (35, 3);
+<<<<<<< HEAD
 insert into clubEvents (clubID, eventID) values (6, 18);
 insert into clubEvents (clubID, eventID) values (19, 31);
 insert into clubEvents (clubID, eventID) values (7, 7);
@@ -1312,6 +1535,15 @@ insert into clubEvents (clubID, eventID) values (28, 11);
 insert into clubEvents (clubID, eventID) values (24, 23);
 insert into clubEvents (clubID, eventID) values (15, 22);
 insert into clubEvents (clubID, eventID) values (29, 5);
+=======
+insert into clubEvents (clubID, eventID) values (6, 34);
+insert into clubEvents (clubID, eventID) values (19, 31);
+insert into clubEvents (clubID, eventID) values (7, 7);
+insert into clubEvents (clubID, eventID) values (28, 11);
+insert into clubEvents (clubID, eventID) values (24, 23);
+insert into clubEvents (clubID, eventID) values (15, 22);
+insert into clubEvents (clubID, eventID) values (29, 1);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into clubEvents (clubID, eventID) values (22, 32);
 insert into clubEvents (clubID, eventID) values (7, 1);
 insert into clubEvents (clubID, eventID) values (8, 31);
@@ -1337,7 +1569,10 @@ insert into clubEvents (clubID, eventID) values (27, 10);
 insert into clubEvents (clubID, eventID) values (15, 32);
 insert into clubEvents (clubID, eventID) values (20, 15);
 insert into clubEvents (clubID, eventID) values (3, 31);
+<<<<<<< HEAD
 insert into clubEvents (clubID, eventID) values (20, 15);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into clubEvents (clubID, eventID) values (26, 21);
 insert into clubEvents (clubID, eventID) values (35, 29);
 insert into clubEvents (clubID, eventID) values (23, 12);
@@ -1350,7 +1585,10 @@ insert into clubEvents (clubID, eventID) values (17, 32);
 insert into clubEvents (clubID, eventID) values (3, 35);
 insert into clubEvents (clubID, eventID) values (9, 9);
 insert into clubEvents (clubID, eventID) values (32, 19);
+<<<<<<< HEAD
 insert into clubEvents (clubID, eventID) values (33, 16);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into clubEvents (clubID, eventID) values (33, 4);
 insert into clubEvents (clubID, eventID) values (12, 16);
 insert into clubEvents (clubID, eventID) values (22, 11);
@@ -1378,12 +1616,21 @@ insert into clubEvents (clubID, eventID) values (13, 18);
 
 
 -- 13. studentJoins
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (187, 36, '2024-06-11');
 insert into studentJoins (studentID, clubID, joinDate) values (174, 35, '2023-11-23');
 insert into studentJoins (studentID, clubID, joinDate) values (50, 1, '2024-05-09');
 insert into studentJoins (studentID, clubID, joinDate) values (54, 40, '2024-04-03');
 insert into studentJoins (studentID, clubID, joinDate) values (119, 26, '2024-07-18');
 insert into studentJoins (studentID, clubID, joinDate) values (91, 36, '2025-12-17');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (187, 30, '2024-06-11');
+insert into studentJoins (studentID, clubID, joinDate) values (174, 35, '2023-11-23');
+insert into studentJoins (studentID, clubID, joinDate) values (50, 1, '2024-05-09');
+insert into studentJoins (studentID, clubID, joinDate) values (54, 30, '2024-04-03');
+insert into studentJoins (studentID, clubID, joinDate) values (119, 26, '2024-07-18');
+insert into studentJoins (studentID, clubID, joinDate) values (91, 35, '2025-12-17');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (191, 6, '2024-07-30');
 insert into studentJoins (studentID, clubID, joinDate) values (37, 26, '2025-05-19');
 insert into studentJoins (studentID, clubID, joinDate) values (55, 15, '2025-08-17');
@@ -1393,15 +1640,24 @@ insert into studentJoins (studentID, clubID, joinDate) values (52, 18, '2025-09-
 insert into studentJoins (studentID, clubID, joinDate) values (162, 15, '2025-11-15');
 insert into studentJoins (studentID, clubID, joinDate) values (148, 25, '2024-04-18');
 insert into studentJoins (studentID, clubID, joinDate) values (138, 30, '2023-09-30');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (37, 36, '2023-02-05');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (37, 31, '2023-02-05');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (6, 23, '2025-04-08');
 insert into studentJoins (studentID, clubID, joinDate) values (174, 34, '2025-01-05');
 insert into studentJoins (studentID, clubID, joinDate) values (141, 20, '2024-03-19');
 insert into studentJoins (studentID, clubID, joinDate) values (140, 27, '2025-04-24');
 insert into studentJoins (studentID, clubID, joinDate) values (200, 1, '2023-05-14');
 insert into studentJoins (studentID, clubID, joinDate) values (193, 21, '2025-12-06');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (130, 37, '2025-06-21');
 insert into studentJoins (studentID, clubID, joinDate) values (112, 36, '2024-02-07');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (130, 35, '2025-06-21');
+insert into studentJoins (studentID, clubID, joinDate) values (112, 35, '2024-02-07');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (161, 9, '2024-09-12');
 insert into studentJoins (studentID, clubID, joinDate) values (78, 17, '2025-10-16');
 insert into studentJoins (studentID, clubID, joinDate) values (145, 10, '2023-04-17');
@@ -1409,6 +1665,7 @@ insert into studentJoins (studentID, clubID, joinDate) values (86, 9, '2023-04-0
 insert into studentJoins (studentID, clubID, joinDate) values (142, 31, '2024-08-25');
 insert into studentJoins (studentID, clubID, joinDate) values (184, 13, '2024-03-05');
 insert into studentJoins (studentID, clubID, joinDate) values (52, 15, '2025-06-21');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (186, 39, '2024-03-29');
 insert into studentJoins (studentID, clubID, joinDate) values (90, 15, '2024-05-07');
 insert into studentJoins (studentID, clubID, joinDate) values (184, 32, '2025-07-05');
@@ -1421,22 +1678,46 @@ insert into studentJoins (studentID, clubID, joinDate) values (121, 2, '2024-12-
 insert into studentJoins (studentID, clubID, joinDate) values (18, 18, '2024-03-10');
 insert into studentJoins (studentID, clubID, joinDate) values (198, 16, '2022-12-17');
 insert into studentJoins (studentID, clubID, joinDate) values (164, 14, '2025-10-06');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (186, 35, '2024-03-29');
+insert into studentJoins (studentID, clubID, joinDate) values (90, 15, '2024-05-07');
+insert into studentJoins (studentID, clubID, joinDate) values (184, 32, '2025-07-05');
+insert into studentJoins (studentID, clubID, joinDate) values (25, 13, '2024-11-18');
+insert into studentJoins (studentID, clubID, joinDate) values (84, 5, '2023-12-13');
+insert into studentJoins (studentID, clubID, joinDate) values (67, 35, '2025-03-27');
+insert into studentJoins (studentID, clubID, joinDate) values (44, 32, '2023-08-19');
+insert into studentJoins (studentID, clubID, joinDate) values (135, 18, '2024-07-30');
+insert into studentJoins (studentID, clubID, joinDate) values (121, 2, '2024-12-19');
+insert into studentJoins (studentID, clubID, joinDate) values (198, 16, '2022-12-17');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (141, 8, '2025-05-21');
 insert into studentJoins (studentID, clubID, joinDate) values (74, 24, '2023-09-02');
 insert into studentJoins (studentID, clubID, joinDate) values (10, 7, '2024-09-29');
 insert into studentJoins (studentID, clubID, joinDate) values (80, 27, '2024-07-21');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (176, 36, '2025-01-11');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (176, 12, '2025-01-11');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (127, 15, '2024-04-29');
 insert into studentJoins (studentID, clubID, joinDate) values (55, 4, '2023-08-24');
 insert into studentJoins (studentID, clubID, joinDate) values (13, 26, '2022-10-17');
 insert into studentJoins (studentID, clubID, joinDate) values (164, 27, '2022-09-24');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (133, 39, '2024-11-25');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (133, 31, '2024-11-25');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (125, 7, '2025-06-14');
 insert into studentJoins (studentID, clubID, joinDate) values (150, 23, '2024-05-18');
 insert into studentJoins (studentID, clubID, joinDate) values (177, 4, '2025-10-06');
 insert into studentJoins (studentID, clubID, joinDate) values (72, 2, '2024-09-02');
 insert into studentJoins (studentID, clubID, joinDate) values (30, 3, '2024-07-01');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (36, 40, '2023-11-20');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (36, 12, '2023-11-20');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (200, 3, '2023-08-10');
 insert into studentJoins (studentID, clubID, joinDate) values (116, 2, '2022-11-06');
 insert into studentJoins (studentID, clubID, joinDate) values (179, 1, '2024-02-25');
@@ -1447,22 +1728,36 @@ insert into studentJoins (studentID, clubID, joinDate) values (51, 19, '2025-10-
 insert into studentJoins (studentID, clubID, joinDate) values (153, 6, '2025-12-13');
 insert into studentJoins (studentID, clubID, joinDate) values (120, 18, '2023-06-16');
 insert into studentJoins (studentID, clubID, joinDate) values (115, 8, '2024-07-16');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (164, 14, '2023-09-10');
 insert into studentJoins (studentID, clubID, joinDate) values (157, 13, '2023-02-11');
 insert into studentJoins (studentID, clubID, joinDate) values (18, 18, '2023-03-20');
 insert into studentJoins (studentID, clubID, joinDate) values (137, 37, '2025-11-22');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (157, 13, '2023-02-11');
+insert into studentJoins (studentID, clubID, joinDate) values (18, 18, '2023-03-20');
+insert into studentJoins (studentID, clubID, joinDate) values (137, 10, '2025-11-22');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (119, 24, '2025-04-06');
 insert into studentJoins (studentID, clubID, joinDate) values (167, 26, '2025-04-02');
 insert into studentJoins (studentID, clubID, joinDate) values (45, 11, '2025-07-03');
 insert into studentJoins (studentID, clubID, joinDate) values (127, 24, '2023-07-20');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (153, 37, '2023-04-20');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (153, 13, '2023-04-20');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (21, 26, '2023-05-05');
 insert into studentJoins (studentID, clubID, joinDate) values (177, 2, '2024-03-24');
 insert into studentJoins (studentID, clubID, joinDate) values (74, 20, '2025-04-05');
 insert into studentJoins (studentID, clubID, joinDate) values (103, 31, '2025-06-01');
 insert into studentJoins (studentID, clubID, joinDate) values (196, 6, '2023-06-15');
 insert into studentJoins (studentID, clubID, joinDate) values (189, 24, '2022-08-20');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (97, 36, '2025-01-31');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (97, 23, '2025-01-31');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (173, 29, '2023-11-08');
 insert into studentJoins (studentID, clubID, joinDate) values (32, 10, '2025-11-29');
 insert into studentJoins (studentID, clubID, joinDate) values (32, 29, '2025-07-05');
@@ -1473,8 +1768,13 @@ insert into studentJoins (studentID, clubID, joinDate) values (140, 12, '2025-06
 insert into studentJoins (studentID, clubID, joinDate) values (147, 33, '2024-01-11');
 insert into studentJoins (studentID, clubID, joinDate) values (15, 5, '2025-04-22');
 insert into studentJoins (studentID, clubID, joinDate) values (72, 18, '2023-12-03');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (66, 39, '2022-10-13');
 insert into studentJoins (studentID, clubID, joinDate) values (84, 39, '2023-11-03');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (66, 27, '2022-10-13');
+insert into studentJoins (studentID, clubID, joinDate) values (84, 28, '2023-11-03');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (68, 32, '2025-09-15');
 insert into studentJoins (studentID, clubID, joinDate) values (188, 11, '2024-01-24');
 insert into studentJoins (studentID, clubID, joinDate) values (161, 30, '2023-08-21');
@@ -1500,7 +1800,11 @@ insert into studentJoins (studentID, clubID, joinDate) values (149, 29, '2023-04
 insert into studentJoins (studentID, clubID, joinDate) values (65, 6, '2024-04-24');
 insert into studentJoins (studentID, clubID, joinDate) values (180, 20, '2023-10-19');
 insert into studentJoins (studentID, clubID, joinDate) values (76, 23, '2024-12-29');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (97, 40, '2024-06-09');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (97, 18, '2024-06-09');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (41, 2, '2022-10-05');
 insert into studentJoins (studentID, clubID, joinDate) values (111, 9, '2023-09-06');
 insert into studentJoins (studentID, clubID, joinDate) values (168, 28, '2025-12-05');
@@ -1509,7 +1813,11 @@ insert into studentJoins (studentID, clubID, joinDate) values (198, 9, '2025-04-
 insert into studentJoins (studentID, clubID, joinDate) values (43, 20, '2024-07-23');
 insert into studentJoins (studentID, clubID, joinDate) values (147, 2, '2024-07-15');
 insert into studentJoins (studentID, clubID, joinDate) values (175, 35, '2025-03-29');
+<<<<<<< HEAD
 insert into studentJoins (studentID, clubID, joinDate) values (27, 37, '2024-02-22');
+=======
+insert into studentJoins (studentID, clubID, joinDate) values (27, 19, '2024-02-22');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentJoins (studentID, clubID, joinDate) values (56, 28, '2025-02-08');
 insert into studentJoins (studentID, clubID, joinDate) values (51, 16, '2022-09-27');
 insert into studentJoins (studentID, clubID, joinDate) values (18, 24, '2022-10-17');
@@ -1531,33 +1839,54 @@ insert into studentJoins (studentID, clubID, joinDate) values (148, 11, '2023-09
 
 -- 14. studentLeaves
 insert into studentLeaves (studentID, clubID, leaveDate) values (174, 25, '2023-01-24');
+<<<<<<< HEAD
 insert into studentLeaves (studentID, clubID, leaveDate) values (137, 39, '2024-02-08');
+=======
+insert into studentLeaves (studentID, clubID, leaveDate) values (137, 18, '2024-02-08');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentLeaves (studentID, clubID, leaveDate) values (1, 12, '2025-07-16');
 insert into studentLeaves (studentID, clubID, leaveDate) values (159, 23, '2024-07-08');
 insert into studentLeaves (studentID, clubID, leaveDate) values (186, 18, '2023-04-25');
 insert into studentLeaves (studentID, clubID, leaveDate) values (60, 8, '2025-06-09');
 insert into studentLeaves (studentID, clubID, leaveDate) values (63, 11, '2025-01-22');
+<<<<<<< HEAD
 insert into studentLeaves (studentID, clubID, leaveDate) values (18, 18, '2024-03-10');
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentLeaves (studentID, clubID, leaveDate) values (186, 4, '2023-07-08');
 insert into studentLeaves (studentID, clubID, leaveDate) values (117, 25, '2024-11-15');
 insert into studentLeaves (studentID, clubID, leaveDate) values (25, 16, '2024-12-20');
 insert into studentLeaves (studentID, clubID, leaveDate) values (59, 5, '2024-11-13');
 insert into studentLeaves (studentID, clubID, leaveDate) values (116, 31, '2025-07-27');
+<<<<<<< HEAD
 insert into studentLeaves (studentID, clubID, leaveDate) values (186, 40, '2025-06-25');
 insert into studentLeaves (studentID, clubID, leaveDate) values (158, 39, '2025-10-01');
+=======
+insert into studentLeaves (studentID, clubID, leaveDate) values (186, 17, '2025-06-25');
+insert into studentLeaves (studentID, clubID, leaveDate) values (158, 29, '2025-10-01');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentLeaves (studentID, clubID, leaveDate) values (73, 16, '2023-03-06');
 insert into studentLeaves (studentID, clubID, leaveDate) values (7, 8, '2023-04-17');
 insert into studentLeaves (studentID, clubID, leaveDate) values (171, 14, '2024-02-11');
 insert into studentLeaves (studentID, clubID, leaveDate) values (58, 22, '2025-06-06');
+<<<<<<< HEAD
 insert into studentLeaves (studentID, clubID, leaveDate) values (34, 39, '2024-11-14');
+=======
+insert into studentLeaves (studentID, clubID, leaveDate) values (34, 17, '2024-11-14');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentLeaves (studentID, clubID, leaveDate) values (173, 20, '2024-09-04');
 insert into studentLeaves (studentID, clubID, leaveDate) values (146, 32, '2024-12-21');
 insert into studentLeaves (studentID, clubID, leaveDate) values (11, 10, '2025-06-03');
 insert into studentLeaves (studentID, clubID, leaveDate) values (44, 1, '2025-12-25');
 insert into studentLeaves (studentID, clubID, leaveDate) values (146, 31, '2025-09-06');
 insert into studentLeaves (studentID, clubID, leaveDate) values (92, 20, '2024-02-08');
+<<<<<<< HEAD
 insert into studentLeaves (studentID, clubID, leaveDate) values (191, 37, '2023-09-26');
 insert into studentLeaves (studentID, clubID, leaveDate) values (192, 37, '2024-08-03');
+=======
+insert into studentLeaves (studentID, clubID, leaveDate) values (191, 16, '2023-09-26');
+insert into studentLeaves (studentID, clubID, leaveDate) values (192, 15, '2024-08-03');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentLeaves (studentID, clubID, leaveDate) values (20, 19, '2025-09-27');
 insert into studentLeaves (studentID, clubID, leaveDate) values (72, 22, '2023-11-19');
 insert into studentLeaves (studentID, clubID, leaveDate) values (156, 23, '2024-05-07');
@@ -1581,15 +1910,26 @@ insert into studentLeaves (studentID, clubID, leaveDate) values (146, 21, '2023-
 insert into studentLeaves (studentID, clubID, leaveDate) values (159, 5, '2023-01-19');
 insert into studentLeaves (studentID, clubID, leaveDate) values (67, 21, '2025-01-07');
 insert into studentLeaves (studentID, clubID, leaveDate) values (175, 23, '2023-11-29');
+<<<<<<< HEAD
 insert into studentLeaves (studentID, clubID, leaveDate) values (115, 37, '2024-03-28');
 insert into studentLeaves (studentID, clubID, leaveDate) values (70, 21, '2025-09-23');
 insert into studentLeaves (studentID, clubID, leaveDate) values (62, 38, '2023-02-25');
 insert into studentLeaves (studentID, clubID, leaveDate) values (139, 37, '2024-08-28');
+=======
+insert into studentLeaves (studentID, clubID, leaveDate) values (115, 29, '2024-03-28');
+insert into studentLeaves (studentID, clubID, leaveDate) values (70, 21, '2025-09-23');
+insert into studentLeaves (studentID, clubID, leaveDate) values (62, 16, '2023-02-25');
+insert into studentLeaves (studentID, clubID, leaveDate) values (139, 10, '2024-08-28');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentLeaves (studentID, clubID, leaveDate) values (143, 11, '2024-02-23');
 insert into studentLeaves (studentID, clubID, leaveDate) values (180, 3, '2024-04-24');
 insert into studentLeaves (studentID, clubID, leaveDate) values (4, 34, '2023-10-22');
 insert into studentLeaves (studentID, clubID, leaveDate) values (112, 15, '2025-10-16');
+<<<<<<< HEAD
 insert into studentLeaves (studentID, clubID, leaveDate) values (6, 39, '2024-04-05');
+=======
+insert into studentLeaves (studentID, clubID, leaveDate) values (6, 27, '2024-04-05');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentLeaves (studentID, clubID, leaveDate) values (181, 27, '2025-02-15');
 insert into studentLeaves (studentID, clubID, leaveDate) values (135, 14, '2023-05-02');
 insert into studentLeaves (studentID, clubID, leaveDate) values (148, 18, '2023-10-29');
@@ -1600,6 +1940,7 @@ insert into studentLeaves (studentID, clubID, leaveDate) values (16, 29, '2024-1
 insert into studentLeaves (studentID, clubID, leaveDate) values (184, 11, '2023-06-03');
 insert into studentLeaves (studentID, clubID, leaveDate) values (33, 1, '2025-12-20');
 insert into studentLeaves (studentID, clubID, leaveDate) values (31, 2, '2025-08-05');
+<<<<<<< HEAD
 insert into studentLeaves (studentID, clubID, leaveDate) values (135, 40, '2024-10-25');
 insert into studentLeaves (studentID, clubID, leaveDate) values (94, 8, '2024-03-19');
 insert into studentLeaves (studentID, clubID, leaveDate) values (165, 8, '2023-06-23');
@@ -1609,6 +1950,16 @@ insert into studentLeaves (studentID, clubID, leaveDate) values (89, 21, '2023-1
 insert into studentLeaves (studentID, clubID, leaveDate) values (146, 37, '2024-12-22');
 insert into studentLeaves (studentID, clubID, leaveDate) values (143, 27, '2024-12-14');
 insert into studentLeaves (studentID, clubID, leaveDate) values (141, 36, '2023-08-29');
+=======
+insert into studentLeaves (studentID, clubID, leaveDate) values (135, 29, '2024-10-25');
+insert into studentLeaves (studentID, clubID, leaveDate) values (94, 8, '2024-03-19');
+insert into studentLeaves (studentID, clubID, leaveDate) values (165, 8, '2023-06-23');
+insert into studentLeaves (studentID, clubID, leaveDate) values (155, 30, '2023-03-25');
+insert into studentLeaves (studentID, clubID, leaveDate) values (89, 21, '2023-12-31');
+insert into studentLeaves (studentID, clubID, leaveDate) values (146, 19, '2024-12-22');
+insert into studentLeaves (studentID, clubID, leaveDate) values (143, 27, '2024-12-14');
+insert into studentLeaves (studentID, clubID, leaveDate) values (141, 29, '2023-08-29');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentLeaves (studentID, clubID, leaveDate) values (85, 34, '2025-12-23');
 insert into studentLeaves (studentID, clubID, leaveDate) values (28, 18, '2024-03-05');
 insert into studentLeaves (studentID, clubID, leaveDate) values (104, 17, '2023-04-06');
@@ -1620,7 +1971,11 @@ insert into studentLeaves (studentID, clubID, leaveDate) values (31, 21, '2024-0
 insert into studentLeaves (studentID, clubID, leaveDate) values (161, 4, '2023-04-09');
 insert into studentLeaves (studentID, clubID, leaveDate) values (108, 17, '2023-06-14');
 insert into studentLeaves (studentID, clubID, leaveDate) values (143, 8, '2025-12-01');
+<<<<<<< HEAD
 insert into studentLeaves (studentID, clubID, leaveDate) values (82, 36, '2023-10-30');
+=======
+insert into studentLeaves (studentID, clubID, leaveDate) values (82, 29, '2023-10-30');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentLeaves (studentID, clubID, leaveDate) values (26, 23, '2024-03-31');
 insert into studentLeaves (studentID, clubID, leaveDate) values (196, 33, '2023-09-20');
 insert into studentLeaves (studentID, clubID, leaveDate) values (152, 5, '2025-01-03');
@@ -1633,6 +1988,59 @@ insert into studentLeaves (studentID, clubID, leaveDate) values (94, 29, '2025-1
 
 
 -- 15. application
+<<<<<<< HEAD
+=======
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (1, 28, 129, '2024-12-22 15:38:06', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (2, 25, 25, '2025-01-11 15:21:27', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (3, 30, 140, '2025-04-16 20:11:32', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (4, 10, 188, '2025-01-02 13:46:03', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (5, 2, 82, '2025-02-23 16:31:33', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (6, 32, 168, '2025-05-07 23:00:49', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (7, 7, 16, '2025-05-11 01:19:26', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (8, 10, 118, '2025-07-08 00:13:37', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (9, 6, 179, '2025-01-18 14:36:24', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (10, 7, 7, '2025-11-15 13:08:04', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (11, 33, 9, '2025-08-27 03:22:20', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (12, 33, 125, '2025-01-29 07:35:07', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (13, 9, 186, '2024-12-25 02:06:34', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (14, 32, 167, '2025-07-13 11:30:44', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (15, 14, 79, '2025-07-10 09:32:54', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (16, 26, 50, '2024-12-02 20:29:33', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (17, 35, 134, '2025-08-21 05:47:24', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (18, 22, 55, '2025-02-16 01:30:23', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (19, 25, 30, '2025-10-08 10:37:29', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (20, 12, 54, '2025-04-18 17:19:42', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (21, 32, 146, '2025-04-08 20:54:53', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (22, 17, 85, '2025-03-21 10:31:00', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (23, 3, 35, '2025-11-26 17:14:00', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (24, 23, 40, '2025-07-03 19:02:29', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (25, 10, 160, '2025-09-02 18:28:15', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (26, 22, 147, '2025-11-24 18:58:11', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (27, 17, 25, '2025-03-05 22:51:25', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (28, 26, 69, '2024-12-14 05:13:45', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (29, 12, 109, '2025-09-27 04:04:04', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (30, 30, 152, '2025-04-17 19:44:04', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (31, 18, 75, '2025-07-31 05:28:44', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (32, 35, 32, '2025-06-12 22:35:53', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (33, 5, 108, '2025-09-06 05:27:49', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (34, 23, 54, '2025-03-07 00:28:47', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (35, 9, 173, '2024-12-25 03:09:42', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (36, 16, 152, '2025-01-04 21:12:54', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (37, 25, 3, '2025-04-28 08:13:44', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (38, 11, 21, '2025-04-28 02:54:32', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (39, 14, 98, '2025-05-26 19:59:00', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (40, 24, 10, '2025-10-29 08:09:01', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (41, 24, 190, '2025-01-21 02:40:43', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (42, 14, 145, '2025-06-08 10:09:12', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (43, 19, 72, '2025-08-02 20:26:11', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (44, 12, 105, '2025-08-07 00:22:42', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (45, 8, 99, '2025-10-25 01:48:39', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (46, 24, 153, '2025-07-16 22:22:33', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (47, 31, 6, '2025-11-21 10:01:12', 1);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (48, 5, 59, '2025-10-06 02:34:07', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (49, 31, 27, '2025-10-21 10:29:40', 0);
+insert into application (applicationID, clubID, studentID, dateSubmitted, status) values (50, 33, 79, '2025-09-28 09:55:22', 0);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 
 
 -- 16. studentEvents
@@ -1652,7 +2060,10 @@ insert into studentEvents (studentID, eventID) values (21, 35);
 insert into studentEvents (studentID, eventID) values (33, 1);
 insert into studentEvents (studentID, eventID) values (26, 4);
 insert into studentEvents (studentID, eventID) values (4, 26);
+<<<<<<< HEAD
 insert into studentEvents (studentID, eventID) values (28, 30);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentEvents (studentID, eventID) values (7, 32);
 insert into studentEvents (studentID, eventID) values (10, 13);
 insert into studentEvents (studentID, eventID) values (3, 13);
@@ -1668,12 +2079,18 @@ insert into studentEvents (studentID, eventID) values (21, 9);
 insert into studentEvents (studentID, eventID) values (33, 21);
 insert into studentEvents (studentID, eventID) values (23, 15);
 insert into studentEvents (studentID, eventID) values (11, 5);
+<<<<<<< HEAD
 insert into studentEvents (studentID, eventID) values (28, 30);
 insert into studentEvents (studentID, eventID) values (28, 2);
 insert into studentEvents (studentID, eventID) values (3, 28);
 insert into studentEvents (studentID, eventID) values (25, 34);
 insert into studentEvents (studentID, eventID) values (28, 19);
 insert into studentEvents (studentID, eventID) values (34, 16);
+=======
+insert into studentEvents (studentID, eventID) values (28, 2);
+insert into studentEvents (studentID, eventID) values (25, 34);
+insert into studentEvents (studentID, eventID) values (28, 19);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentEvents (studentID, eventID) values (7, 30);
 insert into studentEvents (studentID, eventID) values (34, 32);
 insert into studentEvents (studentID, eventID) values (21, 17);
@@ -1691,7 +2108,10 @@ insert into studentEvents (studentID, eventID) values (16, 11);
 insert into studentEvents (studentID, eventID) values (7, 20);
 insert into studentEvents (studentID, eventID) values (32, 26);
 insert into studentEvents (studentID, eventID) values (7, 4);
+<<<<<<< HEAD
 insert into studentEvents (studentID, eventID) values (29, 12);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentEvents (studentID, eventID) values (17, 18);
 insert into studentEvents (studentID, eventID) values (32, 22);
 insert into studentEvents (studentID, eventID) values (25, 29);
@@ -1722,7 +2142,10 @@ insert into studentEvents (studentID, eventID) values (6, 13);
 insert into studentEvents (studentID, eventID) values (30, 2);
 insert into studentEvents (studentID, eventID) values (27, 26);
 insert into studentEvents (studentID, eventID) values (32, 9);
+<<<<<<< HEAD
 insert into studentEvents (studentID, eventID) values (15, 2);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentEvents (studentID, eventID) values (23, 2);
 insert into studentEvents (studentID, eventID) values (3, 20);
 insert into studentEvents (studentID, eventID) values (33, 3);
@@ -1735,7 +2158,10 @@ insert into studentEvents (studentID, eventID) values (14, 15);
 insert into studentEvents (studentID, eventID) values (18, 9);
 insert into studentEvents (studentID, eventID) values (26, 6);
 insert into studentEvents (studentID, eventID) values (2, 29);
+<<<<<<< HEAD
 insert into studentEvents (studentID, eventID) values (24, 12);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentEvents (studentID, eventID) values (26, 35);
 insert into studentEvents (studentID, eventID) values (33, 31);
 insert into studentEvents (studentID, eventID) values (26, 3);
@@ -1743,14 +2169,20 @@ insert into studentEvents (studentID, eventID) values (31, 21);
 insert into studentEvents (studentID, eventID) values (16, 17);
 insert into studentEvents (studentID, eventID) values (28, 11);
 insert into studentEvents (studentID, eventID) values (31, 15);
+<<<<<<< HEAD
 insert into studentEvents (studentID, eventID) values (28, 30);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentEvents (studentID, eventID) values (3, 22);
 insert into studentEvents (studentID, eventID) values (26, 32);
 insert into studentEvents (studentID, eventID) values (30, 13);
 insert into studentEvents (studentID, eventID) values (29, 10);
 insert into studentEvents (studentID, eventID) values (3, 17);
 insert into studentEvents (studentID, eventID) values (12, 15);
+<<<<<<< HEAD
 insert into studentEvents (studentID, eventID) values (18, 18);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into studentEvents (studentID, eventID) values (12, 9);
 insert into studentEvents (studentID, eventID) values (14, 5);
 insert into studentEvents (studentID, eventID) values (30, 27);
@@ -1769,6 +2201,7 @@ insert into studentEvents (studentID, eventID) values (12, 35);
 
 
 -- 17. search
+<<<<<<< HEAD
 insert into clubEvents (clubID, eventID) values (6, 18);
 insert into clubEvents (clubID, eventID) values (31, 23);
 insert into clubEvents (clubID, eventID) values (25, 17);
@@ -1900,6 +2333,58 @@ insert into clubEvents (clubID, eventID) values (20, 25);
 insert into clubEvents (clubID, eventID) values (31, 5);
 insert into clubEvents (clubID, eventID) values (13, 18);
 
+=======
+insert into search (searchID, studentID, name, dateTime) values (1, 77, 'scholarship', '2025-02-09 19:40:38');
+insert into search (searchID, studentID, name, dateTime) values (2, 163, 'academic journal', '2025-10-08 21:40:10');
+insert into search (searchID, studentID, name, dateTime) values (3, 45, 'scholarship', '2025-10-31 19:16:42');
+insert into search (searchID, studentID, name, dateTime) values (4, 132, 'academic journal', '2025-11-03 22:34:44');
+insert into search (searchID, studentID, name, dateTime) values (5, 55, 'academic conference', '2025-10-18 03:40:43');
+insert into search (searchID, studentID, name, dateTime) values (6, 13, 'research', '2025-06-06 14:09:11');
+insert into search (searchID, studentID, name, dateTime) values (7, 79, 'academic journal', '2025-09-08 22:08:05');
+insert into search (searchID, studentID, name, dateTime) values (8, 5, 'research', '2025-11-02 02:30:29');
+insert into search (searchID, studentID, name, dateTime) values (9, 68, 'study group', '2025-01-14 04:25:04');
+insert into search (searchID, studentID, name, dateTime) values (10, 144, 'research', '2025-07-22 10:06:32');
+insert into search (searchID, studentID, name, dateTime) values (11, 165, 'study group', '2025-10-07 06:34:11');
+insert into search (searchID, studentID, name, dateTime) values (12, 63, 'academic journal', '2025-04-16 22:28:44');
+insert into search (searchID, studentID, name, dateTime) values (13, 33, 'research', '2025-09-07 19:01:55');
+insert into search (searchID, studentID, name, dateTime) values (14, 183, 'academic conference', '2025-11-18 17:14:32');
+insert into search (searchID, studentID, name, dateTime) values (15, 195, 'academic journal', '2025-11-22 06:27:49');
+insert into search (searchID, studentID, name, dateTime) values (16, 67, 'research', '2025-06-26 14:59:14');
+insert into search (searchID, studentID, name, dateTime) values (17, 86, 'scholarship', '2025-08-07 09:05:28');
+insert into search (searchID, studentID, name, dateTime) values (18, 131, 'study group', '2025-05-30 23:34:51');
+insert into search (searchID, studentID, name, dateTime) values (19, 53, 'academic journal', '2025-06-23 10:30:01');
+insert into search (searchID, studentID, name, dateTime) values (20, 123, 'academic journal', '2025-04-26 10:20:25');
+insert into search (searchID, studentID, name, dateTime) values (21, 86, 'academic journal', '2024-12-18 04:01:55');
+insert into search (searchID, studentID, name, dateTime) values (22, 191, 'academic journal', '2025-04-20 09:54:31');
+insert into search (searchID, studentID, name, dateTime) values (23, 4, 'scholarship', '2025-05-16 10:20:24');
+insert into search (searchID, studentID, name, dateTime) values (24, 83, 'scholarship', '2025-08-25 12:56:55');
+insert into search (searchID, studentID, name, dateTime) values (25, 169, 'scholarship', '2025-01-10 00:19:38');
+insert into search (searchID, studentID, name, dateTime) values (26, 34, 'academic conference', '2025-07-17 03:26:08');
+insert into search (searchID, studentID, name, dateTime) values (27, 11, 'research', '2025-03-15 17:26:02');
+insert into search (searchID, studentID, name, dateTime) values (28, 102, 'academic conference', '2025-07-13 02:07:39');
+insert into search (searchID, studentID, name, dateTime) values (29, 162, 'academic journal', '2025-04-21 23:31:37');
+insert into search (searchID, studentID, name, dateTime) values (30, 127, 'academic journal', '2025-10-12 05:09:32');
+insert into search (searchID, studentID, name, dateTime) values (31, 70, 'academic journal', '2025-01-25 19:17:09');
+insert into search (searchID, studentID, name, dateTime) values (32, 146, 'study group', '2025-11-10 03:39:26');
+insert into search (searchID, studentID, name, dateTime) values (33, 25, 'research', '2025-04-09 00:43:29');
+insert into search (searchID, studentID, name, dateTime) values (34, 130, 'research', '2025-01-13 17:18:54');
+insert into search (searchID, studentID, name, dateTime) values (35, 174, 'academic conference', '2025-07-02 22:48:52');
+insert into search (searchID, studentID, name, dateTime) values (36, 120, 'academic journal', '2025-01-23 13:16:51');
+insert into search (searchID, studentID, name, dateTime) values (37, 182, 'academic conference', '2025-07-19 14:55:50');
+insert into search (searchID, studentID, name, dateTime) values (38, 123, 'scholarship', '2024-12-06 19:12:44');
+insert into search (searchID, studentID, name, dateTime) values (39, 42, 'study group', '2025-02-10 02:33:49');
+insert into search (searchID, studentID, name, dateTime) values (40, 44, 'scholarship', '2025-05-30 18:41:24');
+insert into search (searchID, studentID, name, dateTime) values (41, 48, 'academic journal', '2025-03-31 22:27:14');
+insert into search (searchID, studentID, name, dateTime) values (42, 145, 'research', '2025-06-11 11:06:44');
+insert into search (searchID, studentID, name, dateTime) values (43, 68, 'scholarship', '2025-08-14 15:59:57');
+insert into search (searchID, studentID, name, dateTime) values (44, 136, 'study group', '2025-02-10 22:07:01');
+insert into search (searchID, studentID, name, dateTime) values (45, 3, 'scholarship', '2025-01-08 00:56:32');
+insert into search (searchID, studentID, name, dateTime) values (46, 94, 'academic conference', '2025-01-22 12:45:03');
+insert into search (searchID, studentID, name, dateTime) values (47, 87, 'scholarship', '2025-03-11 00:36:57');
+insert into search (searchID, studentID, name, dateTime) values (48, 61, 'research', '2025-09-28 17:52:44');
+insert into search (searchID, studentID, name, dateTime) values (49, 57, 'scholarship', '2025-03-28 12:18:35');
+insert into search (searchID, studentID, name, dateTime) values (50, 155, 'study group', '2025-04-18 15:50:06');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 
 -- 18. adminContact
 insert into adminContact (adminID, eboardID) values (21, 12);
@@ -1910,7 +2395,10 @@ insert into adminContact (adminID, eboardID) values (26, 22);
 insert into adminContact (adminID, eboardID) values (18, 6);
 insert into adminContact (adminID, eboardID) values (18, 25);
 insert into adminContact (adminID, eboardID) values (22, 17);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (18, 6);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (29, 21);
 insert into adminContact (adminID, eboardID) values (26, 1);
 insert into adminContact (adminID, eboardID) values (21, 4);
@@ -1958,7 +2446,10 @@ insert into adminContact (adminID, eboardID) values (4, 24);
 insert into adminContact (adminID, eboardID) values (23, 10);
 insert into adminContact (adminID, eboardID) values (34, 19);
 insert into adminContact (adminID, eboardID) values (32, 7);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (24, 18);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (32, 28);
 insert into adminContact (adminID, eboardID) values (21, 35);
 insert into adminContact (adminID, eboardID) values (17, 26);
@@ -1967,21 +2458,32 @@ insert into adminContact (adminID, eboardID) values (23, 8);
 insert into adminContact (adminID, eboardID) values (2, 16);
 insert into adminContact (adminID, eboardID) values (27, 11);
 insert into adminContact (adminID, eboardID) values (30, 32);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (1, 18);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (16, 34);
 insert into adminContact (adminID, eboardID) values (2, 32);
 insert into adminContact (adminID, eboardID) values (23, 17);
 insert into adminContact (adminID, eboardID) values (13, 6);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (23, 10);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (3, 3);
 insert into adminContact (adminID, eboardID) values (6, 28);
 insert into adminContact (adminID, eboardID) values (21, 3);
 insert into adminContact (adminID, eboardID) values (4, 30);
 insert into adminContact (adminID, eboardID) values (27, 15);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (32, 18);
 insert into adminContact (adminID, eboardID) values (21, 25);
 insert into adminContact (adminID, eboardID) values (15, 4);
 insert into adminContact (adminID, eboardID) values (14, 26);
+=======
+insert into adminContact (adminID, eboardID) values (21, 25);
+insert into adminContact (adminID, eboardID) values (15, 4);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (30, 23);
 insert into adminContact (adminID, eboardID) values (21, 1);
 insert into adminContact (adminID, eboardID) values (5, 16);
@@ -1989,16 +2491,23 @@ insert into adminContact (adminID, eboardID) values (25, 16);
 insert into adminContact (adminID, eboardID) values (31, 21);
 insert into adminContact (adminID, eboardID) values (32, 10);
 insert into adminContact (adminID, eboardID) values (34, 15);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (16, 19);
 insert into adminContact (adminID, eboardID) values (13, 31);
 insert into adminContact (adminID, eboardID) values (3, 3);
+=======
+insert into adminContact (adminID, eboardID) values (13, 31);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (27, 23);
 insert into adminContact (adminID, eboardID) values (24, 20);
 insert into adminContact (adminID, eboardID) values (14, 2);
 insert into adminContact (adminID, eboardID) values (29, 17);
 insert into adminContact (adminID, eboardID) values (7, 7);
 insert into adminContact (adminID, eboardID) values (26, 26);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (7, 28);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (12, 35);
 insert into adminContact (adminID, eboardID) values (17, 21);
 insert into adminContact (adminID, eboardID) values (29, 5);
@@ -2010,7 +2519,10 @@ insert into adminContact (adminID, eboardID) values (13, 21);
 insert into adminContact (adminID, eboardID) values (27, 8);
 insert into adminContact (adminID, eboardID) values (30, 9);
 insert into adminContact (adminID, eboardID) values (30, 1);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (25, 18);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (28, 31);
 insert into adminContact (adminID, eboardID) values (6, 1);
 insert into adminContact (adminID, eboardID) values (13, 13);
@@ -2020,14 +2532,20 @@ insert into adminContact (adminID, eboardID) values (24, 15);
 insert into adminContact (adminID, eboardID) values (24, 3);
 insert into adminContact (adminID, eboardID) values (33, 24);
 insert into adminContact (adminID, eboardID) values (30, 13);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (29, 5);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (13, 10);
 insert into adminContact (adminID, eboardID) values (15, 19);
 insert into adminContact (adminID, eboardID) values (29, 31);
 insert into adminContact (adminID, eboardID) values (33, 7);
 insert into adminContact (adminID, eboardID) values (13, 30);
 insert into adminContact (adminID, eboardID) values (2, 26);
+<<<<<<< HEAD
 insert into adminContact (adminID, eboardID) values (30, 9);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminContact (adminID, eboardID) values (25, 33);
 insert into adminContact (adminID, eboardID) values (4, 14);
 insert into adminContact (adminID, eboardID) values (18, 2);
@@ -2035,6 +2553,7 @@ insert into adminContact (adminID, eboardID) values (11, 24);
 
 
 -- 19. error
+<<<<<<< HEAD
 insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 4, '504 Gateway Timeout', 'Restarted the system', '2025-09-28 19:29:46', '2025-12-01 12:20:26', 93);
 insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (6, 5, '429 Too Many Requests', 'Cleared cache and cookies', '2025-02-07 18:55:30', '2025-08-02 07:45:38', 83);
 insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (9, 1, '502 Bad Gateway', 'Performed a system restore', '2025-12-30 09:05:57', '2025-01-31 22:13:30', 10);
@@ -2075,6 +2594,48 @@ insert into error (systemID, updateID, errorType, errorSolution, timeReported, t
 insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (3, 10, '403 Forbidden', 'Restarted the system', '2025-03-02 03:14:50', '2025-03-08 10:58:28', 53);
 insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (10, 4, '500 Internal Server Error', 'Rebooted the device', '2025-09-25 14:31:22', '2025-01-12 00:31:23', 79);
 insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 2, '403 Forbidden', 'Checked the network connection', '2025-05-08 20:11:58', '2025-07-08 03:31:15', 98);
+=======
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (1, 1, 'logic error', 'Restart the system', '2024-12-10 20:12:41', '2024-12-20 04:19:38', 1);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (4, 8, 'network error', 'Check network connection', '2025-03-18 08:34:57', '2025-02-15 03:24:30', 2);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (1, 10, 'runtime error', 'Contact support', '2025-11-24 06:33:39', '2025-06-19 05:53:19', 3);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (2, 2, 'network error', 'Clear cache', '2025-10-11 05:05:06', '2025-01-29 13:11:06', 4);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 9, 'logic error', 'Update software', '2024-12-06 12:45:47', '2025-10-30 13:37:12', 5);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 2, 'database error', 'Check network connection', '2025-11-11 08:18:39', '2025-01-19 22:29:52', 6);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (10, 1, 'logic error', 'Update software', '2025-09-29 17:32:09', '2025-04-02 06:16:16', 7);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (2, 5, 'network error', 'Update software', '2025-10-28 05:25:25', '2025-03-04 07:01:04', 8);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (7, 2, 'network error', 'Contact support', '2025-11-03 06:52:45', '2025-10-14 22:45:59', 9);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (7, 8, 'logic error', 'Clear cache', '2025-03-17 22:51:22', '2025-11-11 02:42:37', 10);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (3, 10, 'database error', 'Contact support', '2025-11-30 00:12:42', '2025-07-10 09:33:58', 11);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 5, 'syntax error', 'Update software', '2025-02-15 19:09:55', '2025-02-07 03:54:10', 12);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (4, 10, 'database error', 'Contact support', '2025-08-24 08:53:06', '2025-03-16 16:10:00', 13);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (1, 10, 'network error', 'Restart the system', '2025-07-04 12:46:27', '2025-02-25 21:22:47', 14);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 3, 'network error', 'Check network connection', '2025-01-23 06:11:06', '2025-04-04 05:14:45', 15);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (2, 8, 'network error', 'Check network connection', '2025-04-15 23:04:08', '2024-12-13 05:46:47', 16);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (1, 5, 'syntax error', 'Update software', '2025-10-05 00:17:52', '2025-11-02 15:15:52', 17);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (6, 6, 'database error', 'Update software', '2025-03-13 06:47:20', '2024-12-26 03:51:05', 18);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (2, 5, 'syntax error', 'Restart the system', '2025-06-18 08:27:46', '2025-04-04 03:07:09', 19);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (9, 8, 'runtime error', 'Update software', '2025-08-19 19:29:41', '2025-06-11 00:57:04', 20);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (3, 5, 'runtime error', 'Restart the system', '2025-01-31 11:54:34', '2025-08-10 14:25:59', 21);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 3, 'syntax error', 'Update software', '2025-05-27 12:31:46', '2025-01-18 06:07:18', 22);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (4, 7, 'database error', 'Contact support', '2025-10-22 02:11:52', '2025-10-18 04:49:43', 23);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (6, 1, 'logic error', 'Update software', '2025-09-01 20:30:56', '2025-08-20 09:03:43', 24);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (6, 9, 'network error', 'Restart the system', '2025-03-12 17:33:01', '2025-10-16 00:37:00', 25);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (7, 4, 'network error', 'Restart the system', '2025-05-26 13:30:26', '2025-05-30 10:50:50', 26);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 5, 'network error', 'Restart the system', '2025-08-01 13:33:49', '2025-10-23 10:08:31', 27);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (1, 2, 'database error', 'Check network connection', '2025-08-03 16:30:22', '2025-07-05 19:43:27', 28);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (3, 7, 'network error', 'Clear cache', '2024-12-17 19:18:10', '2025-11-22 16:43:33', 29);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 2, 'network error', 'Check network connection', '2025-11-28 07:28:30', '2025-06-13 03:24:39', 30);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (9, 6, 'logic error', 'Restart the system', '2025-04-13 03:23:51', '2024-12-08 21:49:31', 31);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (2, 1, 'syntax error', 'Update software', '2025-03-17 04:41:53', '2025-01-13 15:02:33', 32);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 5, 'database error', 'Restart the system', '2025-03-13 03:07:30', '2024-12-29 00:06:09', 33);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (7, 5, 'network error', 'Check network connection', '2025-10-21 22:58:24', '2025-04-13 08:07:24', 34);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (10, 4, 'logic error', 'Clear cache', '2025-07-25 01:12:18', '2025-12-01 01:10:43', 35);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (5, 10, 'database error', 'Update software', '2025-02-16 07:48:36', '2025-07-05 19:10:52', 36);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (8, 3, 'logic error', 'Clear cache', '2025-02-12 10:36:30', '2025-11-28 00:02:48', 37);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (1, 6, 'logic error', 'Restart the system', '2025-05-01 18:05:44', '2025-11-13 15:17:37', 38);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (9, 2, 'runtime error', 'Clear cache', '2025-03-13 11:58:24', '2025-07-22 06:39:07', 39);
+insert into error (systemID, updateID, errorType, errorSolution, timeReported, timeSolved, errorID) values (2, 4, 'logic error', 'Restart the system', '2025-11-10 20:35:29', '2025-07-19 18:58:57', 40);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 
 
 -- 20. adminPermissions
@@ -2086,7 +2647,10 @@ insert into adminPermissions (adminID, permission) values (7, 'custom access');
 insert into adminPermissions (adminID, permission) values (16, 'restricted access');
 insert into adminPermissions (adminID, permission) values (11, 'restricted access');
 insert into adminPermissions (adminID, permission) values (1, 'write access');
+<<<<<<< HEAD
 insert into adminPermissions (adminID, permission) values (19, 'restricted access');
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminPermissions (adminID, permission) values (5, 'limited access');
 insert into adminPermissions (adminID, permission) values (7, 'guest access');
 insert into adminPermissions (adminID, permission) values (3, 'view-only access');
@@ -2107,19 +2671,27 @@ insert into adminPermissions (adminID, permission) values (5, 'read-only access'
 insert into adminPermissions (adminID, permission) values (5, 'guest access');
 insert into adminPermissions (adminID, permission) values (12, 'guest access');
 insert into adminPermissions (adminID, permission) values (9, 'admin access');
+<<<<<<< HEAD
 insert into adminPermissions (adminID, permission) values (1, 'write access');
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminPermissions (adminID, permission) values (11, 'write access');
 insert into adminPermissions (adminID, permission) values (8, 'view-only access');
 insert into adminPermissions (adminID, permission) values (11, 'full access');
 insert into adminPermissions (adminID, permission) values (1, 'limited access');
 insert into adminPermissions (adminID, permission) values (2, 'custom access');
 insert into adminPermissions (adminID, permission) values (9, 'limited access');
+<<<<<<< HEAD
 insert into adminPermissions (adminID, permission) values (11, 'write access');
+=======
+insert into adminPermissions (adminID, permission) values (3, 'write access');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminPermissions (adminID, permission) values (15, 'limited access');
 insert into adminPermissions (adminID, permission) values (16, 'admin access');
 insert into adminPermissions (adminID, permission) values (6, 'full access');
 insert into adminPermissions (adminID, permission) values (9, 'write access');
 insert into adminPermissions (adminID, permission) values (16, 'limited access');
+<<<<<<< HEAD
 insert into adminPermissions (adminID, permission) values (17, 'read-only access');
 insert into adminPermissions (adminID, permission) values (10, 'custom access');
 insert into adminPermissions (adminID, permission) values (2, 'full access');
@@ -2127,6 +2699,15 @@ insert into adminPermissions (adminID, permission) values (7, 'superuser access'
 insert into adminPermissions (adminID, permission) values (16, 'custom access');
 insert into adminPermissions (adminID, permission) values (14, 'full access');
 insert into adminPermissions (adminID, permission) values (16, 'custom access');
+=======
+insert into adminPermissions (adminID, permission) values (7, 'read-only access');
+insert into adminPermissions (adminID, permission) values (10, 'custom access');
+insert into adminPermissions (adminID, permission) values (20, 'full access');
+insert into adminPermissions (adminID, permission) values (7, 'superuser access');
+insert into adminPermissions (adminID, permission) values (16, 'custom access');
+insert into adminPermissions (adminID, permission) values (1, 'full access');
+insert into adminPermissions (adminID, permission) values (6, 'custom access');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into adminPermissions (adminID, permission) values (15, 'superuser access');
 insert into adminPermissions (adminID, permission) values (6, 'superuser access');
 
@@ -2211,7 +2792,10 @@ insert into searchFilters (searchID, filter) values (8, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (30, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (29, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (7, 'Minimum GPA 3.5');
+<<<<<<< HEAD
 insert into searchFilters (searchID, filter) values (20, 'Main Campus');
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into searchFilters (searchID, filter) values (3, 'Main Campus');
 insert into searchFilters (searchID, filter) values (27, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (7, 'Minimum GPA 3.0');
@@ -2219,20 +2803,28 @@ insert into searchFilters (searchID, filter) values (28, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (26, 'Minimum GPA 3.5');
 insert into searchFilters (searchID, filter) values (6, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (35, 'Minimum GPA 3.5');
+<<<<<<< HEAD
 insert into searchFilters (searchID, filter) values (17, 'Minimum GPA 3.5');
 insert into searchFilters (searchID, filter) values (32, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (26, 'Minimum GPA 3.0');
+=======
+insert into searchFilters (searchID, filter) values (32, 'Undergraduate Level');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into searchFilters (searchID, filter) values (30, 'Minimum GPA 3.0');
 insert into searchFilters (searchID, filter) values (35, 'Main Campus');
 insert into searchFilters (searchID, filter) values (10, 'Minimum GPA 3.5');
 insert into searchFilters (searchID, filter) values (28, 'Minimum GPA 3.5');
 insert into searchFilters (searchID, filter) values (13, 'Undergraduate Level');
+<<<<<<< HEAD
 insert into searchFilters (searchID, filter) values (9, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (9, 'Undergraduate Level');
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into searchFilters (searchID, filter) values (29, 'Main Campus');
 insert into searchFilters (searchID, filter) values (4, 'Minimum GPA 3.5');
 insert into searchFilters (searchID, filter) values (2, 'Minimum GPA 3.0');
 insert into searchFilters (searchID, filter) values (17, 'Main Campus');
+<<<<<<< HEAD
 insert into searchFilters (searchID, filter) values (3, 'Main Campus');
 insert into searchFilters (searchID, filter) values (3, 'Minimum GPA 3.0');
 insert into searchFilters (searchID, filter) values (24, 'Undergraduate Level');
@@ -2240,26 +2832,39 @@ insert into searchFilters (searchID, filter) values (34, 'Minimum GPA 3.5');
 insert into searchFilters (searchID, filter) values (12, 'Main Campus');
 insert into searchFilters (searchID, filter) values (22, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (9, 'Minimum GPA 3.5');
+=======
+insert into searchFilters (searchID, filter) values (3, 'Minimum GPA 3.0');
+insert into searchFilters (searchID, filter) values (24, 'Undergraduate Level');
+insert into searchFilters (searchID, filter) values (12, 'Main Campus');
+insert into searchFilters (searchID, filter) values (22, 'Undergraduate Level');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into searchFilters (searchID, filter) values (30, 'Main Campus');
 insert into searchFilters (searchID, filter) values (11, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (1, 'Main Campus');
 insert into searchFilters (searchID, filter) values (11, 'Main Campus');
 insert into searchFilters (searchID, filter) values (35, 'Graduate Level');
 insert into searchFilters (searchID, filter) values (20, 'Graduate Level');
+<<<<<<< HEAD
 insert into searchFilters (searchID, filter) values (26, 'Minimum GPA 3.0');
 insert into searchFilters (searchID, filter) values (28, 'Minimum GPA 3.5');
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into searchFilters (searchID, filter) values (18, 'Main Campus');
 insert into searchFilters (searchID, filter) values (12, 'Graduate Level');
 insert into searchFilters (searchID, filter) values (12, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (23, 'Minimum GPA 3.5');
 insert into searchFilters (searchID, filter) values (25, 'Minimum GPA 3.5');
+<<<<<<< HEAD
 insert into searchFilters (searchID, filter) values (24, 'Undergraduate Level');
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into searchFilters (searchID, filter) values (5, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (29, 'Graduate Level');
 insert into searchFilters (searchID, filter) values (6, 'Graduate Level');
 insert into searchFilters (searchID, filter) values (11, 'Graduate Level');
 insert into searchFilters (searchID, filter) values (2, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (25, 'Undergraduate Level');
+<<<<<<< HEAD
 insert into searchFilters (searchID, filter) values (35, 'Graduate Level');
 insert into searchFilters (searchID, filter) values (25, 'Main Campus');
 insert into searchFilters (searchID, filter) values (29, 'Main Campus');
@@ -2331,6 +2936,11 @@ insert into searchFilters (searchID, filter) values (14, 'Graduate Level');
 insert into searchFilters (searchID, filter) values (15, 'Minimum GPA 3.5');
 insert into searchFilters (searchID, filter) values (6, 'Undergraduate Level');
 insert into searchFilters (searchID, filter) values (23, 'Minimum GPA 3.5');
+=======
+insert into searchFilters (searchID, filter) values (10, 'Main Campus');
+insert into searchFilters (searchID, filter) values (22, 'Minimum GPA 3.0');
+insert into searchFilters (searchID, filter) values (3, 'Undergraduate Level');
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 
 
 -- 23. updateNotifications
@@ -2350,8 +2960,11 @@ insert into updateNotifications (notification, updateID) values ('System update 
 insert into updateNotifications (notification, updateID) values ('New update initiated for security patches', 9);
 insert into updateNotifications (notification, updateID) values ('System maintenance update scheduled for tonight', 1);
 insert into updateNotifications (notification, updateID) values ('Update process started for bug fixes', 4);
+<<<<<<< HEAD
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 8);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 5);
+=======
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 10);
 insert into updateNotifications (notification, updateID) values ('Update started for software version 2.0', 1);
 insert into updateNotifications (notification, updateID) values ('System update scheduled for tomorrow at 3pm', 2);
@@ -2361,6 +2974,7 @@ insert into updateNotifications (notification, updateID) values ('System update 
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 1);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 2);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 6);
+<<<<<<< HEAD
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 10);
 insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 8);
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 6);
@@ -2369,6 +2983,12 @@ insert into updateNotifications (notification, updateID) values ('System mainten
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 6);
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 9);
 insert into updateNotifications (notification, updateID) values ('System update scheduled for tomorrow at 3pm', 3);
+=======
+insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 8);
+insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 6);
+insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 6);
+insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 9);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 5);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 3);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 9);
@@ -2377,6 +2997,7 @@ insert into updateNotifications (notification, updateID) values ('New update ini
 
 
 -- 24. errorAdmin
+<<<<<<< HEAD
 insert into errorAdmin (adminID, errorID) values (6, 4);
 insert into errorAdmin (adminID, errorID) values (5, 9);
 insert into errorAdmin (adminID, errorID) values (3, 7);
@@ -2417,3 +3038,45 @@ insert into errorAdmin (adminID, errorID) values (19, 4);
 insert into errorAdmin (adminID, errorID) values (1, 1);
 insert into errorAdmin (adminID, errorID) values (4, 9);
 insert into errorAdmin (adminID, errorID) values (7, 6);
+=======
+insert into errorAdmin (adminID, errorID) values (13, 35);
+insert into errorAdmin (adminID, errorID) values (38, 16);
+insert into errorAdmin (adminID, errorID) values (35, 38);
+insert into errorAdmin (adminID, errorID) values (3, 3);
+insert into errorAdmin (adminID, errorID) values (28, 14);
+insert into errorAdmin (adminID, errorID) values (4, 17);
+insert into errorAdmin (adminID, errorID) values (36, 26);
+insert into errorAdmin (adminID, errorID) values (9, 25);
+insert into errorAdmin (adminID, errorID) values (40, 28);
+insert into errorAdmin (adminID, errorID) values (30, 18);
+insert into errorAdmin (adminID, errorID) values (17, 24);
+insert into errorAdmin (adminID, errorID) values (5, 33);
+insert into errorAdmin (adminID, errorID) values (15, 36);
+insert into errorAdmin (adminID, errorID) values (27, 37);
+insert into errorAdmin (adminID, errorID) values (34, 20);
+insert into errorAdmin (adminID, errorID) values (6, 23);
+insert into errorAdmin (adminID, errorID) values (3, 10);
+insert into errorAdmin (adminID, errorID) values (21, 34);
+insert into errorAdmin (adminID, errorID) values (12, 3);
+insert into errorAdmin (adminID, errorID) values (25, 7);
+insert into errorAdmin (adminID, errorID) values (20, 8);
+insert into errorAdmin (adminID, errorID) values (20, 15);
+insert into errorAdmin (adminID, errorID) values (3, 27);
+insert into errorAdmin (adminID, errorID) values (1, 14);
+insert into errorAdmin (adminID, errorID) values (36, 9);
+insert into errorAdmin (adminID, errorID) values (34, 23);
+insert into errorAdmin (adminID, errorID) values (32, 38);
+insert into errorAdmin (adminID, errorID) values (12, 5);
+insert into errorAdmin (adminID, errorID) values (17, 2);
+insert into errorAdmin (adminID, errorID) values (8, 5);
+insert into errorAdmin (adminID, errorID) values (14, 15);
+insert into errorAdmin (adminID, errorID) values (1, 40);
+insert into errorAdmin (adminID, errorID) values (2, 40);
+insert into errorAdmin (adminID, errorID) values (35, 21);
+insert into errorAdmin (adminID, errorID) values (11, 24);
+insert into errorAdmin (adminID, errorID) values (18, 25);
+insert into errorAdmin (adminID, errorID) values (8, 35);
+insert into errorAdmin (adminID, errorID) values (12, 6);
+insert into errorAdmin (adminID, errorID) values (32, 25);
+insert into errorAdmin (adminID, errorID) values (5, 27);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
