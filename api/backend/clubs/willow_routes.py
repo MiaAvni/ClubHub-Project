@@ -23,13 +23,8 @@ def get_club_searches():
         cursor.execute(query)
         searches = cursor.fetchall()
 
-        response = make_response(searches)
-        response.status_code = 200
-        response.mimetype = 'application/json'
+        return jsonify(searches)
         
-        
-        return response
-
     except Error as e:
         current_app.logger.error(f'Database error in get_club_searches: {str(e)}')
         return jsonify({"error": str(e)}), 500
@@ -108,7 +103,7 @@ def get_club_demographics(clubID):
                 student.studentID = studentJoins.studentID\
                 WHERE clubID = {clubID}'
 
-        cursor.execute(query)
+        cursor.execute(query, clubID)
         demographics = cursor.fetchall()
         cursor.close()
 
@@ -130,7 +125,7 @@ def get_attendees():
         current_app.logger.info('Starting get_attendees request')
         cursor = db.get_db().cursor()
 
-        query = "SELECT club.clubID, club.name, event.eventID, event.name\
+        query = "SELECT club.clubID, club.name, event.eventID, event.name,\
                 event.numRegistered, club.numMembers AS numClubMembers\
                 FROM club JOIN clubEvents ON club.clubID = clubEvents.clubID\
                 JOIN event ON clubEvents.eventID = event.eventID\
@@ -139,13 +134,8 @@ def get_attendees():
     
         cursor.execute(query)
         attendees = cursor.fetchall()
-        cursor.close()
 
-        response = make_response(attendees)
-        response.status_code = 200
-        response.mimetype = 'application/json'
-        
-        return response
+        return jsonify(attendees)
 
     except Error as e:
         current_app.logger.error(f'Database error in get_club_demographics: {str(e)}')

@@ -6,9 +6,9 @@ from modules.nav import SideBarLinks
 # Initialize sidebar
 SideBarLinks()
 
-st.title("Club Searches Data")
+st.title("Event Attendees Data")
 
-searches = requests.get('http://api:4000/clubs/searches').json()
+searches = requests.get('http://api:4000/events/attendees').json()
 
 try:
   st.dataframe(searches)
