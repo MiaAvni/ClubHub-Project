@@ -130,7 +130,7 @@ def get_attendees():
         current_app.logger.info('Starting get_attendees request')
         cursor = db.get_db().cursor()
 
-        query = "SELECT club.clubID, club.name, event.eventID, event.name,\
+        query = "SELECT club.clubID, club.name, event.eventID, event.name\
                 event.numRegistered, club.numMembers AS numClubMembers\
                 FROM club JOIN clubEvents ON club.clubID = clubEvents.clubID\
                 JOIN event ON clubEvents.eventID = event.eventID\
