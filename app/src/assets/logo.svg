@@ -1,0 +1,82 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#CC0000" opacity="0.95"/>
+  
+  <!-- Connection spokes representing different clubs -->
+  <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round">
+    <line x1="100" y1="100" x2="100" y2="25" opacity="0.9"/>
+    <line x1="100" y1="100" x2="153" y2="53" opacity="0.9"/>
+    <line x1="100" y1="100" x2="175" y2="100" opacity="0.9"/>
+    <line x1="100" y1="100" x2="153" y2="147" opacity="0.9"/>
+    <line x1="100" y1="100" x2="100" y2="175" opacity="0.9"/>
+    <line x1="100" y1="100" x2="47" y2="147" opacity="0.9"/>
+    <line x1="100" y1="100" x2="25" y2="100" opacity="0.9"/>
+    <line x1="100" y1="100" x2="47" y2="53" opacity="0.9"/>
+  </g>
+  
+  <!-- Hub center circle -->
+  <circle cx="100" cy="100" r="28" fill="#FFFFFF"/>
+  
+  <!-- ClubHub text in center -->
+  <text x="100" y="97" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1a1a1a" text-anchor="middle">CLUB</text>
+  <text x="100" y="112" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#1a1a1a" text-anchor="middle">HUB</text>
+  
+  <!-- Outer circles representing clubs -->
+  <circle cx="100" cy="25" r="12" fill="#FFFFFF"/>
+  <circle cx="153" cy="53" r="12" fill="#FFFFFF"/>
+  <circle cx="175" cy="100" r="12" fill="#FFFFFF"/>
+  <circle cx="153" cy="147" r="12" fill="#FFFFFF"/>
+  <circle cx="100" cy="175" r="12" fill="#FFFFFF"/>
+  <circle cx="47" cy="147" r="12" fill="#FFFFFF"/>
+  <circle cx="25" cy="100" r="12" fill="#FFFFFF"/>
+  <circle cx="47" cy="53" r="12" fill="#FFFFFF"/>
+  
+  <!-- Icons in outer circles representing different club types -->
+  <!-- Book icon (Academic) -->
+  <g transform="translate(100, 25)">
+    <rect x="-5" y="-3" width="10" height="6" fill="#CC0000" rx="1"/>
+    <line x1="-3" y1="-1" x2="3" y2="-1" stroke="#FFFFFF" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Music note (Arts) -->
+  <g transform="translate(153, 53)">
+    <ellipse cx="0" cy="1" rx="2.5" ry="1.8" fill="#CC0000"/>
+    <rect x="2" y="-5" width="1.5" height="6" fill="#CC0000"/>
+  </g>
+  
+  <!-- Star (Leadership) -->
+  <path d="M 175 95 l 2 4 l 4 0 l -3 3 l 1 4 l -4 -2 l -4 2 l 1 -4 l -3 -3 l 4 0 z" fill="#CC0000"/>
+  
+  <!-- Flask (Science) -->
+  <g transform="translate(153, 147)">
+    <path d="M -2 -4 l 0 3 l -2 4 l 8 0 l -2 -4 l 0 -3 z" fill="#CC0000"/>
+    <rect x="-2.5" y="-5" width="5" height="1" fill="#CC0000"/>
+  </g>
+  
+  <!-- Palette (Creative) -->
+  <g transform="translate(100, 175)">
+    <ellipse cx="0" cy="0" rx="4" ry="3.5" fill="#CC0000"/>
+    <circle cx="-1.5" cy="-0.5" r="1" fill="#FFFFFF"/>
+    <circle cx="1.5" cy="-0.5" r="1" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Globe (Cultural) -->
+  <g transform="translate(47, 147)">
+    <circle cx="0" cy="0" r="4" fill="none" stroke="#CC0000" stroke-width="1"/>
+    <ellipse cx="0" cy="0" rx="1.5" ry="4" fill="none" stroke="#CC0000" stroke-width="0.8"/>
+    <line x1="-4" y1="0" x2="4" y2="0" stroke="#CC0000" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Sports ball -->
+  <g transform="translate(25, 100)">
+    <circle cx="0" cy="0" r="4" fill="none" stroke="#CC0000" stroke-width="1"/>
+    <path d="M -2.5 -2.5 Q 0 -1 2.5 -2.5" fill="none" stroke="#CC0000" stroke-width="0.8"/>
+    <path d="M -2.5 2.5 Q 0 1 2.5 2.5" fill="none" stroke="#CC0000" stroke-width="0.8"/>
+  </g>
+  
+  <!-- Chat bubble (Social) -->
+  <g transform="translate(47, 53)">
+    <rect x="-3.5" y="-2.5" width="7" height="5" rx="1" fill="#CC0000"/>
+    <path d="M -0.5 2.5 l -1 2 l 0 -2 z" fill="#CC0000"/>
+  </g>
+</svg>
