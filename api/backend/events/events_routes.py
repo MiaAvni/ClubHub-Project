@@ -98,7 +98,6 @@ def update_event(eventID):
         if not cursor.fetchone():
             return jsonify({"error": "Event not found"}), 404
         
-        # Build update query dynamically based on provided fields
         update_fields = []
         params = []
         allowed_fields = ["isFull", "tierRequirement", "capacity", "numRegistered", "location", "date", "startTime", "endTime"]
@@ -131,7 +130,6 @@ def archive_event(eventID):
     try:
         cursor = db.get_db().cursor()
         
-        # Mark event as archived (soft delete)
         the_query = '''
             UPDATE `event`
             SET isArchived = 1

@@ -15,8 +15,6 @@ from mysql.connector import Error
 
 clubs = Blueprint("clubs", __name__)
 
-@clubs.route("/clubs", methods=["GET"])
-
 # GET interested students for a specific club
 @clubs.route("/clubs/<int:clubID>/interested-students", methods=["GET"])
 def get_interested_students(clubID):
