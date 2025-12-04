@@ -8,9 +8,9 @@ SideBarLinks()
 
 st.title("Club Categories Data")
 
-searches = requests.get('http://api:4000/clubs/categories').json()
+categories = requests.get('http://api:4000/clubs/categories').json()
 
 try:
-  st.dataframe(searches)
+  st.dataframe(categories)
 except:
   st.write('Could not connect to database to retrieve searches')
