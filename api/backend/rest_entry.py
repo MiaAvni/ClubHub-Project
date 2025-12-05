@@ -7,13 +7,9 @@ from logging.handlers import RotatingFileHandler
 from backend.db_connection import db
 from backend.simple.simple_routes import simple_routes
 from backend.ngos.ngo_routes import ngos
-from backend.clubs.willow_routes import willow
-from backend.clubs.alex_routes import students
-
-
-from backend.clubs.clubs_routes import clubs
-from backend.events.events_routes import events 
-from backend.applications.applications_routes import applications
+from backend.willow.willow_routes import willow
+from backend.alex_student.alex_routes import students
+from backend.kaitlyn.kaitlyn_routes import kaitlyn
 
 
 def create_app():
@@ -58,10 +54,8 @@ def create_app():
     app.logger.info("create_app(): registering blueprints with Flask app object.")
     app.register_blueprint(simple_routes)
     app.register_blueprint(ngos, url_prefix="/ngo")
-    app.register_blueprint(clubs, url_prefix="/c")
-    app.register_blueprint(events, url_prefix="/e")
-    app.register_blueprint(applications, url_prefix="/a")
 
+    app.register_blueprint(kaitlyn)
     app.register_blueprint(willow)
     app.register_blueprint(students, url_prefix="/student")
     # Don't forget to return the app object
