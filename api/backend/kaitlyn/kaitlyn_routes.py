@@ -349,6 +349,42 @@ def get_club_applications(clubID):
     except Error as e:
         return jsonify({"error": str(e)}), 500
 
+# GET all members of a specific club
+@kaitlyn.route("/clubs/<int:clubID>/members", methods=["GET"])
+def get_club_members(clubID):
+    current_app.logger.info(f"GET /clubs/{clubID}/members handler")
+    
+    try:
+        cursor = db.get_db().cursor()
+        the_query = '''
+            SELECT 
+                s.studentID,
+                s.firstName,
+                s.lastName,
+                s.major,
+                s.gradYear,
+                sj.memberType,
+                sj.joinDate,
+                se.email
+            FROM student s
+            JOIN studentJoins sj ON s.studentID = sj.studentID
+            LEFT JOIN studentEmails se ON s.studentID = se.studentID
+            WHERE sj.clubID = %s
+            ORDER BY s.lastName, s.firstName
+        '''
+        
+        cursor.execute(the_query, (clubID,))
+        the_data = cursor.fetchall()
+        cursor.close()
+        
+        if not the_data:
+            return jsonify({"message": "No members found"}), 200
+        
+        return jsonify(the_data), 200
+        
+    except Error as e:
+        return jsonify({"error": str(e)}), 500
+
 # GET registered students for a specific event
 @kaitlyn.route("/events/<int:eventID>/registered-students", methods=["GET"])
 def get_registered_students(eventID):

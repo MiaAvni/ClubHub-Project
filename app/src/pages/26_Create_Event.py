@@ -23,11 +23,9 @@ with st.form("Create a New Club Event"):
     submit_button = st.form_submit_button("Create Event")
 
     if submit_button:
-
         start_datetime = datetime.combine(date, start_time)
         end_datetime = datetime.combine(date, end_time)
         
-
         data = {}
         data['name'] = event_name
         data['date'] = date.isoformat()
@@ -37,13 +35,13 @@ with st.form("Create a New Club Event"):
         data['description'] = description
         data['capacity'] = capacity
         data['tierRequirement'] = tier_requirement
-        st.write(data)
 
         try:
-            response = requests.post('http://api:4000/api/clubs/1/events', json=data)
+            response = requests.post('http://api:4000/eboardmember/clubs/1/events', json=data)
             if response.status_code == 201:
                 st.success("Event created successfully!")
             else:
-                st.error("Error creating event")
-        except:
-            st.error("Connection error")
+                st.error(f"Error creating event: {response.status_code}")
+                st.write(response.text)
+        except Exception as e:
+            st.error(f"Connection error: {str(e)}")

@@ -12,7 +12,7 @@ st.write('')
 
 try:
     # Fixed: use actual club ID and correct URL path
-    response = requests.get('http://api:4000/api/clubs/1/interested-students')
+    response = requests.get('http://api:4000/eboardmember/clubs/1/interested-students')
     
     if response.status_code == 200:
         interested_students = response.json()
