@@ -109,10 +109,81 @@ The student pages can be accessed directly via URL or through the Streamlit app 
 
 ---
 
-## Persona 2: [Team Member Name]
+## Persona 2: [Willow]
 
 > [!NOTE]
-> This section will be completed by [Team Member Name]. Please add your persona name, API routes, Streamlit pages, and testing instructions here.
+The data analyst persona functionality allows an analyst to view data about club searches, applications, categories, demographics, and events. 
+
+### API Routes
+
+The data analyst blueprint (`api/backend/willow/willow_routes.py`) provides 5 REST API endpoints:
+
+#### get data on searches
+
+- **Endpoint**: `GET /clubs/searches`
+- **Description**: show all clubs and the number of searches they have
+- **Response**: table of clubs and number of searches they have
+
+#### get data on applications
+
+- **Endpoint**: `GET /clubs/applications`
+- **Description**: show all clubs and the number of applications they have
+- **Response**: table of all clubs and the number of applications they have
+
+#### get data on categories
+
+- **Endpoint**: `GET /clubs/categories`
+- **Description**: show all clubs and the categories they are a part of
+- **Response**: table with all clubs and their respective categories
+
+#### get data on club demographics
+
+- **Endpoint**: `GET /clubs/<int:clubID>/demographics`
+- **Description**: shows all students belonging to this specific club and their demographic information
+- **Example**: `GET /clubs/1/demographics`
+- **Response**: table of all students in a particular club and their demographic information
+
+#### get data on event attendees
+
+- **Endpoint**: `GET /events/attendees`
+- **Description**: compare an event's number of students registered with the host club's number of members
+- **Response**: table with club, event, numregistered and club members
+
+### Streamlit Pages
+
+The following Streamlit pages are located in `app/src/pages/`:
+
+- **`40_willow_home.py`**: The data analyst home page with navigation buttons to access all data analyst features.
+- **`41_willow_searches.py`**: See data about clubs and their searches.
+- **`42_willow_applications.py`**: See data about clubs and their applications. 
+- **`43_willow_categories.py`**: See data about clubs and their categories.
+- **`44_willow_demographics.py`**: see data about students in a particular club and their demographic information.
+- **`45_willow_attendees.py`**: see data about an event, the number registered for the event, the host club and host club's number of members.
+
+### Testing the Data Analyst API
+
+You can test the API endpoints using `curl`:
+
+```bash
+# data about searches
+curl http://localhost:4000/clubs/searches
+
+# data about applications
+curl "http://localhost:4000/clubs/applications"
+
+# data about club categories
+curl http://localhost:4000/clubs/categories
+
+# data about a club's demographics
+curl  http://localhost:4000/clubs/<int:clubID>/demographics
+
+# Update application
+curl  http://localhost:4000/events/attendees 
+
+
+### Accessing Data Analyst Pages
+
+The data analyst pages can be accessed directly via URL or through the Streamlit app navigation. All pages include proper error handling and user feedback for successful operations and errors.
 
 ---
 
