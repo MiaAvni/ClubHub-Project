@@ -10,6 +10,7 @@ from flask import (
 )
 import json
 from backend.db_connection import db
+from mysql.connector import Error
 # from backend.simple.playlist import sample_playlist_data
 # from backend.ml_models import model01
 Elizabeth = Blueprint("Elizabeth", __name__)
@@ -161,15 +162,15 @@ def get_update(update_id):
     Get details of a specific update by ID
     """
     try:
-        current_app.logger.info(f'Retrievinghing update with ID: {error_id}')
+        current_app.logger.info(f'Retrieving update with ID: {update_id}')
         cursor = db.get_db().cursor()
         
-        # Query to get specific error
-        cursor.execute("SELECT * FROM Error WHERE updateID = %s", (update_id,))
-        erupdateror = cursor.fetchone()
+        # Query to get specific update
+        cursor.execute("SELECT * FROM update WHERE updateID = %s", (update_id,))
+        update = cursor.fetchone()
         
         if not update:
-            current_app.logger.warning(f'Update ID {update_id} not found')
+            current_app.logger.warning(f'Update ID {update} not found')
             return jsonify({"update": "Update not found"}), 404
         
         cursor.close()
@@ -416,8 +417,41 @@ def get_eboard_contact(eboard_id):
     except Error as e:
         current_app.logger.error(f'Database error in get_eboard_contact: {str(e)}')
         return jsonify({"error": str(e)}), 500
+    
 
 
+# Get all system errors (GET)
+@Elizabeth.route("/system/error", methods=["GET"])
+def get_all_system_errors():
+    """
+    Get all system errors with optional filtering
+    """
+    try:
+        current_app.logger.info('Retrieving all system errors')
+        cursor = db.get_db().cursor()
+        
+        # Get query parameters for filtering
+        system_id = request.args.get("systemID")
+        error_type = request.args.get("errorType")
+        
+        if system_id and error_type:
+            cursor.execute("SELECT * FROM error WHERE systemID = %s AND errorType = %s", (system_id, error_type))
+        elif system_id:
+            cursor.execute("SELECT * FROM error WHERE systemID = %s", (system_id,))
+        elif error_type:
+            cursor.execute("SELECT * FROM error WHERE errorType = %s", (error_type,))
+        else:
+            cursor.execute("SELECT * FROM error")
+        
+        errors = cursor.fetchall()
+        cursor.close()
+        
+        current_app.logger.info(f'Successfully retrieved {len(errors)} system errors')
+        return jsonify(errors), 200
+        
+    except Error as e:
+        current_app.logger.error(f'Database error in get_all_system_errors: {str(e)}')
+        return jsonify({"error": str(e)}), 500
 
 # Show the particular error a system network has (GET)
 @Elizabeth.route("/system/error/<int:error_id>", methods=["GET"])
