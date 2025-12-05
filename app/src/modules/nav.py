@@ -105,7 +105,7 @@ def AlexDeleteApplicationNav():
 #### ------------------------ admin elizabeth  ------------------------
 def adminNav():
     st.sidebar.page_link(
-        "pages/60_Adminstrator_Home", label="Administrator Home (Elizabeth)"
+        "pages/60_Administrator_Home", label="Administrator Home (Elizabeth)"
     )
 
 def adminpermissions():
@@ -193,7 +193,7 @@ def SideBarLinks(show_home=False):
             admincontact()
 
         # if user is eboard member
-        if st.session_state["role"] == "eboard"
+        if st.session_state["role"] == "eboard":
             EBoardNav()
             interestedstudents()
             eventsignups()
