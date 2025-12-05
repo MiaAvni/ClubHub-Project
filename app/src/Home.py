@@ -38,7 +38,7 @@ st.title('ClubHub')
 st.write('\n\n')
 # st.write('### Overview:')
 # st.write('\n')
-st.write('#### HI! As which user would you like to log in?')
+st.write('#### Hi! As which user would you like to log in?')
 
 # For each of the user personas for which we are implementing
 # functionality, we put a button on the screen that the user 
