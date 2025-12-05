@@ -24,7 +24,7 @@ def get_club_searches():
         searches = cursor.fetchall()
 
         return jsonify(searches)
-        
+
     except Error as e:
         current_app.logger.error(f'Database error in get_club_searches: {str(e)}')
         return jsonify({"error": str(e)}), 500
@@ -103,7 +103,8 @@ def get_club_demographics(clubID):
                 student.studentID = studentJoins.studentID\
                 WHERE clubID = {clubID}'
 
-        cursor.execute(query, clubID)
+        # cursor.execute(query, clubID)
+        cursor.execute(query)
         demographics = cursor.fetchall()
         cursor.close()
 
