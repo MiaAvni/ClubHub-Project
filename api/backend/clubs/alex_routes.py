@@ -1,0 +1,196 @@
+from flask import Blueprint, jsonify, request
+from backend.db_connection import db
+from mysql.connector import Error
+from flask import current_app
+
+# Routes for everything a student can do (search clubs, apply, update apps, etc.)
+students = Blueprint("students", __name__)
+
+
+# Story 1
+# Let students search for clubs. They can also filter by campus or gradLevel.
+# Example: /student/clubs?campus=Boston&gradLevel=undergrad
+@students.route("/clubs", methods=["GET"])
+def get_clubs():
+    try:
+        current_app.logger.info("Starting get_clubs request")
+        cursor = db.get_db().cursor()
+
+        # Base query – we add filters only if they're provided
+        query = """
+            SELECT clubID, name, gradLevel, campus, description,
+                   numMembers, numSearches
+            FROM club
+            WHERE 1=1
+        """
+
+        params = []
+
+        # Optional filters
+        campus = request.args.get("campus")
+        grad_level = request.args.get("gradLevel")
+
+        if campus:
+            query += " AND campus = %s"
+            params.append(campus)
+
+        if grad_level:
+            query += " AND gradLevel = %s"
+            params.append(grad_level)
+
+        cursor.execute(query, params)
+        clubs = cursor.fetchall()
+        cursor.close()
+
+        return jsonify(clubs), 200
+
+    except Error as e:
+        current_app.logger.error(f"Database error in get_clubs: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+
+# Story 5
+# Student wants to see every application they've submitted + its status
+# Example: /student/applications/1
+@students.route("/applications/<int:studentID>", methods=["GET"])
+def get_student_applications(studentID):
+    try:
+        current_app.logger.info("Starting get_student_applications request")
+        cursor = db.get_db().cursor()
+
+        query = """
+            SELECT applicationID, clubID, studentID,
+                   dateSubmitted, status
+            FROM application
+            WHERE studentID = %s
+            ORDER BY dateSubmitted DESC
+        """
+
+        cursor.execute(query, (studentID,))
+        apps = cursor.fetchall()
+        cursor.close()
+
+        return jsonify(apps), 200
+
+    except Error as e:
+        current_app.logger.error(f"Database error: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+
+# Story 3
+# Student submits an application to a club
+# JSON body should look like:
+# {
+#   "studentID": 1,
+#   "clubID": 3,
+#   "dateSubmitted": "2025-12-02"
+# }
+@students.route("/applications", methods=["POST"])
+def create_application():
+    try:
+        current_app.logger.info("Starting create_application request")
+        data = request.get_json() or {}
+
+        student_id = data.get("studentID")
+        club_id = data.get("clubID")
+        date_submitted = data.get("dateSubmitted")
+
+        # Quick check for required fields
+        if not student_id or not club_id or not date_submitted:
+            return jsonify({
+                "error": "studentID, clubID, and dateSubmitted are required"
+            }), 400
+
+        cursor = db.get_db().cursor()
+
+        insert_query = """
+            INSERT INTO application (clubID, studentID, dateSubmitted, status)
+            VALUES (%s, %s, %s, %s)
+        """
+
+        cursor.execute(insert_query, (club_id, student_id, date_submitted, "pending"))
+        db.get_db().commit()
+
+        new_id = cursor.lastrowid
+        cursor.close()
+
+        return jsonify({
+            "message": "Application created",
+            "applicationID": new_id
+        }), 201
+
+    except Error as e:
+        current_app.logger.error(f"Database error: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+
+# Story 4
+# Student updates their application (ex: withdraw, change status, etc.)
+# JSON body: { "status": "withdrawn" }
+@students.route("/applications/<int:applicationID>", methods=["PUT"])
+def update_application(applicationID):
+    try:
+        current_app.logger.info("Starting update_application request")
+        data = request.get_json() or {}
+        new_status = data.get("status")
+
+        if not new_status:
+            return jsonify({"error": "status is required"}), 400
+
+        cursor = db.get_db().cursor()
+
+        # Check if the application exists
+        cursor.execute(
+            "SELECT applicationID FROM application WHERE applicationID = %s",
+            (applicationID,)
+        )
+        if not cursor.fetchone():
+            cursor.close()
+            return jsonify({"error": "Application not found"}), 404
+
+        update_query = """
+            UPDATE application
+            SET status = %s
+            WHERE applicationID = %s
+        """
+
+        cursor.execute(update_query, (new_status, applicationID))
+        db.get_db().commit()
+        cursor.close()
+
+        return jsonify({"message": "Application updated"}), 200
+
+    except Error as e:
+        current_app.logger.error(f"Database error: {str(e)}")
+        return jsonify({"error": str(e)}), 500
+
+
+# Story 4 (delete/withdraw an application)
+# Student wants to remove an app they no longer care about
+@students.route("/applications/<int:applicationID>", methods=["DELETE"])
+def delete_application(applicationID):
+    try:
+        current_app.logger.info("Starting delete_application request")
+        cursor = db.get_db().cursor()
+
+        # Make sure the application exists
+        cursor.execute(
+            "SELECT applicationID FROM application WHERE applicationID = %s",
+            (applicationID,)
+        )
+        if not cursor.fetchone():
+            cursor.close()
+            return jsonify({"error": "Application not found"}), 404
+
+        cursor.execute(
+            "DELETE FROM application WHERE applicationID = %s",
+            (applicationID,)
+        )
+        db.get_db().commit()
+        cursor.close()
+
+        return jsonify({"message": "Application deleted"}), 200
+
+    except Error as e:
+        current_app.logger.error(f"Database error: {str(e)}")
+        return jsonify({"error": str(e)}), 500
