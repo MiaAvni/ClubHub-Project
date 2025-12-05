@@ -47,6 +47,41 @@ def AttendeesData():
         "pages/45_willow_attendees.py", label="Attendees Data"
     )
 
+#### ------------------------ student alex  ------------------------
+def StudentHomeNav():
+    st.sidebar.page_link(
+        "pages/50_alex_Home.py", label="Student Home (Alex)"
+    )
+
+
+def AlexClubsNav():
+    st.sidebar.page_link(
+        "pages/51_alex_clubs.py", label="Find Clubs"
+    )
+
+
+def AlexApplicationsNav():
+    st.sidebar.page_link(
+        "pages/52_alex_applications.py", label="My Applications"
+    )
+
+
+def AlexNewApplicationNav():
+    st.sidebar.page_link(
+        "pages/53_alex_new_application.py", label="Submit Application"
+    )
+
+
+def AlexUpdateApplicationNav():
+    st.sidebar.page_link(
+        "pages/54_alex_update_application.py", label="Update Application"
+    )
+
+
+def AlexDeleteApplicationNav():
+    st.sidebar.page_link(
+        "pages/55_alex_delete_application.py", label="Delete Application"
+    )
 
 
 # --------------------------------Links Function -----------------------------------------------
