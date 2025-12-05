@@ -50,7 +50,7 @@ def AttendeesData():
 #### ------------------------ student alex  ------------------------
 def StudentHomeNav():
     st.sidebar.page_link(
-        "pages/50_alex_Home.py", label="Student Home (Alex)"
+        "pages/50_alex_Home.py", label="Student Home (Alex)", icon="📚"
     )
 
 
@@ -127,6 +127,10 @@ def SideBarLinks(show_home=False):
         # If the user is an administrator, give them access to the administrator pages
         if st.session_state["role"] == "administrator":
             AdminPageNav()
+
+        # If the user is a student (Alex), show the student home link for easy navigation
+        if st.session_state["role"] == "student":
+            StudentHomeNav()
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()
