@@ -303,7 +303,7 @@ def get_admin_permissions(admin_id):
 @Elizabeth.route("/adminPermissions/<int:admin_id>", methods=["PUT"])
 def update_admin_permissions(admin_id):
     """
-    Changes the permissions of a particular administrator
+    Changes permissions of a particular administrator
     """
     try:
         current_app.logger.info(f'Updating permissions for admin ID: {admin_id}')
