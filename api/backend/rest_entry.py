@@ -7,7 +7,7 @@ from logging.handlers import RotatingFileHandler
 from backend.db_connection import db
 from backend.simple.simple_routes import simple_routes
 from backend.ngos.ngo_routes import ngos
-from backend.clubs.willow_routes import willow
+from backend.clubs.willow_routes.py import willow
 
 def create_app():
     app = Flask(__name__)
