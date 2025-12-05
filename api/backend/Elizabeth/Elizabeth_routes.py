@@ -35,14 +35,17 @@ def get_all_errors():
         type = request.args.get("errorType")
         time_reported = request.args.get("timeReported")
         
-        query = "SELECT * FROM Error"
+        query = "SELECT * FROM error"
         params = []
         
         if type:
-            query += " AND type = %s"
+            query += " WHERE type = %s"
             params.append(type)
         if time_reported:
             query += " AND time_reported = %s"
+            params.append(time_reported)
+        elif time_reported:
+            query += " WHERE time_reported = %s"
             params.append(time_reported)
         
         cursor.execute(query, params)
@@ -59,25 +62,25 @@ def get_all_errors():
     
 
 # get a specific error (GET)
-@Elizabeth.route("/error/<int:error_id>", methods=["GET"])
-def get_error(error_id):
+@Elizabeth.route("/error/<int:errorId>", methods=["GET"])
+def get_error(errorId):
     """
     Get details of a specific error by ID
     """
     try:
-        current_app.logger.info(f'Retrieving error with ID: {error_id}')
+        current_app.logger.info(f'Retrieving error with ID: {errorId}')
         cursor = db.get_db().cursor()
         
         # Query to get specific error
-        cursor.execute("SELECT * FROM Error WHERE errorID = %s", (error_id,))
+        cursor.execute("SELECT * FROM error WHERE errorID = %s", (errorId,))
         error = cursor.fetchone()
         
         if not error:
-            current_app.logger.warning(f'Error ID {error_id} not found')
+            current_app.logger.warning(f'Error ID {errorId} not found')
             return jsonify({"error": "Error not found"}), 404
         
         cursor.close()
-        current_app.logger.info(f'Successfully retrieved error ID: {error_id}')
+        current_app.logger.info(f'Successfully retrieved error ID: {errorId}')
         return jsonify(error), 200
         
     except Error as e:
@@ -87,28 +90,28 @@ def get_error(error_id):
 
     
 # Remove an error once solved (DELETE)
-@Elizabeth.route("/error/<int:error_id>", methods=["DELETE"])
-def delete_error(error_id):
+@Elizabeth.route("/error/<int:errorId>", methods=["DELETE"])
+def delete_error(errorId):
     """
     Delete an error after it has been solved
     """
     try:
-        current_app.logger.info(f'Deleting error ID: {error_id}')
+        current_app.logger.info(f'Deleting error ID: {errorId}')
         cursor = db.get_db().cursor()
         
         # Does error still exist
-        cursor.execute("SELECT * FROM Error WHERE errorID = %s", (error_id,))
+        cursor.execute("SELECT * FROM error WHERE errorID = %s", (errorId,))
         if not cursor.fetchone():
-            current_app.logger.warning(f'Error ID {error_id} not found for deletion')
+            current_app.logger.warning(f'Error ID {errorId} not found for deletion')
             return jsonify({"error": "Error not found"}), 404
         
         # Delete the error
-        cursor.execute("DELETE FROM Error WHERE errorID = %s", (error_id,))
+        cursor.execute("DELETE FROM error WHERE errorID = %s", (errorId,))
         db.get_db().commit()
         cursor.close()
         
-        current_app.logger.info(f'Successfully deleted error ID: {error_id}')
-        return jsonify({"message": "Error deleted successfully", "deleted_error_id": error_id}), 200
+        current_app.logger.info(f'Successfully deleted error ID: {errorId}')
+        return jsonify({"message": "Error deleted successfully", "deleted_error_id": errorId}), 200
         
     except Error as e:
         current_app.logger.error(f'Database error in delete_error: {str(e)}')
@@ -127,21 +130,24 @@ def get_all_updates():
         availability = request.args.get("availability")
         time_scheduled = request.args.get("scheduledTime")
         
-        query = "SELECT * FROM Update"
+        query = "SELECT * FROM update"
         params = []
         
         if type:
-            query += " AND type = %s"
+            query += " WHERE type = %s"
             params.append(type)
-        if update_id:
-            query += " AND update_id = %s"
+            if update_id:
+                query += " AND update_id = %s"
+                params.append(update_id)
+            if availability:
+                query += " AND availability = %s"
+                params.append(availability)
+            if time_scheduled:
+                query += " AND time_scheduled = %s"
+                params.append(time_scheduled)
+        elif update_id:
+            query += " WHERE update_id = %s"
             params.append(update_id)
-        if availability:
-            query += " AND availability = %s"
-            params.append(availability)
-        if time_scheduled:
-            query += " AND time_scheduled = %s"
-            params.append(time_scheduled)
         
         cursor.execute(query, params)
         updates = cursor.fetchall()
@@ -194,7 +200,7 @@ def update_update_status(update_id):
         cursor = db.get_db().cursor()
         
         # Check if update exists
-        cursor.execute("SELECT * FROM `Update` WHERE updateID = %s", (update_id,))
+        cursor.execute("SELECT * FROM update WHERE updateID = %s", (update_id,))
         if not cursor.fetchone():
             current_app.logger.warning(f'Update ID {update_id} not found')
             return jsonify({"error": "Update not found"}), 404
@@ -214,7 +220,7 @@ def update_update_status(update_id):
             return jsonify({"error": "No valid fields to update"}), 400
 
         params.append(update_id)
-        query = f"UPDATE `Update` SET {', '.join(update_fields)} WHERE updateID = %s"
+        query = f"UPDATE `update` SET {', '.join(update_fields)} WHERE updateID = %s"
 
         cursor.execute(query, params)
         db.get_db().commit()
@@ -248,7 +254,7 @@ def create_notification():
 
         # Insert new notification
         query = """
-        INSERT INTO UpdateNotifications (notification, updateID)
+        INSERT INTO updateNotifications (notification, updateID)
         VALUES (%s, %s)
         """
         cursor.execute(
@@ -507,12 +513,12 @@ def get_all_system_errors():
         system_id = request.args.get("systemID")
         error_type = request.args.get("errorType")
         
-        if system_id and error_type:
-            cursor.execute("SELECT * FROM error WHERE systemID = %s AND errorType = %s", (system_id, error_type))
+        if systemId and errorType:
+            cursor.execute("SELECT * FROM error WHERE systemID = %s AND errorType = %s", (systemId, errorType))
         elif system_id:
-            cursor.execute("SELECT * FROM error WHERE systemID = %s", (system_id,))
+            cursor.execute("SELECT * FROM error WHERE systemID = %s", (systemId,))
         elif error_type:
-            cursor.execute("SELECT * FROM error WHERE errorType = %s", (error_type,))
+            cursor.execute("SELECT * FROM error WHERE errorType = %s", (errorType,))
         else:
             cursor.execute("SELECT * FROM error")
         
@@ -527,24 +533,24 @@ def get_all_system_errors():
         return jsonify({"error": str(e)}), 500
 
 # Show the particular error a system network has (GET)
-@Elizabeth.route("/system/error/<int:error_id>", methods=["GET"])
-def get_system_error(error_id):
+@Elizabeth.route("/system/error/<int:errorId>", methods=["GET"])
+def get_system_error(errorId):
     """
     Show the particular error a system network has
     """
     try:
-        current_app.logger.info(f'Fetching system error with ID: {error_id}')
+        current_app.logger.info(f'Fetching system error with ID: {errorId}')
         cursor = db.get_db().cursor()
         
-        cursor.execute("SELECT * FROM error WHERE errorID = %s", (error_id,))
+        cursor.execute("SELECT * FROM error WHERE errorID = %s", (errorId,))
         error = cursor.fetchone()
         
         if not error:
-            current_app.logger.warning(f'System error ID {error_id} not found')
+            current_app.logger.warning(f'System error ID {errorId} not found')
             return jsonify({"error": "System error not found"}), 404
         
         cursor.close()
-        current_app.logger.info(f'Successfully retrieved system error ID: {error_id}')
+        current_app.logger.info(f'Successfully retrieved system error ID: {errorId}')
         return jsonify(error), 200
         
     except Error as e:
@@ -554,28 +560,28 @@ def get_system_error(error_id):
 
 
 # Removes a  particular error a system network has (DELETE)
-@Elizabeth.route("/system/error/<int:error_id>", methods=["DELETE"])
-def delete_system_error(error_id):
+@Elizabeth.route("/system/error/<int:errorId>", methods=["DELETE"])
+def delete_system_error(errorId):
     """
     Removes a particular error a system network has
     """
     try:
-        current_app.logger.info(f'Deleting system error ID: {error_id}')
+        current_app.logger.info(f'Deleting system error ID: {errorId}')
         cursor = db.get_db().cursor()
         
         # Check if system error exists
-        cursor.execute("SELECT * FROM error WHERE errorID = %s", (error_id,))
+        cursor.execute("SELECT * FROM error WHERE errorID = %s", (errorId,))
         if not cursor.fetchone():
-            current_app.logger.warning(f'System error ID {error_id} not found')
+            current_app.logger.warning(f'System error ID {errorId} not found')
             return jsonify({"error": "System error not found"}), 404
         
         # Delete the system error
-        cursor.execute("DELETE FROM error WHERE errorID = %s", (error_id,))
+        cursor.execute("DELETE FROM error WHERE errorID = %s", (errorId,))
         db.get_db().commit()
         cursor.close()
         
-        current_app.logger.info(f'Successfully deleted system error ID: {error_id}')
-        return jsonify({"message": "System error deleted successfully", "deleted_error_id": error_id}), 200
+        current_app.logger.info(f'Successfully deleted system error ID: {errorId}')
+        return jsonify({"message": "System error deleted successfully", "deleted_error_id": errorId}), 200
         
     except Error as e:
         current_app.logger.error(f'Database error in delete_system_error: {str(e)}')

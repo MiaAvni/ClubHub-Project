@@ -51,13 +51,13 @@ with col5:
     if st.button('View Error Directory', 
                  type='primary',
                  use_container_width=True):
-        st.switch_page('pages/error_directory.py')
+        st.switch_page('pages/63_error_directory.py')
 
 with col6:
     if st.button('View Network System Error Directory', 
                  type='primary',
                  use_container_width=True):
-        st.switch_page('pages/network_system_error_directory.py')
+        st.switch_page('pages/64_network_system_error_directory.py')
 
 st.write('#### E-board Contact')
 if st.button('View E-board Admin Contact Directory', 
