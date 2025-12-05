@@ -9,12 +9,19 @@ SideBarLinks()
 
 st.write("# Accessing a REST API from Within Streamlit")
 
-clubs_events = requests.get('http://api:4000/c/clubs/<int:clubID>/events').json()
+club_events = requests.get('http://api:4000/c/clubs/<int:clubID>/events').json()
 
 try:
     st.dataframe(club_events)
 except:
     st.write("Could not connect to database to retreive club events")
+
+searches = requests.get('http://api:4000/clubs/searches').json()
+
+try:
+  st.dataframe(searches)
+except:
+  st.write('Could not connect to database to retrieve searches')
 
 
 
