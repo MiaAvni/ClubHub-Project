@@ -31,7 +31,7 @@ def show_success_dialog(notification_text):
         if st.button("Return to Updates", use_container_width=True):
             st.session_state.show_success_modal = False
             st.session_state.success_notification_text = ""
-            st.switch_page("pages/update_directory.py") 
+            st.switch_page("pages/Update_Directory.py") 
     with col2:
         if st.button("Add Another Notification", use_container_width=True):
             st.session_state.show_success_modal = False
@@ -66,7 +66,7 @@ with st.form(f"add_notification_form_{st.session_state.form_key_counter}"):
             # Prepare the data for API
             notification_data = {
                 "notification": notification,
-                "updateID": int(update_id),
+                "updateID": int(update_id), 
             }
 
             try:
@@ -93,4 +93,4 @@ if st.session_state.show_success_modal:
 
 # Add a button to return to the Notifications page
 if st.button("Return to Notifications"):
-    st.switch_page("pages/Notifications_Page.py")  
+    st.switch_page("pages/Notifications_Page.py")  # Adjust to your notifications page
