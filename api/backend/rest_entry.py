@@ -10,7 +10,7 @@ from backend.ngos.ngo_routes import ngos
 from backend.willow.willow_routes import willow
 from backend.alex_student.alex_routes import students
 from backend.kaitlyn.kaitlyn_routes import kaitlyn
-
+from backend.Elizabeth.Elizabeth_routes import Elizabeth
 
 def create_app():
     app = Flask(__name__)
@@ -58,6 +58,7 @@ def create_app():
     app.register_blueprint(kaitlyn)
     app.register_blueprint(willow)
     app.register_blueprint(students, url_prefix="/student")
+    app.register_blueprint(Elizabeth)
     # Don't forget to return the app object
     return app
 

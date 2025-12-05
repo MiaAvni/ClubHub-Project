@@ -59,13 +59,13 @@ if st.button("Act as Willow, a Data Analyst",
     logger.info("Logging in as Data Analyst Persona")
     st.switch_page('pages/40_willow_home.py')
 
-if st.button('Act as Mohammad, an USAID worker', 
+if st.button('Act as Kaitlyn, an e-board member', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
-    st.session_state['role'] = 'usaid_worker'
-    st.session_state['first_name'] = 'Mohammad'
-    st.switch_page('pages/10_USAID_Worker_Home.py')
+    st.session_state['role'] = 'eboard'
+    st.session_state['first_name'] = 'Kaitlyn'
+    st.switch_page('pages/20_EBoard_Home.py')
 
 if st.button('Act as System Administrator', 
             type = 'primary', 
@@ -73,7 +73,7 @@ if st.button('Act as System Administrator',
     st.session_state['authenticated'] = True
     st.session_state['role'] = 'administrator'
     st.session_state['first_name'] = 'SysAdmin'
-    st.switch_page('pages/20_Admin_Home.py')
+    st.switch_page('pages/60_Administrator_Home.py')
 
 if st.button("Act as Alex, a Student", 
             type = 'primary', 
