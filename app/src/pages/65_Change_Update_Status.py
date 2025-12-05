@@ -14,7 +14,7 @@ API_URL = "http://web-api:4000/update"
 if "selected_update_id" not in st.session_state:
     st.error("No update selected. Please go back to the Update Directory.")
     if st.button("Return to Update Directory"):
-        st.switch_page("pages/Update_Directory.py")
+        st.switch_page("pages/update_directory.py")
 else:
     update_id = st.session_state["selected_update_id"]
     
@@ -71,7 +71,7 @@ else:
                             if put_response.status_code == 200:
                                 st.success("Update status changed successfully!")
                                 if st.button("Return to Update Directory"):
-                                    st.switch_page("pages/Update_Directory.py")
+                                    st.switch_page("pages/update_directory.py")
                             else:
                                 st.error(f"Failed to update: {put_response.json().get('error', 'Unknown error')}")
                         
@@ -88,4 +88,4 @@ else:
     
     # Return button outside the form
     if st.button("Cancel and Return"):
-        st.switch_page("pages/Update_Directory.py")
+        st.switch_page("pages/update_directory.py")

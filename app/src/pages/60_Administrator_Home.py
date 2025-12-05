@@ -21,13 +21,13 @@ with col1:
     if st.button('View Admin Permissions Directory', 
                  type='primary',
                  use_container_width=True):
-        st.switch_page('pages/Admin_Permissions_Directory.py')
+        st.switch_page('pages/61_admin_permissions_directory.py')
 
 with col2:
     if st.button('Create Admin Permissions', 
                  type='primary',
                  use_container_width=True):
-        st.switch_page('pages/Create_Admin_Permissions.py')
+        st.switch_page('pages/66_create_admin_permissions.py')
 
 st.write('#### System Updates')
 col3, col4 = st.columns(2)
@@ -36,13 +36,13 @@ with col3:
     if st.button('View Update Directory', 
                  type='primary',
                  use_container_width=True):
-        st.switch_page('pages/Update_Directory.py')
+        st.switch_page('pages/62_update_directory.py')
 
 with col4:
     if st.button('Create Notification', 
                  type='primary',
                  use_container_width=True):
-        st.switch_page('pages/Create_Notification.py')
+        st.switch_page('pages/67_create_notification.py')
 
 st.write('#### Error Management')
 col5, col6 = st.columns(2)
@@ -51,16 +51,16 @@ with col5:
     if st.button('View Error Directory', 
                  type='primary',
                  use_container_width=True):
-        st.switch_page('pages/Error_Directory.py')
+        st.switch_page('pages/error_directory.py')
 
 with col6:
     if st.button('View Network System Error Directory', 
                  type='primary',
                  use_container_width=True):
-        st.switch_page('pages/Network_System_Error_Directory.py')
+        st.switch_page('pages/network_system_error_directory.py')
 
 st.write('#### E-board Contact')
 if st.button('View E-board Admin Contact Directory', 
              type='primary',
              use_container_width=True):
-    st.switch_page('pages/Eboard_Admin_Contact.py')
+    st.switch_page('pages/68_eboard_admin_contact.py')

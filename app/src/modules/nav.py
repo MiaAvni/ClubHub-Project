@@ -4,14 +4,23 @@
 
 import streamlit as st
 
+# ----------------------------eboard--------------------------
 def EBoardNav():
-    st.sidebar.page_link("Home.py", label="Home", icon='🏠')
     st.sidebar.page_link("pages/20_EBoard_Home.py", label="E-Board Home", icon='👥')
+
+def interestedstudents():
     st.sidebar.page_link("pages/21_Interested_Students.py", label="Interested Students", icon='🎓')
+
+def eventsignups():
     st.sidebar.page_link("pages/22_Event_Signups.py", label="Event Signups", icon='📋')
+    
+def manageevents():
     st.sidebar.page_link("pages/23_Manage_Events.py", label="Manage Events", icon='📅')
-    st.sidebar.page_link("pages/24_Member_Tiers.py", label="Member Tiers", icon='⭐')
+
+def seeapplication():
     st.sidebar.page_link("pages/25_Applications.py", label="Applications", icon='📝')
+
+def createevent():
     st.sidebar.page_link("pages/26_Create_Event.py", label="Create Event", icon='➕')
 
 
@@ -93,6 +102,54 @@ def AlexDeleteApplicationNav():
         "pages/55_alex_delete_application.py", label="Delete Application"
     )
 
+#### ------------------------ admin elizabeth  ------------------------
+def adminNav():
+    st.sidebar.page_link(
+        "pages/60_administrator_home.py", label="Administrator Home (Elizabeth)"
+    )
+
+def adminpermissions():
+    st.sidebar.page_link(
+        "pages/61_admin_permissions_directory.py", label="Administrator Permissions Directory"
+    )
+def adminupdatedirectory():
+    st.sidebar.page_link(
+        "pages/62_update_directory.py", label="Update Directory"
+    )
+
+def adminpermissions():
+    st.sidebar.page_link(
+        "pages/61_admin_permissions_directory.py", label="Administrator Permissions Directory"
+    )
+
+def adminerrordirectory():
+    st.sidebar.page_link(
+        "pages/62_update_directory.py", label="Update Directory"
+    )
+
+def syserrordirectory():
+    st.sidebar.page_link(
+        "pages/64_network_system_error_directory.py", label="System Error Directory"
+    )
+
+def changeupdatestatus():
+    st.sidebar.page_link(
+        "pages/65_change_update_status.py", label="Change Update Status"
+    )
+
+def createpermissions():
+    st.sidebar.page_link(
+        "pages/66_create_admin_permissions.py", label="Create Admin Permissions"
+    )
+
+def createnotification():
+    st.sidebar.page_link(
+        "pages/67_create_notifications.py", label="Create Notification"
+    )
+def admincontact():
+    st.sidebar.page_link(
+        "pages/68_eboard_admin_contact.py", label="Contact Eboard"
+    )
 
 # --------------------------------Links Function -----------------------------------------------
 def SideBarLinks(show_home=False):
@@ -115,7 +172,7 @@ def SideBarLinks(show_home=False):
     # Show the other page navigators depending on the users' role.
     if st.session_state["authenticated"]:
 
-        # Show World Bank Link and Map Demo Link if the user is a political strategy advisor role.
+        # if user is data analyst
         if st.session_state["role"] == "data_analyst":
             DataAnalystHomeNav()
             SearchData()
@@ -124,23 +181,35 @@ def SideBarLinks(show_home=False):
             DemographicsData()
             AttendeesData()
 
-        # If the user role is usaid worker, show the Api Testing page
-        if st.session_state["role"] == "usaid_worker":
-            usaidWorkerHomeNav()
-            NgoDirectoryNav()
-            AddNgoNav()
-            PredictionNav()
-            ApiTestNav()
-            ClassificationNav()
-            
+        # if user is eboard member
+        if st.session_state["role"]  == "administrator":
+            adminNav()
+            adminpermissions()
+            adminerrordirectory()
+            syserrordirectory()
+            changeupdatestatus()
+            createpermissions()
+            createnotification()
+            admincontact()
 
-        # If the user is an administrator, give them access to the administrator pages
-        if st.session_state["role"] == "administrator":
-            AdminPageNav()
+        # if user is eboard member
+        if st.session_state["role"] == "eboard":
+            EBoardNav()
+            interestedstudents()
+            eventsignups()
+            manageevents()
+            seeapplication()
+            createevent()
 
         # If the user is a student (Alex), show the student home link for easy navigation
         if st.session_state["role"] == "student":
             StudentHomeNav()
+            AlexClubsNav()
+            AlexApplicationsNav()
+            AlexNewApplicationNav()
+            AlexUpdateApplicationNav()
+            AlexDeleteApplicationNav()
+
 
     # Always show the About page at the bottom of the list of links
     AboutPageNav()
