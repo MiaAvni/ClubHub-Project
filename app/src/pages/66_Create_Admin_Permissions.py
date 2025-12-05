@@ -93,4 +93,4 @@ if st.session_state.show_success_modal:
 
 # Add a button to return to the Admin Directory
 if st.button("Return to Admin Perimssions Directory"):
-    st.switch_page("pages/Admin_Permissions_Directory.py")
+    st.switch_page("pages/admin_permissions_directory.py")

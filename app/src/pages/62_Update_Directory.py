@@ -82,12 +82,12 @@ try:
                     with button_col2:
                         if st.button(f"Change Status", key=f"change_{update['updateID']}"):
                             st.session_state["selected_update_id"] = update["updateID"]
-                            st.switch_page("pages/Change_Update_Status.py")
+                            st.switch_page("pages/65_change_update_status.py")
 
                     with button_col3:
                         if st.button(f"Create Notification for Users", key=f"notify_{update['updateID']}"):
                             st.session_state["selected_update_id"] = update["updateID"]
-                            st.switch_page("pages/Create_Notification.py")
+                            st.switch_page("pages/67_create_notification.py")
 
 
     else:

@@ -31,7 +31,7 @@ def show_success_dialog(notification_text):
         if st.button("Return to Updates", use_container_width=True):
             st.session_state.show_success_modal = False
             st.session_state.success_notification_text = ""
-            st.switch_page("pages/Update_Directory.py") 
+            st.switch_page("pages/update_directory.py") 
     with col2:
         if st.button("Add Another Notification", use_container_width=True):
             st.session_state.show_success_modal = False

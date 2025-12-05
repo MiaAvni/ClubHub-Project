@@ -17,7 +17,7 @@ def eventsignups():
 def manageevents():
     st.sidebar.page_link("pages/23_Manage_Events.py", label="Manage Events", icon='📅')
 
-def seeapplications():
+def seeapplication():
     st.sidebar.page_link("pages/25_Applications.py", label="Applications", icon='📝')
 
 def createevent():
@@ -105,50 +105,50 @@ def AlexDeleteApplicationNav():
 #### ------------------------ admin elizabeth  ------------------------
 def adminNav():
     st.sidebar.page_link(
-        "pages/60_Administrator_Home", label="Administrator Home (Elizabeth)"
+        "pages/60_administrator_home.py", label="Administrator Home (Elizabeth)"
     )
 
 def adminpermissions():
     st.sidebar.page_link(
-        "pages/61_Admin_Permissions_Directory", label="Administrator Permissions Directory"
+        "pages/61_admin_permissions_directory.py", label="Administrator Permissions Directory"
     )
 def adminupdatedirectory():
     st.sidebar.page_link(
-        "pages/62_Update_Directory", label="Update Directory"
+        "pages/62_update_directory.py", label="Update Directory"
     )
 
 def adminpermissions():
     st.sidebar.page_link(
-        "pages/61_Admin_Permissions_Directory", label="Administrator Permissions Directory"
+        "pages/61_admin_permissions_directory.py", label="Administrator Permissions Directory"
     )
 
 def adminerrordirectory():
     st.sidebar.page_link(
-        "pages/62_Update_Directory", label="Update Directory"
+        "pages/62_update_directory.py", label="Update Directory"
     )
 
 def syserrordirectory():
     st.sidebar.page_link(
-        "pages/64_Network_System_Error_Directory", label="System Error Directory"
+        "pages/64_network_system_error_directory.py", label="System Error Directory"
     )
 
 def changeupdatestatus():
     st.sidebar.page_link(
-        "pages/65_Change_Update_Status", label="Change Update Status"
+        "pages/65_change_update_status.py", label="Change Update Status"
     )
 
 def createpermissions():
     st.sidebar.page_link(
-        "pages/66_Create_Admin_Permissions", label="Create Admin Permissions"
+        "pages/66_create_admin_permissions.py", label="Create Admin Permissions"
     )
 
 def createnotification():
     st.sidebar.page_link(
-        "pages/67_Create_Notifications", label="Create Notification"
+        "pages/67_create_notifications.py", label="Create Notification"
     )
 def admincontact():
     st.sidebar.page_link(
-        "pages/68_Eboard_Admin_Contact", label="Contact Eboard"
+        "pages/68_eboard_admin_contact.py", label="Contact Eboard"
     )
 
 # --------------------------------Links Function -----------------------------------------------
