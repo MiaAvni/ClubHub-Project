@@ -5,8 +5,8 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 from backend.db_connection import db
-from backend.simple.simple_routes import simple_routes
-from backend.ngos.ngo_routes import ngos
+# from backend.simple.simple_routes import simple_routes
+from backend.Elizabeth.Elizabeth_routes import Elizabeth
 
 def create_app():
     app = Flask(__name__)
@@ -38,7 +38,7 @@ def create_app():
     app.config["MYSQL_DATABASE_HOST"] = os.getenv("DB_HOST").strip()
     app.config["MYSQL_DATABASE_PORT"] = int(os.getenv("DB_PORT").strip())
     app.config["MYSQL_DATABASE_DB"] = os.getenv(
-        "DB_NAME"
+        "ClubHub"
     ).strip()  # Change this to your DB name
 
     # Initialize the database object with the settings above.
@@ -48,8 +48,8 @@ def create_app():
     # Register the routes from each Blueprint with the app object
     # and give a url prefix to each
     app.logger.info("create_app(): registering blueprints with Flask app object.")
-    app.register_blueprint(simple_routes)
-    app.register_blueprint(ngos, url_prefix="/ngo")
+    # app.register_blueprint(simple_routes)
+    app.register_blueprint(Elizabeth, url_prefix="/Elizabeth")
 
     # Don't forget to return the app object
     return app
