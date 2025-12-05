@@ -35,7 +35,7 @@ def get_all_errors():
         type = request.args.get("errorType")
         time_reported = request.args.get("timeReported")
         
-        query = "SELECT * FROM Error WHERE errorType = %s"
+        query = "SELECT * FROM Error"
         params = []
         
         if type:
@@ -65,7 +65,7 @@ def get_error(error_id):
     Get details of a specific error by ID
     """
     try:
-        current_app.logger.info(f'Retrievinghing error with ID: {error_id}')
+        current_app.logger.info(f'Retrieving error with ID: {error_id}')
         cursor = db.get_db().cursor()
         
         # Query to get specific error
@@ -127,7 +127,7 @@ def get_all_updates():
         availability = request.args.get("availability")
         time_scheduled = request.args.get("scheduledTime")
         
-        query = "SELECT * FROM Update WHERE updateType = %s"
+        query = "SELECT * FROM Update"
         params = []
         
         if type:
@@ -138,7 +138,7 @@ def get_all_updates():
             params.append(update_id)
         if availability:
             query += " AND availability = %s"
-            params.append(type)
+            params.append(availability)
         if time_scheduled:
             query += " AND time_scheduled = %s"
             params.append(time_scheduled)
@@ -151,7 +151,7 @@ def get_all_updates():
         return jsonify(updates), 200
         
     except Error as e:
-        current_app.logger.update(f'Database update in get_all_updates: {str(e)}')
+        current_app.logger.error(f'Database update in get_all_updates: {str(e)}')
         return jsonify({"error": str(e)}), 500
     
 
@@ -178,7 +178,7 @@ def get_update(update_id):
         return jsonify(update), 200
         
     except Error as e:
-        current_app.logger.update(f'Database update in get_update: {str(e)}')
+        current_app.logger.error(f'Database update in get_update: {str(e)}')
         return jsonify({"error": str(e)}), 500
     
 # update the status of an update (PUT)
@@ -248,7 +248,7 @@ def create_notification():
 
         # Insert new notification
         query = """
-        INSERT INTO UpdateNotifications (notification, updatID)
+        INSERT INTO UpdateNotifications (notification, updateID)
         VALUES (%s, %s)
         """
         cursor.execute(
@@ -270,6 +270,42 @@ def create_notification():
         )
     except Error as e:
         current_app.logger.error(f'Database error in create_notification: {str(e)}')
+        return jsonify({"error": str(e)}), 500
+    
+
+ # show all admin permissions (GET)
+@Elizabeth.route("/adminPermissions", methods=["GET"])
+def get_all_admin_permissions():
+    try:
+        current_app.logger.info('Retrieving all admin permissions')
+        cursor = db.get_db().cursor()
+        
+        # Get query parameters for filtering
+        admin_id = request.args.get("adminID")
+        permission = request.args.get("permission")
+        
+        query = "SELECT * FROM AdminPermissions"
+        params = []
+        
+        if admin_id:
+            query += " WHERE adminID = %s"
+            params.append(admin_id)
+            if permission:
+                query += " AND permission = %s"
+                params.append(permission)
+        elif permission:
+            query += " WHERE permission = %s"
+            params.append(permission)
+        
+        cursor.execute(query, params)
+        permissions = cursor.fetchall()
+        cursor.close()
+        
+        current_app.logger.info(f'Successfully retrieved {len(permissions)} admin permissions.')
+        return jsonify(permissions), 200
+        
+    except Error as e:
+        current_app.logger.error(f'Database error in get_all_admin_permissions: {str(e)}')
         return jsonify({"error": str(e)}), 500
     
 
@@ -367,7 +403,7 @@ def create_admin_permissions():
 
         # Insert new admin permissions
         query = """
-        INSERT INTO AdminPermissions (adminID, [permission])
+        INSERT INTO AdminPermissions (adminID, permission)
         VALUES (%s, %s)
         """
         cursor.execute(
@@ -389,6 +425,43 @@ def create_admin_permissions():
         )
     except Error as e:
         current_app.logger.error(f'Database error in create_admin_permissions: {str(e)}')
+        return jsonify({"error": str(e)}), 500
+
+
+
+# Get all eboard contacts (GET)
+@Elizabeth.route("/adminContact", methods=["GET"])
+def get_all_eboard_contacts():
+    try:
+        current_app.logger.info('Retrieving all eboard contacts')
+        cursor = db.get_db().cursor()
+        
+        # Get query parameters for filtering
+        eboard_id = request.args.get("eboardID")
+        admin_id = request.args.get("adminID")
+        
+        query = "SELECT * FROM EboardContact"
+        params = []
+        
+        if eboard_id:
+            query += " WHERE eboardID = %s"
+            params.append(eboard_id)
+            if admin_id:
+                query += " AND adminID = %s"
+                params.append(admin_id)
+        elif admin_id:
+            query += " WHERE adminID = %s"
+            params.append(admin_id)
+        
+        cursor.execute(query, params)
+        contacts = cursor.fetchall()
+        cursor.close()
+        
+        current_app.logger.info(f'Successfully retrieved {len(contacts)} eboard contacts.')
+        return jsonify(contacts), 200
+        
+    except Error as e:
+        current_app.logger.error(f'Database error in get_all_eboard_contacts: {str(e)}')
         return jsonify({"error": str(e)}), 500
     
 

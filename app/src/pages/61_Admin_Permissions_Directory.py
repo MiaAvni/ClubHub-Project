@@ -54,18 +54,15 @@ try:
                         st.write("**Actions**")
                         st.write("Manage this admin's permissions")
 
-                    # Add buttons
-                    button_col1, button_col2 = st.columns(2)
+                    # Add button
+                    button_col1 = st.columns(1)
                     
                     with button_col1:
-                        if st.button(f"Change Permission", key=f"change_{ap['adminID']}"):
+                        if st.button(f"Create Permission", key=f"change_{ap['adminID']}"):
                             st.session_state["selected_admin_id"] = ap["adminID"]
-                            st.switch_page("pages/Change_Admin_Permissions.py")
+                            st.switch_page("pages/66_create_admin_permissions.py")
                     
-                    with button_col2:
-                        if st.button(f"View Details", key=f"view_{ap['adminID']}"):
-                            st.session_state["selected_admin_id"] = ap["adminID"]
-                            st.switch_page("pages/Admin_Profile.py")
+    
 
     else:
         st.error("Failed to fetch Admin Permissions data from the API")
