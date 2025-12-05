@@ -1,8 +1,8 @@
-# Fall 2025 CS 3200 Project Template
+# ClubHub
 
-This is a template repo for Dr. Fontenot's Fall 2025 CS 3200 Course Project. 
+ClubHub is a web application designed to help students discover and join clubs at their university. The application provides functionality for students to search for clubs, submit applications, and manage their club memberships. It also includes administrative and analytical features for club management and data analysis.
 
-It includes most of the infrastructure setup (containers), sample databases, and example UI pages. Explore it fully and ask questions!
+This project is built using Flask for the REST API backend, Streamlit for the frontend, and MySQL for the database.
 
 ## Prerequisites
 
@@ -103,18 +103,146 @@ If you are not familiar with web app development, this code base might be confus
 
 In most applications, when a user logs in, they assume a particular role in the app. For instance, when one logs in to a stock price prediction app, they may be a single investor, a portfolio manager, or a corporate executive (of a publicly traded company). Each of those _roles_ will likely present some similar features as well as some different features when compared to the other roles. So, how do you accomplish this in Streamlit? This is sometimes called Role-based Access Control, or **RBAC** for short.
 
-The code in this project demonstrates how to implement a simple RBAC system in Streamlit but without actually using user authentication (usernames and passwords). The Streamlit pages from the original template repo are split up among 3 roles - Political Strategist, USAID Worker, and a System Administrator role (this is used for any sort of system tasks such as re-training ML model, etc.). It also demonstrates how to deploy an ML model.
-
-Wrapping your head around this will take a little time and exploration of this code base. Some highlights are below.
+The code in this project demonstrates how to implement a simple RBAC system in Streamlit without actually using user authentication (usernames and passwords). The Streamlit pages are organized by persona/role, with each team member implementing functionality for their assigned persona.
 
 ### Getting Started with the RBAC
 
-1. We need to turn off the standard panel of links on the left side of the Streamlit app. This is done through the `app/src/.streamlit/config.toml` file. So check that out. We are turning it off so we can control directly what links are shown.
-1. Then I created a new python module in `app/src/modules/nav.py`. When you look at the file, you will se that there are functions for basically each page of the application. The `st.sidebar.page_link(...)` adds a single link to the sidebar. We have a separate function for each page so that we can organize the links/pages by role.
-1. Next, check out the `app/src/Home.py` file. Notice that there are 3 buttons added to the page and when one is clicked, it redirects via `st.switch_page(...)` to that Roles Home page in `app/src/pages`. But before the redirect, I set a few different variables in the Streamlit `session_state` object to track role, first name of the user, and that the user is now authenticated.
-1. Notice near the top of `app/src/Home.py` and all other pages, there is a call to `SideBarLinks(...)` from the `app/src/nav.py` module. This is the function that will use the role set in `session_state` to determine what links to show the user in the sidebar.
-1. The pages are organized by Role. Pages that start with a `0` are related to the _Political Strategist_ role. Pages that start with a `1` are related to the _USAID worker_ role. And, pages that start with a `2` are related to The _System Administrator_ role.
+1. The standard panel of links on the left side of the Streamlit app is turned off. This is configured in `app/src/.streamlit/config.toml` so we can control directly what links are shown.
+1. Navigation functions are defined in `app/src/modules/nav.py`. Each page has a corresponding function that uses `st.sidebar.page_link(...)` to add links to the sidebar. Functions are organized by role/persona.
+1. The `app/src/Home.py` file contains buttons for each persona. When clicked, they set variables in the Streamlit `session_state` object (role, first name, authenticated status) and redirect to that persona's home page.
+1. All pages call `SideBarLinks(...)` from `app/src/modules/nav.py` at the top. This function uses the role set in `session_state` to determine what links to show in the sidebar.
+1. Pages are organized by persona/role using filename prefixes:
+   - Pages starting with `4` are for the _Data Analyst_ role (Willow)
+   - Pages starting with `5` are for the _Student_ role (Alex)
+   - Additional personas will be documented by their respective team members
 
+## Student Functionality (Alex)
+
+The Student persona functionality allows students to search for clubs, view their applications, submit new applications, update application status, and delete/withdraw applications.
+
+### API Routes
+
+The Student blueprint (`api/backend/clubs/alex_routes.py`) provides 5 REST API endpoints under the `/student` URL prefix:
+
+#### Search Clubs
+
+- **Endpoint**: `GET /student/clubs`
+- **Description**: Search for clubs with optional filters
+- **Query Parameters**:
+  - `campus` (optional): Filter by campus (e.g., `"Boston"`)
+  - `gradLevel` (optional): Filter by grad level (e.g., `"undergrad"`)
+- **Example**: `GET /student/clubs?campus=Boston&gradLevel=undergrad`
+- **Response**: JSON array of club objects
+
+#### Get Student Applications
+
+- **Endpoint**: `GET /student/applications/<studentID>`
+- **Description**: Retrieve all applications for a specific student
+- **Example**: `GET /student/applications/1`
+- **Response**: JSON array of application objects ordered by submission date (newest first)
+
+#### Create Application
+
+- **Endpoint**: `POST /student/applications`
+- **Description**: Submit a new application to a club
+- **Request Body**:
+
+  ```json
+  {
+    "studentID": 1,
+    "clubID": 3,
+    "dateSubmitted": "2025-12-02"
+  }
+  ```
+
+- **Response**: JSON object with `message` and `applicationID`
+
+#### Update Application
+
+- **Endpoint**: `PUT /student/applications/<applicationID>`
+- **Description**: Update the status of an existing application
+- **Request Body**:
+
+  ```json
+  {
+    "status": "withdrawn"
+  }
+  ```
+
+- **Response**: JSON object with success message
+
+#### Delete Application
+
+- **Endpoint**: `DELETE /student/applications/<applicationID>`
+- **Description**: Delete/withdraw an application
+- **Example**: `DELETE /student/applications/1`
+- **Response**: JSON object with success message
+
+### Streamlit Pages
+
+The following Streamlit pages are located in `app/src/pages/`:
+
+- **`50_alex_Home.py`**: The student home page with navigation buttons to access all student features.
+- **`51_alex_clubs.py`**: Search and filter clubs by campus and grad level. Displays results in a dataframe.
+- **`52_alex_applications.py`**: View all applications for a specific student ID. Shows application details including status and submission date.
+- **`53_alex_new_application.py`**: Submit a new application to a club. Requires student ID, club ID, and submission date.
+- **`54_alex_update_application.py`**: Update the status of an existing application. Uses a dropdown to select from valid status options (`pending`, `withdrawn`, `accepted`, `rejected`).
+- **`55_alex_delete_application.py`**: Delete/withdraw an application. Includes a confirmation checkbox to prevent accidental deletions.
+
+### Testing the Student API
+
+You can test the API endpoints using `curl`:
+
+```bash
+# Search clubs
+curl http://localhost:4000/student/clubs
+
+# Search with filters
+curl "http://localhost:4000/student/clubs?campus=Boston&gradLevel=undergrad"
+
+# Get student applications
+curl http://localhost:4000/student/applications/1
+
+# Create application
+curl -X POST http://localhost:4000/student/applications \
+  -H "Content-Type: application/json" \
+  -d '{"studentID": 1, "clubID": 3, "dateSubmitted": "2025-12-02"}'
+
+# Update application
+curl -X PUT http://localhost:4000/student/applications/1 \
+  -H "Content-Type: application/json" \
+  -d '{"status": "withdrawn"}'
+
+# Delete application
+curl -X DELETE http://localhost:4000/student/applications/1
+```
+
+### Accessing Student Pages
+
+The student pages can be accessed directly via URL or through the Streamlit app navigation. All pages include proper error handling and user feedback for successful operations and errors.
+
+---
+
+## Persona 2: [Team Member Name]
+
+> [!NOTE]
+> This section will be completed by [Team Member Name]. Please add your persona name, API routes, Streamlit pages, and testing instructions here.
+
+---
+
+## Persona 3: [Team Member Name]
+
+> [!NOTE]
+> This section will be completed by [Team Member Name]. Please add your persona name, API routes, Streamlit pages, and testing instructions here.
+
+---
+
+## Persona 4: [Team Member Name]
+
+> [!NOTE]
+> This section will be completed by [Team Member Name]. Please add your persona name, API routes, Streamlit pages, and testing instructions here.
+
+---
 
 ## (Completely Optional) Incorporating ML Models into your Project
 
@@ -131,3 +259,46 @@ _Note_: This project only contains the infrastructure for a hypothetical ML mode
    - We've put a sample (read _fake_) ML model in the `model01.py` file. The `predict` function will be called by the Flask REST API to perform '_real-time_' prediction based on model parameter values that are stored in the database. **Important**: you would never want to hard code the model parameter weights directly in the prediction function.
 1. The prediction route for the REST API is in `api/backend/customers/customer_routes.py`. Basically, it accepts two URL parameters and passes them to the `prediction` function in the `ml_models` module. The `prediction` route/function packages up the value(s) it receives from the model's `predict` function and send its back to Streamlit as JSON.
 1. Back in streamlit, check out `app/src/pages/11_Prediction.py`. Here, I create two numeric input fields. When the button is pressed, it makes a request to the REST API URL `/c/prediction/.../...` function and passes the values from the two inputs as URL parameters. It gets back the results from the route and displays them. Nothing fancy here.
+
+---
+
+## Original Template Documentation (Reference)
+
+> [!TIP]
+> The following sections contain the original template documentation. Team members can refer to this when writing their persona sections to maintain consistency with the project structure and formatting guidelines.
+
+### Original Template Introduction
+
+This is a template repo for Dr. Fontenot's Fall 2025 CS 3200 Course Project.
+
+It includes most of the infrastructure setup (containers), sample databases, and example UI pages. Explore it fully and ask questions!
+
+### Original Template RBAC Documentation
+
+The code in this project demonstrates how to implement a simple RBAC system in Streamlit but without actually using user authentication (usernames and passwords). The Streamlit pages from the original template repo are split up among 3 roles - Political Strategist, USAID Worker, and a System Administrator role (this is used for any sort of system tasks such as re-training ML model, etc.). It also demonstrates how to deploy an ML model.
+
+Wrapping your head around this will take a little time and exploration of this code base. Some highlights are below.
+
+#### Getting Started with the RBAC (Template Reference)
+
+1. We need to turn off the standard panel of links on the left side of the Streamlit app. This is done through the `app/src/.streamlit/config.toml` file. So check that out. We are turning it off so we can control directly what links are shown.
+1. Then I created a new python module in `app/src/modules/nav.py`. When you look at the file, you will see that there are functions for basically each page of the application. The `st.sidebar.page_link(...)` adds a single link to the sidebar. We have a separate function for each page so that we can organize the links/pages by role.
+1. Next, check out the `app/src/Home.py` file. Notice that there are 3 buttons added to the page and when one is clicked, it redirects via `st.switch_page(...)` to that Roles Home page in `app/src/pages`. But before the redirect, I set a few different variables in the Streamlit `session_state` object to track role, first name of the user, and that the user is now authenticated.
+1. Notice near the top of `app/src/Home.py` and all other pages, there is a call to `SideBarLinks(...)` from the `app/src/nav.py` module. This is the function that will use the role set in `session_state` to determine what links to show the user in the sidebar.
+1. The pages are organized by Role. Pages that start with a `0` are related to the _Political Strategist_ role. Pages that start with a `1` are related to the _USAID worker_ role. And, pages that start with a `2` are related to The _System Administrator_ role.
+
+### Template Example: Persona Documentation Format
+
+When documenting your persona, follow this structure (as shown in the Student Functionality section above):
+
+1. **Section Header**: Use `## Persona Name: [Name]`
+2. **Introduction**: Brief description of what the persona can do
+3. **API Routes**: Document all REST API endpoints with:
+   - Endpoint path and HTTP method
+   - Description
+   - Query parameters or request body (if applicable)
+   - Example requests
+   - Response format
+4. **Streamlit Pages**: List all pages with brief descriptions
+5. **Testing**: Provide `curl` examples for testing API endpoints
+6. **Accessing Pages**: Note how pages can be accessed
