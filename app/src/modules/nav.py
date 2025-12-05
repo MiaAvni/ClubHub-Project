@@ -4,6 +4,16 @@
 
 import streamlit as st
 
+def EBoardNav():
+    st.sidebar.page_link("Home.py", label="Home", icon='🏠')
+    st.sidebar.page_link("pages/20_EBoard_Home.py", label="E-Board Home", icon='👥')
+    st.sidebar.page_link("pages/21_Interested_Students.py", label="Interested Students", icon='🎓')
+    st.sidebar.page_link("pages/22_Event_Signups.py", label="Event Signups", icon='📋')
+    st.sidebar.page_link("pages/23_Manage_Events.py", label="Manage Events", icon='📅')
+    st.sidebar.page_link("pages/24_Member_Tiers.py", label="Member Tiers", icon='⭐')
+    st.sidebar.page_link("pages/25_Applications.py", label="Applications", icon='📝')
+    st.sidebar.page_link("pages/26_Create_Event.py", label="Create Event", icon='➕')
+
 
 #### ------------------------ General ------------------------
 def HomeNav():

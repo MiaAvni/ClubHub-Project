@@ -11,6 +11,7 @@ from backend.ngos.ngo_routes import ngos
 
 from backend.clubs.clubs_routes import clubs
 from backend.events.events_routes import events 
+from backend.applications.applications_routes import applications
 
 
 def create_app():
@@ -57,6 +58,7 @@ def create_app():
     app.register_blueprint(ngos, url_prefix="/ngo")
     app.register_blueprint(clubs, url_prefix="/c")
     app.register_blueprint(events, url_prefix="/e")
+    app.register_blueprint(applications, url_prefix="/a")
 
     # Don't forget to return the app object
     return app

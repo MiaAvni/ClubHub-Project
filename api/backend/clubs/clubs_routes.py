@@ -52,7 +52,7 @@ def get_interested_students(clubID):
         return jsonify({"error": str(e)}), 500
 
 # GET member details including tier for a specific club
-@clubs.route("/club/<int:clubID>/members/<int:memberID>", methods=["GET"])
+@clubs.route("/clubs/<int:clubID>/members/<int:memberID>", methods=["GET"])
 def get_member_details(clubID, memberID):
     current_app.logger.info(f"GET /club/{clubID}/members/{memberID} handler")
     
@@ -91,7 +91,7 @@ def get_member_details(clubID, memberID):
 
 # PUT update member tier (e.g., general to active)
 # Kaitlyn - 5
-@clubs.route("/club/<int:clubID>/members/<int:memberID>", methods=["PUT"])
+@clubs.route("/clubs/<int:clubID>/members/<int:memberID>", methods=["PUT"])
 def update_member_tier(clubID, memberID):
     current_app.logger.info(f"PUT /club/{clubID}/members/{memberID} handler")
     
@@ -134,7 +134,7 @@ def update_member_tier(clubID, memberID):
 
 # GET events the club is hosting
 # Kaitlyn - 6
-@clubs.route("/club/<int:clubID>/events", methods=["GET"])
+@clubs.route("/clubs/<int:clubID>/events", methods=["GET"])
 def get_club_events(clubID):
     current_app.logger.info(f"GET /club/{clubID}/events handler")
     
@@ -177,7 +177,7 @@ def get_club_events(clubID):
 
 # POST create new event on club page
 # Kaitlyn - 8
-@clubs.route("/club/<int:clubID>/events", methods=["POST"])
+@clubs.route("/clubs/<int:clubID>/events", methods=["POST"])
 def create_club_event(clubID):
     current_app.logger.info(f"POST /club/{clubID}/events handler")
     
@@ -272,79 +272,6 @@ def get_club_applications(clubID):
             return jsonify({"message": "No pending applications found"}), 200
         
         return jsonify(the_data), 200
-        
-    except Error as e:
-        return jsonify({"error": str(e)}), 500
-    
-# PUT update application status (approve or deny)
-# Kaitlyn - 7
-@clubs.route("/applications/<int:applicationID>", methods=["PUT"])
-def update_application_status(applicationID):
-    current_app.logger.info(f"PUT /applications/{applicationID} handler")
-    
-    try:
-        data = request.get_json()
-        
-        # Check if application exists
-        cursor = db.get_db().cursor()
-        cursor.execute("SELECT * FROM application WHERE applicationID = %s", (applicationID,))
-        if not cursor.fetchone():
-            return jsonify({"error": "Application not found"}), 404
-        
-        # Build update query
-        update_fields = []
-        params = []
-        allowed_fields = ["status"]  # Can update status to 'Accepted' or 'Rejected'
-        
-        for field in allowed_fields:
-            if field in data:
-                update_fields.append(f"{field} = %s")
-                params.append(data[field])
-        
-        if not update_fields:
-            return jsonify({"error": "No valid fields to update"}), 400
-        
-        # Validate status value
-        if data.get('status') not in ['Accepted', 'Rejected', 'Pending']:
-            return jsonify({"error": "Invalid status. Must be 'Accepted', 'Rejected', or 'Pending'"}), 400
-        
-        params.append(applicationID)
-        query = f"UPDATE application SET {', '.join(update_fields)} WHERE applicationID = %s"
-        
-        cursor.execute(query, params)
-        db.get_db().commit()
-        cursor.close()
-        
-        return jsonify({"message": "Application status updated successfully"}), 200
-        
-    except Error as e:
-        return jsonify({"error": str(e)}), 500
-
-# DELETE remove processed application
-# Kaitlyn - 7
-@clubs.route("/applications/<int:applicationID>", methods=["DELETE"])
-def delete_application(applicationID):
-    current_app.logger.info(f"DELETE /applications/{applicationID} handler")
-    
-    try:
-        cursor = db.get_db().cursor()
-        
-        # Check if application exists
-        cursor.execute("SELECT * FROM application WHERE applicationID = %s", (applicationID,))
-        if not cursor.fetchone():
-            return jsonify({"error": "Application not found"}), 404
-        
-        # Delete the application
-        the_query = '''
-            DELETE FROM application
-            WHERE applicationID = %s
-        '''
-        
-        cursor.execute(the_query, (applicationID,))
-        db.get_db().commit()
-        cursor.close()
-        
-        return jsonify({"message": "Application deleted successfully"}), 200
         
     except Error as e:
         return jsonify({"error": str(e)}), 500
