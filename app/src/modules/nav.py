@@ -117,11 +117,6 @@ def adminupdatedirectory():
         "pages/62_update_directory.py", label="Update Directory"
     )
 
-def adminpermissions():
-    st.sidebar.page_link(
-        "pages/61_admin_permissions_directory.py", label="Administrator Permissions Directory"
-    )
-
 def adminerrordirectory():
     st.sidebar.page_link(
         "pages/62_update_directory.py", label="Update Directory"
