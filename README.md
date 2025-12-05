@@ -113,6 +113,7 @@ The code in this project demonstrates how to implement a simple RBAC system in S
 1. All pages call `SideBarLinks(...)` from `app/src/modules/nav.py` at the top. This function uses the role set in `session_state` to determine what links to show in the sidebar.
 1. Pages are organized by persona/role using filename prefixes:
    - Pages starting with `4` are for the _Data Analyst_ role (Willow)
+   - Pages starting with `2` are for the _EBoard_Member_role (Kaitlyn)
    - Pages starting with `5` are for the _Student_ role (Alex)
    - Additional personas will be documented by their respective team members
 
@@ -122,7 +123,7 @@ The Student persona functionality allows students to search for clubs, view thei
 
 ### API Routes
 
-The Student blueprint (`api/backend/clubs/alex_routes.py`) provides 5 REST API endpoints under the `/student` URL prefix:
+The Student blueprint (`api/backend/alex-student/alex_routes.py`) provides 5 REST API endpoints under the `/student` URL prefix:
 
 #### Search Clubs
 
