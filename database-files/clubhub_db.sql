@@ -2960,11 +2960,10 @@ insert into updateNotifications (notification, updateID) values ('System update 
 insert into updateNotifications (notification, updateID) values ('New update initiated for security patches', 9);
 insert into updateNotifications (notification, updateID) values ('System maintenance update scheduled for tonight', 1);
 insert into updateNotifications (notification, updateID) values ('Update process started for bug fixes', 4);
-<<<<<<< HEAD
+
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 8);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 5);
-=======
->>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
+
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 10);
 insert into updateNotifications (notification, updateID) values ('Update started for software version 2.0', 1);
 insert into updateNotifications (notification, updateID) values ('System update scheduled for tomorrow at 3pm', 2);
@@ -2974,7 +2973,7 @@ insert into updateNotifications (notification, updateID) values ('System update 
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 1);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 2);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 6);
-<<<<<<< HEAD
+
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 10);
 insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 8);
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 6);
@@ -2983,7 +2982,7 @@ insert into updateNotifications (notification, updateID) values ('System mainten
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 6);
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 9);
 insert into updateNotifications (notification, updateID) values ('System update scheduled for tomorrow at 3pm', 3);
-=======
+
 insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 8);
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 6);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 6);
@@ -2997,7 +2996,7 @@ insert into updateNotifications (notification, updateID) values ('New update ini
 
 
 -- 24. errorAdmin
-<<<<<<< HEAD
+
 insert into errorAdmin (adminID, errorID) values (6, 4);
 insert into errorAdmin (adminID, errorID) values (5, 9);
 insert into errorAdmin (adminID, errorID) values (3, 7);
@@ -3038,7 +3037,7 @@ insert into errorAdmin (adminID, errorID) values (19, 4);
 insert into errorAdmin (adminID, errorID) values (1, 1);
 insert into errorAdmin (adminID, errorID) values (4, 9);
 insert into errorAdmin (adminID, errorID) values (7, 6);
-=======
+
 insert into errorAdmin (adminID, errorID) values (13, 35);
 insert into errorAdmin (adminID, errorID) values (38, 16);
 insert into errorAdmin (adminID, errorID) values (35, 38);
@@ -3079,4 +3078,3 @@ insert into errorAdmin (adminID, errorID) values (8, 35);
 insert into errorAdmin (adminID, errorID) values (12, 6);
 insert into errorAdmin (adminID, errorID) values (32, 25);
 insert into errorAdmin (adminID, errorID) values (5, 27);
->>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
