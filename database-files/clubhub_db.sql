@@ -2134,6 +2134,10 @@ insert into updateNotifications (notification, updateID) values ('System update 
 insert into updateNotifications (notification, updateID) values ('New update initiated for security patches', 9);
 insert into updateNotifications (notification, updateID) values ('System maintenance update scheduled for tonight', 1);
 insert into updateNotifications (notification, updateID) values ('Update process started for bug fixes', 4);
+
+insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 8);
+insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 5);
+
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 10);
 insert into updateNotifications (notification, updateID) values ('Update started for software version 2.0', 1);
 insert into updateNotifications (notification, updateID) values ('System update scheduled for tomorrow at 3pm', 2);
@@ -2143,10 +2147,19 @@ insert into updateNotifications (notification, updateID) values ('System update 
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 1);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 2);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 6);
+
+insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 10);
 insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 8);
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 6);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 6);
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 9);
+insert into updateNotifications (notification, updateID) values ('System update scheduled for tomorrow at 3pm', 3);
+
+insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 8);
+insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 6);
+insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 6);
+insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 9);
+>>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
 insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 5);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 3);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 9);
@@ -2155,6 +2168,48 @@ insert into updateNotifications (notification, updateID) values ('New update ini
 
 
 -- 24. errorAdmin
+
+insert into errorAdmin (adminID, errorID) values (6, 4);
+insert into errorAdmin (adminID, errorID) values (5, 9);
+insert into errorAdmin (adminID, errorID) values (3, 7);
+insert into errorAdmin (adminID, errorID) values (13, 8);
+insert into errorAdmin (adminID, errorID) values (9, 2);
+insert into errorAdmin (adminID, errorID) values (18, 1);
+insert into errorAdmin (adminID, errorID) values (3, 1);
+insert into errorAdmin (adminID, errorID) values (17, 1);
+insert into errorAdmin (adminID, errorID) values (7, 5);
+insert into errorAdmin (adminID, errorID) values (10, 5);
+insert into errorAdmin (adminID, errorID) values (16, 6);
+insert into errorAdmin (adminID, errorID) values (20, 2);
+insert into errorAdmin (adminID, errorID) values (20, 1);
+insert into errorAdmin (adminID, errorID) values (8, 6);
+insert into errorAdmin (adminID, errorID) values (6, 5);
+insert into errorAdmin (adminID, errorID) values (4, 8);
+insert into errorAdmin (adminID, errorID) values (9, 4);
+insert into errorAdmin (adminID, errorID) values (6, 9);
+insert into errorAdmin (adminID, errorID) values (2, 5);
+insert into errorAdmin (adminID, errorID) values (4, 8);
+insert into errorAdmin (adminID, errorID) values (14, 6);
+insert into errorAdmin (adminID, errorID) values (3, 2);
+insert into errorAdmin (adminID, errorID) values (3, 8);
+insert into errorAdmin (adminID, errorID) values (4, 5);
+insert into errorAdmin (adminID, errorID) values (19, 2);
+insert into errorAdmin (adminID, errorID) values (17, 6);
+insert into errorAdmin (adminID, errorID) values (15, 9);
+insert into errorAdmin (adminID, errorID) values (6, 8);
+insert into errorAdmin (adminID, errorID) values (3, 4);
+insert into errorAdmin (adminID, errorID) values (1, 6);
+insert into errorAdmin (adminID, errorID) values (11, 9);
+insert into errorAdmin (adminID, errorID) values (14, 1);
+insert into errorAdmin (adminID, errorID) values (17, 1);
+insert into errorAdmin (adminID, errorID) values (14, 9);
+insert into errorAdmin (adminID, errorID) values (16, 2);
+insert into errorAdmin (adminID, errorID) values (1, 5);
+insert into errorAdmin (adminID, errorID) values (19, 4);
+insert into errorAdmin (adminID, errorID) values (1, 1);
+insert into errorAdmin (adminID, errorID) values (4, 9);
+insert into errorAdmin (adminID, errorID) values (7, 6);
+
 insert into errorAdmin (adminID, errorID) values (13, 35);
 insert into errorAdmin (adminID, errorID) values (38, 16);
 insert into errorAdmin (adminID, errorID) values (35, 38);

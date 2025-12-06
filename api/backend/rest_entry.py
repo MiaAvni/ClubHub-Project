@@ -58,7 +58,7 @@ def create_app():
     app.register_blueprint(kaitlyn, url_prefix="/eboardmember")
     app.register_blueprint(willow)
     app.register_blueprint(students, url_prefix="/student")
-    app.register_blueprint(Elizabeth)
+    app.register_blueprint(Elizabeth, url_prefix='/Elizabeth')
     # Don't forget to return the app object
     return app
 
