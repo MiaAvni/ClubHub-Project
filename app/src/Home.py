@@ -43,6 +43,21 @@ st.write('#### Hi! As which user would you like to log in?')
 # For each of the user personas for which we are implementing
 # functionality, we put a button on the screen that the user 
 # can click to MIMIC logging in as that mock user. 
+if st.button("Act as Alex, a Student", 
+            type = 'primary', 
+            use_container_width=True):
+    st.session_state['authenticated'] = True
+    st.session_state['role'] = 'student'
+    st.session_state['first_name'] = 'Alex'
+    logger.info("Logging in as Student Persona")
+    st.switch_page('pages/50_alex_Home.py')
+
+if st.button('Act as Kaitlyn, an E-board Member', 
+            type = 'primary', 
+            use_container_width=True):
+    st.session_state['authenticated'] = True
+    st.session_state['role'] = 'eboard'
+    st.session_state['first_name'] = 'Kaitlyn'
 
 if st.button("Act as Willow, a Data Analyst", 
             type = 'primary', 
@@ -59,30 +74,15 @@ if st.button("Act as Willow, a Data Analyst",
     logger.info("Logging in as Data Analyst Persona")
     st.switch_page('pages/40_willow_home.py')
 
-if st.button('Act as Kaitlyn, an e-board member', 
-            type = 'primary', 
-            use_container_width=True):
-    st.session_state['authenticated'] = True
-    st.session_state['role'] = 'eboard'
-    st.session_state['first_name'] = 'Kaitlyn'
     st.switch_page('pages/20_EBoard_Home.py')
 
-if st.button('Act as System Administrator', 
+if st.button('Act as Elizabeth, a System Administrator', 
             type = 'primary', 
             use_container_width=True):
     st.session_state['authenticated'] = True
     st.session_state['role'] = 'administrator'
     st.session_state['first_name'] = 'Elizabeth'
     st.switch_page('pages/60_administrator_home.py')
-
-if st.button("Act as Alex, a Student", 
-            type = 'primary', 
-            use_container_width=True):
-    st.session_state['authenticated'] = True
-    st.session_state['role'] = 'student'
-    st.session_state['first_name'] = 'Alex'
-    logger.info("Logging in as Student Persona")
-    st.switch_page('pages/50_alex_Home.py')
 
 
 
