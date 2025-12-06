@@ -58,6 +58,8 @@ if st.button('Act as Kaitlyn, an E-board Member',
     st.session_state['authenticated'] = True
     st.session_state['role'] = 'eboard'
     st.session_state['first_name'] = 'Kaitlyn'
+    logger.info("Logging in as E-Board Persona")
+    st.switch_page('pages/20_EBoard_Home.py')
 
 if st.button("Act as Willow, a Data Analyst", 
             type = 'primary', 

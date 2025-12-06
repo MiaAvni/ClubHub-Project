@@ -29,8 +29,8 @@ with st.form("Create a New Club Event"):
         data = {}
         data['name'] = event_name
         data['date'] = date.isoformat()
-        data['startTime'] = start_time.isoformat()
-        data['endTime'] = end_time.isoformat()
+        data['startTime'] = start_datetime.isoformat()
+        data['endTime'] = end_datetime.isoformat()
         data['location'] = location
         data['description'] = description
         data['capacity'] = capacity
