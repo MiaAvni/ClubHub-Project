@@ -109,41 +109,42 @@ The student pages can be accessed directly via URL or through the Streamlit app 
 
 ---
 
-## Persona 2: [Willow]
+## Analyst Functionality (Willow)
 
-> [!NOTE]
 The data analyst persona functionality allows an analyst to view data about club searches, applications, categories, demographics, and events. 
 
 ### API Routes
 
 The data analyst blueprint (`api/backend/willow/willow_routes.py`) provides 5 REST API endpoints:
 
-#### get data on searches
+#### Get data about searches
 
 - **Endpoint**: `GET /clubs/searches`
 - **Description**: show all clubs and the number of searches they have
 - **Response**: table of clubs and number of searches they have
 
-#### get data on applications
+#### Get data about applications
 
 - **Endpoint**: `GET /clubs/applications`
 - **Description**: show all clubs and the number of applications they have
 - **Response**: table of all clubs and the number of applications they have
 
-#### get data on categories
+#### Get data about club categories
 
 - **Endpoint**: `GET /clubs/categories`
 - **Description**: show all clubs and the categories they are a part of
 - **Response**: table with all clubs and their respective categories
 
-#### get data on club demographics
+#### Get data about a certain club's demographics
 
 - **Endpoint**: `GET /clubs/<int:clubID>/demographics`
 - **Description**: shows all students belonging to this specific club and their demographic information
+- **Query Parameters**:
+  - `clubID` (required): input a club ID to see demographic information about members of that club
 - **Example**: `GET /clubs/1/demographics`
 - **Response**: table of all students in a particular club and their demographic information
 
-#### get data on event attendees
+#### Get data about event attendees
 
 - **Endpoint**: `GET /events/attendees`
 - **Description**: compare an event's number of students registered with the host club's number of members
