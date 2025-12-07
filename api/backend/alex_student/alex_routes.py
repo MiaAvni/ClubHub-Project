@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 from backend.db_connection import db
 from mysql.connector import Error
 from flask import current_app
+from datetime import datetime, date
 
 # Routes for everything a student can do (search clubs, apply, update apps, etc.)
 students = Blueprint("students", __name__)
@@ -60,7 +61,7 @@ def get_student_applications(studentID):
 
         query = """
             SELECT applicationID, clubID, studentID,
-                   dateSubmitted, status
+                   DATE_FORMAT(dateSubmitted, '%%Y-%%m-%%d') as dateSubmitted, status
             FROM application
             WHERE studentID = %s
             ORDER BY dateSubmitted DESC
@@ -103,6 +104,22 @@ def create_application():
 
         cursor = db.get_db().cursor()
 
+        # Validate that student exists
+        cursor.execute("SELECT studentID FROM student WHERE studentID = %s", (student_id,))
+        if not cursor.fetchone():
+            cursor.close()
+            return jsonify({
+                "error": f"Student ID {student_id} does not exist. Please use a valid student ID."
+            }), 400
+
+        # Validate that club exists
+        cursor.execute("SELECT clubID FROM club WHERE clubID = %s", (club_id,))
+        if not cursor.fetchone():
+            cursor.close()
+            return jsonify({
+                "error": f"Club ID {club_id} does not exist. Please use a valid club ID."
+            }), 400
+
         insert_query = """
             INSERT INTO application (clubID, studentID, dateSubmitted, status)
             VALUES (%s, %s, %s, %s)
@@ -121,6 +138,17 @@ def create_application():
 
     except Error as e:
         current_app.logger.error(f"Database error: {str(e)}")
+        # Check if it's a foreign key constraint error
+        error_str = str(e)
+        if "foreign key constraint" in error_str.lower() or "1452" in error_str:
+            if "studentID" in error_str:
+                return jsonify({
+                    "error": f"Student ID {student_id} does not exist. Please use a valid student ID."
+                }), 400
+            elif "clubID" in error_str:
+                return jsonify({
+                    "error": f"Club ID {club_id} does not exist. Please use a valid club ID."
+                }), 400
         return jsonify({"error": str(e)}), 500
 
 

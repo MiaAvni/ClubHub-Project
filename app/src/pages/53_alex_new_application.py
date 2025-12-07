@@ -6,16 +6,44 @@ SideBarLinks()
 
 st.title("Submit a New Application")
 
-student_id = st.number_input("Student ID", min_value=1, step=1)
-club_id = st.number_input("Club ID", min_value=1, step=1)
+student_id = st.text_input("Student ID", placeholder="Enter student ID number")
+club_id = st.text_input("Club ID", placeholder="Enter club ID number")
 date_submitted = st.date_input("Date Submitted")
 
 if st.button("Submit Application", type="primary"):
+    # Validate student ID input
+    if not student_id or not student_id.strip():
+        st.error("Please enter a Student ID")
+        st.stop()
+    
+    try:
+        student_id_int = int(student_id.strip())
+        if student_id_int < 1:
+            st.error("Student ID must be a positive number")
+            st.stop()
+    except ValueError:
+        st.error("Student ID must be a valid number")
+        st.stop()
+    
+    # Validate club ID input
+    if not club_id or not club_id.strip():
+        st.error("Please enter a Club ID")
+        st.stop()
+    
+    try:
+        club_id_int = int(club_id.strip())
+        if club_id_int < 1:
+            st.error("Club ID must be a positive number")
+            st.stop()
+    except ValueError:
+        st.error("Club ID must be a valid number")
+        st.stop()
+    
     url = "http://api:4000/student/applications"
     
     body = {
-        "studentID": int(student_id),
-        "clubID": int(club_id),
+        "studentID": student_id_int,
+        "clubID": club_id_int,
         "dateSubmitted": str(date_submitted)
     }
 
