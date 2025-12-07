@@ -40,3 +40,8 @@ if st.button('Withdraw / Delete an Application',
              type='primary',
              use_container_width=True):
     st.switch_page('pages/55_alex_delete_application.py')
+
+if st.button('Register for Event',
+             type='primary',
+             use_container_width=True):
+    st.switch_page('pages/56_alex_register_for_event.py')

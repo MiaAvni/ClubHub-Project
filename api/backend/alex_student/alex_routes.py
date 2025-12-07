@@ -222,3 +222,128 @@ def delete_application(applicationID):
     except Error as e:
         current_app.logger.error(f"Database error: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
+
+# Student registers for an event
+# JSON body should look like:
+# {
+#   "studentID": 1,
+#   "eventID": 5
+# }
+@students.route("/events", methods=["POST"])
+def register_for_event():
+    try:
+        current_app.logger.info("Starting register_for_event request")
+        data = request.get_json() or {}
+
+        student_id = data.get("studentID")
+        event_id = data.get("eventID")
+
+        # Quick check for required fields
+        if not student_id or not event_id:
+            return jsonify({
+                "error": "studentID and eventID are required"
+            }), 400
+
+        cursor = db.get_db().cursor()
+
+        # Validate that student exists
+        cursor.execute("SELECT studentID FROM student WHERE studentID = %s", (student_id,))
+        if not cursor.fetchone():
+            cursor.close()
+            return jsonify({
+                "error": f"Student ID {student_id} does not exist. Please use a valid student ID."
+            }), 400
+
+        # Validate that event exists and get event details
+        cursor.execute("""
+            SELECT eventID, capacity, numRegistered, isFull, isArchived
+            FROM event
+            WHERE eventID = %s
+        """, (event_id,))
+        event_data = cursor.fetchone()
+        
+        if not event_data:
+            cursor.close()
+            return jsonify({
+                "error": f"Event ID {event_id} does not exist. Please use a valid event ID."
+            }), 404
+
+        # Check if event is archived
+        if event_data.get("isArchived") == 1:
+            cursor.close()
+            return jsonify({
+                "error": "This event has been archived and is no longer available for registration."
+            }), 400
+
+        # Check if event is full
+        capacity = event_data.get("capacity", 0)
+        num_registered = event_data.get("numRegistered", 0)
+        is_full = event_data.get("isFull", 0)
+        
+        if is_full == 1 or (capacity > 0 and num_registered >= capacity):
+            cursor.close()
+            return jsonify({
+                "error": "This event is full and cannot accept more registrations."
+            }), 400
+
+        # Check if student is already registered for this event
+        cursor.execute("""
+            SELECT studentID, eventID
+            FROM studentEvents
+            WHERE studentID = %s AND eventID = %s
+        """, (student_id, event_id))
+        
+        if cursor.fetchone():
+            cursor.close()
+            return jsonify({
+                "error": "You are already registered for this event."
+            }), 409
+
+        # Insert into studentEvents table
+        insert_query = """
+            INSERT INTO studentEvents (studentID, eventID)
+            VALUES (%s, %s)
+        """
+        cursor.execute(insert_query, (student_id, event_id))
+
+        # Update numRegistered count in event table
+        new_num_registered = num_registered + 1
+        update_query = """
+            UPDATE event
+            SET numRegistered = %s, isFull = %s
+            WHERE eventID = %s
+        """
+        # Set isFull to 1 if we've reached capacity, otherwise 0
+        new_is_full = 1 if (capacity > 0 and new_num_registered >= capacity) else 0
+        cursor.execute(update_query, (new_num_registered, new_is_full, event_id))
+
+        db.get_db().commit()
+        cursor.close()
+
+        return jsonify({
+            "message": "Successfully registered for event",
+            "studentID": student_id,
+            "eventID": event_id
+        }), 201
+
+    except Error as e:
+        current_app.logger.error(f"Database error: {str(e)}")
+        db.get_db().rollback()
+        # Check if it's a duplicate entry error (already registered)
+        error_str = str(e)
+        if "Duplicate entry" in error_str or "1062" in error_str:
+            return jsonify({
+                "error": "You are already registered for this event."
+            }), 409
+        # Check if it's a foreign key constraint error
+        elif "foreign key constraint" in error_str.lower() or "1452" in error_str:
+            if "studentID" in error_str:
+                return jsonify({
+                    "error": f"Student ID {student_id} does not exist. Please use a valid student ID."
+                }), 400
+            elif "eventID" in error_str:
+                return jsonify({
+                    "error": f"Event ID {event_id} does not exist. Please use a valid event ID."
+                }), 400
+        return jsonify({"error": str(e)}), 500

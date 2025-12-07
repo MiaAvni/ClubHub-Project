@@ -69,7 +69,7 @@ def AttendeesData():
 #### ------------------------ student alex  ------------------------
 def StudentHomeNav():
     st.sidebar.page_link(
-        "pages/50_alex_Home.py", label="Student Home", icon="🏠"
+        "pages/50_alex_Home.py", label="Student Home (Alex)", icon="📚"
     )
 
 
@@ -100,6 +100,12 @@ def AlexUpdateApplicationNav():
 def AlexDeleteApplicationNav():
     st.sidebar.page_link(
         "pages/55_alex_delete_application.py", label="Delete Application", icon="🗑️"
+    )
+
+
+def AlexRegisterForEventNav():
+    st.sidebar.page_link(
+        "pages/56_alex_register_for_event.py", label="Register for Event", icon="📅"
     )
 
 #### ------------------------ admin elizabeth  ------------------------
@@ -204,6 +210,7 @@ def SideBarLinks(show_home=False):
             AlexNewApplicationNav()
             AlexUpdateApplicationNav()
             AlexDeleteApplicationNav()
+            AlexRegisterForEventNav()
 
 
     # Always show the About page at the bottom of the list of links
