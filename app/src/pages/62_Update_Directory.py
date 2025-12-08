@@ -87,7 +87,7 @@ try:
                     with button_col3:
                         if st.button(f"Create Notification for Users", key=f"notify_{update['updateID']}"):
                             st.session_state["selected_update_id"] = update["updateID"]
-                            st.switch_page("pages/67_create_notification.py")
+                            st.switch_page("pages/67_create_notifications.py")
 
 
     else:
