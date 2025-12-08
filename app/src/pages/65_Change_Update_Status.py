@@ -8,13 +8,13 @@ SideBarLinks()
 st.title("Change Update Status")
 
 # API endpoint
-API_URL = "http://web-api:4000/update"
+API_URL = "http://api:4000/Elizabeth/update"
 
 # Check if update ID was passed
 if "selected_update_id" not in st.session_state:
     st.error("No update selected. Please go back to the Update Directory.")
     if st.button("Return to Update Directory"):
-        st.switch_page("pages/update_directory.py")
+        st.switch_page("pages/62_update_directory.py")
 else:
     update_id = st.session_state["selected_update_id"]
     
@@ -27,7 +27,7 @@ else:
             st.subheader(f"Update ID: {update_id}")
             st.write(f"**Current Status:** {update['updateStatus']}")
             st.write(f"**Type:** {update['updateType']}")
-            st.write(f"**Availability:** {update['avaiability']}")
+            st.write(f"**Availability:** {update['availability']}")
             
             st.divider()
             
@@ -52,7 +52,7 @@ else:
                     )
                     
                     new_type = st.text_input("Update Type", value=update['updateType'])
-                    new_availability = st.text_input("Availability", value=update['avaiability'])
+                    new_availability = st.text_input("Availability", value=update['availability'])
                     
                     submitted = st.form_submit_button("Update Status")
                     
@@ -61,7 +61,7 @@ else:
                         update_data = {
                             "updateStatus": new_status,
                             "updateType": new_type,
-                            "avaiability": new_availability
+                            "availability": new_availability
                         }
                         
                         try:
@@ -70,13 +70,23 @@ else:
                             
                             if put_response.status_code == 200:
                                 st.success("Update status changed successfully!")
-                                if st.button("Return to Update Directory"):
-                                    st.switch_page("pages/update_directory.py")
+                                st.session_state["update_success"] = True
                             else:
                                 st.error(f"Failed to update: {put_response.json().get('error', 'Unknown error')}")
                         
                         except requests.exceptions.RequestException as e:
                             st.error(f"Error connecting to the API: {str(e)}")
+                
+                # OUTSIDE THE FORM - Success button
+                if st.session_state.get("update_success", False):
+                    if st.button("Return to Update Directory"):
+                        st.session_state["update_success"] = False
+                        st.switch_page("pages/62_update_directory.py")
+                
+                # Cancel button (also outside form)
+                if st.button("Cancel and Return"):
+                    st.switch_page("pages/62_update_directory.py")
+                    
             else:
                 st.error("Failed to fetch available statuses")
         
@@ -85,7 +95,3 @@ else:
     
     except requests.exceptions.RequestException as e:
         st.error(f"Error connecting to the API: {str(e)}")
-    
-    # Return button outside the form
-    if st.button("Cancel and Return"):
-        st.switch_page("pages/62_update_directory.py")

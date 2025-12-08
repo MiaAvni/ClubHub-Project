@@ -30,7 +30,7 @@ def show_success_dialog(admin_id):
         if st.button("Return to Admin Directory", use_container_width=True):
             st.session_state.show_success_modal = False
             st.session_state.success_admin_id = ""
-            st.switch_page("pages/60_administrator_home.py.py")
+            st.switch_page("pages/60_administrator_home.py")
     
     with col2:
         if st.button("Add Another Permission", use_container_width=True):
@@ -45,7 +45,7 @@ if st.session_state.reset_form:
     st.session_state.reset_form = False
 
 # API endpoint
-API_URL = "http://web-api:4000/adminPermissions"
+API_URL = "http://api:4000/Elizabeth/adminPermissions"
 
 # Create a form for admin permissions with dynamic key to force reset
 with st.form(f"add_admin_permissions_form_{st.session_state.form_key_counter}"):

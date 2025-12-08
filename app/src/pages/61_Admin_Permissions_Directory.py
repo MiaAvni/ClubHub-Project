@@ -9,7 +9,7 @@ SideBarLinks()
 st.title("Admin Permissions Directory")
 
 # API endpoint
-API_URL = "http://web-api:4000/adminPermissions"
+API_URL = "http://api:4000/Elizabeth/adminPermissions"
 
 # Create filter columns
 col1 = st.columns(1)[0]
@@ -55,10 +55,10 @@ try:
                         st.write("Manage this admin's permissions")
 
                     # Add button
-                    button_col1 = st.columns(1)
+                    button_col1 = st.columns(1)[0]
                     
                     with button_col1:
-                        if st.button(f"Create Permission", key=f"change_{ap['adminID']}"):
+                        if st.button(f"Create Permission", key=f"change_{ap['adminID']}_{ap['permission']}"):
                             st.session_state["selected_admin_id"] = ap["adminID"]
                             st.switch_page("pages/66_create_admin_permissions.py")
                     
