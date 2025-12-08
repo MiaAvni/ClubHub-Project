@@ -404,52 +404,353 @@ The e-board pages can be accessed directly via URL or through the Streamlit app 
 ---
 ---
 
-## Persona 4: [Team Member Name]
-
-> [!NOTE]
-> This section will be completed by [Team Member Name]. Please add your persona name, API routes, Streamlit pages, and testing instructions here.
 
 ---
+## System Administrator (Elizabeth)
 
----
 
-## Original Template Documentation (Reference)
+The system administrator functionality allows system administrators of ClubHub to search for administrator permissions, create new administrative permissions, view all system updates, change an update status, create new notifications for users, view system errors, and delete system errors once solved.
 
-> [!TIP]
-> The following sections contain the original template documentation. Team members can refer to this when writing their persona sections to maintain consistency with the project structure and formatting guidelines.
 
-### Original Template Introduction
+### API Routes
 
-This is a template repo for Dr. Fontenot's Fall 2025 CS 3200 Course Project.
 
-It includes most of the infrastructure setup (containers), sample databases, and example UI pages. Explore it fully and ask questions!
+The Administrator blueprint (`api/backend/Elizabeth/Elizabeth_routes.py`) provides 17 REST API endpoints under the `/Elizabeth` URL prefix:
 
-### Original Template RBAC Documentation
 
-The code in this project demonstrates how to implement a simple RBAC system in Streamlit but without actually using user authentication (usernames and passwords). The Streamlit pages from the original template repo are split up among 3 roles - Political Strategist, USAID Worker, and a System Administrator role (this is used for any sort of system tasks such as re-training ML model, etc.). It also demonstrates how to deploy an ML model.
+#### Get All Errors
 
-Wrapping your head around this will take a little time and exploration of this code base. Some highlights are below.
 
-#### Getting Started with the RBAC (Template Reference)
+- **Endpoint**: `GET /error`
+- **Description**: Find all errors on the application
+- **Query Parameters**:
+ - `error_type` (optional): Filter by error type (e.g., `"syntax error"`)
+ - `time_reported` (optional): Filter by time the error was reported (e.g., `"Fri, 06 Dec 2024 12:45:47 GMT"`)
+- **Example**: `GET /error/error_type=syntax error&time_reported=Fri, 06 Dec 2024 12:45:47 GMT`
+- **Response**: JSON array of errors
 
-1. We need to turn off the standard panel of links on the left side of the Streamlit app. This is done through the `app/src/.streamlit/config.toml` file. So check that out. We are turning it off so we can control directly what links are shown.
-1. Then I created a new python module in `app/src/modules/nav.py`. When you look at the file, you will see that there are functions for basically each page of the application. The `st.sidebar.page_link(...)` adds a single link to the sidebar. We have a separate function for each page so that we can organize the links/pages by role.
-1. Next, check out the `app/src/Home.py` file. Notice that there are 3 buttons added to the page and when one is clicked, it redirects via `st.switch_page(...)` to that Roles Home page in `app/src/pages`. But before the redirect, I set a few different variables in the Streamlit `session_state` object to track role, first name of the user, and that the user is now authenticated.
-1. Notice near the top of `app/src/Home.py` and all other pages, there is a call to `SideBarLinks(...)` from the `app/src/nav.py` module. This is the function that will use the role set in `session_state` to determine what links to show the user in the sidebar.
-1. The pages are organized by Role. Pages that start with a `0` are related to the _Political Strategist_ role. Pages that start with a `1` are related to the _USAID worker_ role. And, pages that start with a `2` are related to The _System Administrator_ role.
 
-### Template Example: Persona Documentation Format
+#### Get a Specific Error
 
-When documenting your persona, follow this structure (as shown in the Student Functionality section above):
 
-1. **Section Header**: Use `## Persona Name: [Name]`
-2. **Introduction**: Brief description of what the persona can do
-3. **API Routes**: Document all REST API endpoints with:
-   - Endpoint path and HTTP method
-   - Description
-   - Query parameters or request body (if applicable)
-   - Example requests
-   - Response format
-4. **Streamlit Pages**: List all pages with brief descriptions
-5. **Testing**: Provide `curl` examples for testing API endpoints
-6. **Accessing Pages**: Note how pages can be accessed
+- **Endpoint**: `GET /error/<int:errorId>`
+- **Description**: retrieve details of a specific error by its ID
+- **Example**: `GET /error/1`
+- **Response**: details of the error with the specified ID
+
+
+#### Delete an Error
+
+
+- **Endpoint**: `DELETE /error/<int:errorId>`
+- **Description**: remove an error once it has been solved
+- **Example**: `DELETE /error/1`
+- **Response**: confirmation message with deleted error ID
+
+
+#### Get all Updated
+
+
+- **Endpoint**: `GET /update`
+- **Description**: retrieve all system updates with optional filtering by update type, status, and scheduled time
+- **Response**: table of all updates matching the filter criteria
+
+
+#### Get a Specific Update
+
+
+- **Endpoint**: `GET /update/<int:update_id>`
+- **Description**: retrieve details of a specific update by its ID
+- **Example**: `GET /update/1`
+- **Response**: details of the update with the specified ID
+
+
+#### Change an Update Status
+
+
+- **Endpoint**: `PUT /update/<int:update_id>`
+- **Description**: modify the status and other fields of an existing update
+- **Example**: `PUT /update/1`
+- **Response**: confirmation message
+
+
+#### Create a Notification
+
+
+- **Endpoint**: `POST /updateNotifications/notification`
+- **Description**: create a new notification for an update
+- **Response**: confirmation message with new notification ID
+
+
+#### Get all Admin Permissions
+
+
+- **Endpoint**: `GET /adminPermissions`
+- **Description**: retrieve all administrator permissions with optional filtering by admin ID and permission
+- **Response**: table of all admin permissions matching the filter criteria
+
+
+#### Get a specific Admin Permission
+
+
+- **Endpoint**: `GET /adminPermissions/<int:admin_id>`
+- **Description**: retrieve permissions for a specific administrator
+- **Example**: `GET /adminPermissions/1`
+- **Response**: permissions for the specified admin
+
+
+#### Update Admin Permissions
+
+
+- **Endpoint**: `PUT /adminPermissions/<int:admin_id>`
+- **Description**: modify the permissions of a particular administrator
+- **Example**: `PUT /adminPermissions/1`
+- **Response**: confirmation message
+
+
+#### Create Admin Permissions
+
+
+- **Endpoint**: `POST /adminPermissions`
+- **Description**: create permissions for a new administrator
+- **Response**: confirmation message with admin ID
+
+
+#### Get all E-board Contacts
+
+
+- **Endpoint**: `GET /adminContact`
+- **Description**: retrieve all e-board contact information with optional filtering by e-board ID and admin ID
+- **Response**: table of all e-board contacts matching the filter criteria
+
+
+#### Get a Specific E-Board Contact
+
+
+- **Endpoint**: `GET /adminContact/<int:eboard_id>`
+- **Description**: retrieve contact information for a specific club e-board
+- **Example**: `GET /adminContact/1`
+- **Response**: contact information for the specified e-board
+
+
+#### Get all Sytem Errors
+
+
+- **Endpoint**: `GET /system/error`
+- **Description**: retrieve all system errors with optional filtering by system ID and error type
+- **Response**: table of all system errors matching the filter criteria
+
+
+#### Get a Specific System Error
+
+
+- **Endpoint**: `GET /system/error/<int:errorId>`
+- **Description**: retrieve details of a specific system network error
+- **Example**: `GET /system/error/1`
+- **Response**: details of the system error with the specified ID
+
+
+#### Delete a System Error
+
+
+- **Endpoint**: `DELETE /system/error/<int:errorId>`
+- **Description**: remove a particular error a system network has
+- **Example**: `DELETE /system/error/1`
+- **Response**: confirmation message with deleted error ID
+
+
+### Streamlit Pages
+
+
+The following Streamlit pages are located in `app/src/pages/`:
+
+
+- **`60_administrator_home.py`**: The administrator home page with navigation buttons to access all admin features.
+- **`61_admin_permissions_directory.py`**: Search and filter admin permissions by permission. Displays admin permission information and option to create a permission.
+- **`62_update_directory.py`**: Search and filter all updates by status, update type, and update availability. S Every update has the option to view full details and return to home, change the status of an update, and create a notification for users via that update.
+- **`63_error_directory.py`**: Search and filter errors by error type and time reported. Displays basic information and option to delete the error once solved.
+- **`64_network_system_error_directory.py`**: Search and filter network errors by system ID and error type. Displays basic information and option to delete the error once solved.
+- **`65_change_update_status.py`**: Update the status of a specific update via drop down menu for new status. This page is accessible via the update directory Includes a confirmation message.
+- **`66_create_admin_permissions.py`**: Creates a new admin permission. Access via the admin permission directory or the home page
+- **`67_create_notifications.py`**: Create a new notification for users about updates, errors, or general system details.
+- **`68_eboard_admin_contact.py`**: View eboard information so administrators can switch pages to view specific eboard details as a point of contact.
+
+
+### Testing the Admin API
+
+
+You can test the API endpoints using `curl`:
+
+
+```bash
+# Get all admin permissions
+curl http://localhost:4000/Elizabeth/adminPermissions
+
+
+# Filter by specific permission
+curl "http://localhost:4000/Elizabeth/adminPermissions?permission=full_access"
+
+
+# Get permissions for a specific admin
+curl http://localhost:4000/Elizabeth/adminPermissions/1
+
+
+# Create new admin permissions
+curl -X POST http://localhost:4000/Elizabeth/adminPermissions \
+ -H "Content-Type: application/json" \
+ -d '{"adminID": 5, "permission": "limited_access"}'
+
+
+# Update admin permissions
+curl -X PUT http://localhost:4000/Elizabeth/adminPermissions/1 \
+ -H "Content-Type: application/json" \
+ -d '{"permission": "guest_access"}'
+
+
+# Get all updates
+curl http://localhost:4000/Elizabeth/update
+
+
+# Filter by status
+curl "http://localhost:4000/Elizabeth/update?updateStatus=scheduled"
+
+
+# Filter by update type
+curl "http://localhost:4000/Elizabeth/update?updateType=Bug_fix"
+
+
+# Filter by multiple parameters
+curl "http://localhost:4000/Elizabeth/update?updateStatus=completed&updateType=API_integration"
+
+
+# Get a specific update
+curl http://localhost:4000/Elizabeth/update/1
+
+
+# Update an update's status
+curl -X PUT http://localhost:4000/Elizabeth/update/1 \
+ -H "Content-Type: application/json" \
+ -d '{"updateStatus": "in_progress", "startTime": "2025-12-08 10:00:00"}'
+
+
+# Get all errors
+curl http://localhost:4000/Elizabeth/error
+
+
+# Filter by error type
+curl "http://localhost:4000/Elizabeth/error?errorType=database_error"
+
+
+# Filter by time reported
+curl "http://localhost:4000/Elizabeth/error?timeReported=2025-12-08 10:30:00"
+
+
+# Filter by multiple parameters
+curl "http://localhost:4000/Elizabeth/error?errorType=logic_error&timeReported=2025-12-07 14:00:00"
+
+
+# Get a specific error
+curl http://localhost:4000/Elizabeth/error/1
+
+
+# Delete an error
+curl -X DELETE http://localhost:4000/Elizabeth/error/1
+
+
+# Get all system errors
+curl http://localhost:4000/Elizabeth/system/error
+
+
+# Filter by system ID
+curl "http://localhost:4000/Elizabeth/system/error?systemID=101"
+
+
+# Filter by error type
+curl "http://localhost:4000/Elizabeth/system/error?errorType=network"
+
+
+# Filter by multiple parameters
+curl "http://localhost:4000/Elizabeth/system/error?systemID=101&errorType=hardware"
+
+
+# Get a specific system error
+curl http://localhost:4000/Elizabeth/system/error/1
+
+
+# Delete a system error
+curl -X DELETE http://localhost:4000/Elizabeth/system/error/1
+
+
+# Get all updates
+curl http://localhost:4000/Elizabeth/update
+
+
+# Get a specific update
+curl http://localhost:4000/Elizabeth/update/1
+
+
+# Update status only
+curl -X PUT http://localhost:4000/Elizabeth/update/1 \
+ -H "Content-Type: application/json" \
+ -d '{"updateStatus": "in_progress"}'
+
+
+# Update multiple fields
+curl -X PUT http://localhost:4000/Elizabeth/update/1 \
+ -H "Content-Type: application/json" \
+ -d '{"updateStatus": "completed", "updateType": "Database_migration", "availability": "completed"}'
+
+
+# Create new admin permissions
+curl -X POST http://localhost:4000/Elizabeth/adminPermissions \
+ -H "Content-Type: application/json" \
+ -d '{"adminID": 5, "permission": "write_only"}'
+
+
+# Create permissions with full access
+curl -X POST http://localhost:4000/Elizabeth/adminPermissions \
+ -H "Content-Type: application/json" \
+ -d '{"adminID": 6, "permission": "full_access"}'
+
+
+# Verify the created permission
+curl http://localhost:4000/Elizabeth/adminPermissions/5
+`
+# Create a new notification
+curl -X POST http://localhost:4000/Elizabeth/updateNotifications/notification \
+ -H "Content-Type: application/json" \
+ -d '{"notification": "System maintenance scheduled for tonight", "updateID": 1}'
+
+
+# Create notification with detailed message
+curl -X POST http://localhost:4000/Elizabeth/updateNotifications/notification \
+ -H "Content-Type: application/json" \
+ -d '{"notification": "Security update will be applied. Expected downtime: 2 hours.", "updateID": 2}'
+
+
+# Get all e-board contacts
+curl http://localhost:4000/Elizabeth/adminContact
+
+
+# Filter by e-board ID
+curl "http://localhost:4000/Elizabeth/adminContact?eboardID=1"
+
+
+# Filter by admin ID
+curl "http://localhost:4000/Elizabeth/adminContact?adminID=2"
+
+
+# Filter by both parameters
+curl "http://localhost:4000/Elizabeth/adminContact?eboardID=1&adminID=2"
+
+
+# Get a specific e-board contact
+curl http://localhost:4000/Elizabeth/adminContact/1
+```
+
+
+### Accessing Student Pages
+
+
+The administrator pages can be accessed directly via URL or through the Streamlit app navigation. All pages include proper error handling and user feedback for successful operations and errors.
+
