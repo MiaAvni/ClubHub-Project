@@ -2,6 +2,9 @@
 
 ClubHub is a web application designed to help students discover and join clubs at their university. The application provides functionality for students to search for clubs, submit applications, and manage their club memberships. It also includes administrative and analytical features for club management and data analysis.
 
+## Project Demo:
+https://drive.google.com/file/d/1usG2yrZbE2a3y2lzD4s4LVWXV3cRlR0M/view?usp=sharing 
+
 ## Student Functionality (Alex)
 
 The Student persona functionality allows students to search for clubs, view their applications, submit new applications, update application status, and delete/withdraw applications.
