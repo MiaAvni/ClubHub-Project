@@ -188,8 +188,8 @@ The data analyst pages can be accessed directly via URL or through the Streamlit
 
 ---
 
-## E-Board Functionality (Kaitlyn)
-
+**## E-Board Functionality (Kaitlyn)
+**
 The E-Board persona functionality allows executive board members to manage their club's operations, including reviewing member applications, managing club members and their tiers, creating and managing events, viewing event registrations, and handling event capacity.
 
 ### API Routes
