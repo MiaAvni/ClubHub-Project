@@ -47,7 +47,7 @@ if st.session_state.reset_form:
 # API endpoint
 API_URL = "http://api:4000/Elizabeth/adminPermissions"
 
-# Create a form for admin permissions with dynamic key to force reset
+
 with st.form(f"add_admin_permissions_form_{st.session_state.form_key_counter}"):
     st.subheader("Admin Permission Information")
 

@@ -77,13 +77,13 @@ else:
                         except requests.exceptions.RequestException as e:
                             st.error(f"Error connecting to the API: {str(e)}")
                 
-                # OUTSIDE THE FORM - Success button
+                
                 if st.session_state.get("update_success", False):
                     if st.button("Return to Update Directory"):
                         st.session_state["update_success"] = False
                         st.switch_page("pages/62_update_directory.py")
                 
-                # Cancel button (also outside form)
+                
                 if st.button("Cancel and Return"):
                     st.switch_page("pages/62_update_directory.py")
                     

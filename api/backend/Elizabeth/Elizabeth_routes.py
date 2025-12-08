@@ -30,7 +30,7 @@ def get_all_errors():
         current_app.logger.info('Retrieving all errors')
         cursor = db.get_db().cursor()
         
-        # Get query parameters for filtering - FIXED: changed to match schema
+        # Get query parameters for filtering 
         error_type = request.args.get("errorType")
         time_reported = request.args.get("timeReported")
         
@@ -111,7 +111,7 @@ def get_all_updates():
         current_app.logger.info('Retrieving all updates')
         cursor = db.get_db().cursor()
         
-        # Get query parameters - FIXED: match schema column names
+        # Get query parameters 
         update_type = request.args.get("updateType")
         update_status = request.args.get("updateStatus")
         scheduled_time = request.args.get("scheduledTime")
@@ -179,7 +179,7 @@ def update_update_status(update_id):
             current_app.logger.warning(f'Update ID {update_id} not found')
             return jsonify({"error": "Update not found"}), 404
 
-        # FIXED: match actual schema column names
+       
         update_fields = []
         params = []
         
@@ -312,7 +312,6 @@ def update_admin_permissions(admin_id):
         update_fields = []
         params = []
         
-        # Only permission can be updated (adminID is the key)
         if "permission" in data:
             update_fields.append("permission = %s")
             params.append(data["permission"])
