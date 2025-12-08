@@ -77,7 +77,7 @@ try:
                     with button_col1:
                         if st.button(f"View Full Details", key=f"view_{update['updateID']}"):
                             st.session_state["selected_update_id"] = update["updateID"]
-                            st.switch_page("pages/Update_Profile.py")
+                            st.switch_page("pages/60_administrator_home.py.py")
                     
                     with button_col2:
                         if st.button(f"Change Status", key=f"change_{update['updateID']}"):

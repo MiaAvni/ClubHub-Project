@@ -40,12 +40,12 @@ try:
                 with button_col1:
                     if st.button(f"View E-board Details", key=f"eboard_{contact['eboardID']}"):
                         st.session_state["selected_eboard_id"] = contact["eboardID"]
-                        st.switch_page("pages/Eboard_Profile.py")
+                        st.switch_page("pages/20_EBoard_Home.py")
                 
                 with button_col2:
                     if st.button(f"View Admin Details", key=f"admin_{contact['adminID']}"):
                         st.session_state["selected_admin_id"] = contact["adminID"]
-                        st.switch_page("pages/Admin_Profile.py")
+                        st.switch_page("pages/60_administrator_home.py")
 
     else:
         st.error("Failed to fetch E-board Contact data from the API")

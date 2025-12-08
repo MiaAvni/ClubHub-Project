@@ -30,7 +30,7 @@ def show_success_dialog(admin_id):
         if st.button("Return to Admin Directory", use_container_width=True):
             st.session_state.show_success_modal = False
             st.session_state.success_admin_id = ""
-            st.switch_page("pages/Admin_Directory.py")
+            st.switch_page("pages/60_administrator_home.py.py")
     
     with col2:
         if st.button("Add Another Permission", use_container_width=True):
@@ -93,4 +93,4 @@ if st.session_state.show_success_modal:
 
 # Add a button to return to the Admin Directory
 if st.button("Return to Admin Perimssions Directory"):
-    st.switch_page("pages/admin_permissions_directory.py")
+    st.switch_page("pages/61_admin_permissions_directory.py")

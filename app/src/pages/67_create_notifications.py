@@ -91,6 +91,6 @@ with st.form(f"add_notification_form_{st.session_state.form_key_counter}"):
 if st.session_state.show_success_modal:
     show_success_dialog(st.session_state.success_notification_text)
 
-# Add a button to return to the Notifications page
-if st.button("Return to Notifications"):
-    st.switch_page("pages/Notifications_Page.py")  
+# Add a button to return to the Home page
+if st.button("Return to Home"):
+    st.switch_page("pages/60_administrator_home.py")  

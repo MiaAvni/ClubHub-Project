@@ -88,4 +88,4 @@ else:
     
     # Return button outside the form
     if st.button("Cancel and Return"):
-        st.switch_page("pages/update_directory.py")
+        st.switch_page("pages/62_update_directory.py")
