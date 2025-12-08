@@ -749,7 +749,7 @@ curl http://localhost:4000/Elizabeth/adminContact/1
 ```
 
 
-### Accessing Student Pages
+### Accessing Administrator Pages
 
 
 The administrator pages can be accessed directly via URL or through the Streamlit app navigation. All pages include proper error handling and user feedback for successful operations and errors.
