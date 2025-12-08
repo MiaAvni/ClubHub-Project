@@ -37,7 +37,7 @@ try:
                 
                 col1, col2, col3 = st.columns(3)
                 
-                if app['status'] == 'Pending':
+                if app['status'] == 'pending':
                     with col1:
                         if st.button("✅ Approve"):
                             try:
