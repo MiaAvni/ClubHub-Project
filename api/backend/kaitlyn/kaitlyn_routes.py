@@ -111,14 +111,12 @@ def get_interested_students(clubID):
             ORDER BY a.dateSubmitted;
 
         '''
-        
         cursor.execute(the_query, (clubID,))
         the_data = cursor.fetchall()
         cursor.close()
         
         if not the_data:
             return jsonify({"message": "No pending applications found"}), 200
-        
         return jsonify(the_data), 200
         
     except Error as e:
@@ -149,14 +147,12 @@ def get_member_details(clubID, memberID):
             WHERE sj.clubID = %s
                 AND s.studentID = %s
         '''
-        
         cursor.execute(the_query, (clubID, memberID))
         the_data = cursor.fetchone()
         cursor.close()
         
         if not the_data:
             return jsonify({"error": "Member not found in this club"}), 404
-        
         return jsonify(the_data), 200
         
     except Error as e:
