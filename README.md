@@ -179,8 +179,8 @@ curl http://localhost:4000/clubs/categories
 curl  http://localhost:4000/clubs/<int:clubID>/demographics
 
 # Update application
-curl  http://localhost:4000/events/attendees 
-
+curl  http://localhost:4000/events/attendees
+```
 
 ### Accessing Data Analyst Pages
 
@@ -188,29 +188,30 @@ The data analyst pages can be accessed directly via URL or through the Streamlit
 
 ---
 
-**## E-Board Functionality (Kaitlyn)
-**
+## E-Board Functionality (Kaitlyn)
+
 The E-Board persona functionality allows executive board members to manage their club's operations, including reviewing member applications, managing club members and their tiers, creating and managing events, viewing event registrations, and handling event capacity.
 
 ### API Routes
 
 The E-Board blueprint (`api/backend/kaitlyn/kaitlyn_routes.py`) provides 13 REST API endpoints:
 
-#### Application Management
+#### Get Club Applications
 
-##### Get Club Applications
 - **Endpoint**: `GET /clubs/<clubID>/applications`
 - **Description**: Retrieve all pending applications for a specific club
 - **Example**: `GET /clubs/5/applications`
 - **Response**: JSON array of pending application objects with student details ordered by submission date
 
-##### Get Interested Students
+#### Get Interested Students
+
 - **Endpoint**: `GET /clubs/<clubID>/interested-students`
 - **Description**: View all students with pending applications (alternative view)
 - **Example**: `GET /clubs/5/interested-students`
 - **Response**: JSON array of pending applicants with contact information
 
-##### Update Application Status
+#### Update Application Status
+
 - **Endpoint**: `PUT /applications/<applicationID>`
 - **Description**: Update the status of a club application (Accepted/Rejected/Pending)
 - **Request Body**:
@@ -219,29 +220,32 @@ The E-Board blueprint (`api/backend/kaitlyn/kaitlyn_routes.py`) provides 13 REST
     "status": "Accepted"
   }
 ```
+
 - **Response**: JSON object with success message
 
-##### Delete Application
+#### Delete Application
+
 - **Endpoint**: `DELETE /applications/<applicationID>`
 - **Description**: Remove a processed application from the system
 - **Example**: `DELETE /applications/15`
 - **Response**: JSON object with success message
 
-#### Member Management
+#### Get Club Members
 
-##### Get Club Members
 - **Endpoint**: `GET /clubs/<clubID>/members`
 - **Description**: View all current members of a specific club
 - **Example**: `GET /clubs/5/members`
 - **Response**: JSON array of member objects with student details, member type, and join dates
 
-##### Get Member Details
+#### Get Member Details
+
 - **Endpoint**: `GET /clubs/<clubID>/members/<memberID>`
 - **Description**: Get detailed information about a specific club member including tier
 - **Example**: `GET /clubs/5/members/42`
 - **Response**: JSON object with complete member details
 
-##### Update Member Tier
+#### Update Member Tier
+
 - **Endpoint**: `PUT /clubs/<clubID>/members/<memberID>`
 - **Description**: Update a member's tier (e.g., general to active member)
 - **Request Body**:
@@ -250,17 +254,18 @@ The E-Board blueprint (`api/backend/kaitlyn/kaitlyn_routes.py`) provides 13 REST
     "memberType": "active"
   }
 ```
+
 - **Response**: JSON object with success message
 
-#### Event Management
+#### Get Club Events
 
-##### Get Club Events
 - **Endpoint**: `GET /clubs/<clubID>/events`
 - **Description**: View all upcoming events hosted by a specific club
 - **Example**: `GET /clubs/5/events`
 - **Response**: JSON array of event objects with registration counts and spots remaining
 
-##### Create Club Event
+#### Create Club Event
+
 - **Endpoint**: `POST /clubs/<clubID>/events`
 - **Description**: Create a new event for the club
 - **Request Body**:
@@ -276,15 +281,18 @@ The E-Board blueprint (`api/backend/kaitlyn/kaitlyn_routes.py`) provides 13 REST
     "tierRequirement": "Open"
   }
 ```
+
 - **Response**: JSON object with success message and new eventID
 
-##### Get Event Details
+#### Get Event Details
+
 - **Endpoint**: `GET /events/<eventID>`
 - **Description**: Get detailed information about a specific event including capacity
 - **Example**: `GET /events/12`
 - **Response**: JSON object with complete event details
 
-##### Update Event
+#### Update Event
+
 - **Endpoint**: `PUT /events/<eventID>`
 - **Description**: Update event details (capacity, tier requirements, mark as full, etc.)
 - **Request Body**:
@@ -294,23 +302,22 @@ The E-Board blueprint (`api/backend/kaitlyn/kaitlyn_routes.py`) provides 13 REST
     "tierRequirement": "active"
   }
 ```
+
 - **Response**: JSON object with success message
 
-##### Archive Event
+#### Archive Event
+
 - **Endpoint**: `DELETE /events/<eventID>`
 - **Description**: Archive a past event (soft delete)
 - **Example**: `DELETE /events/12`
 - **Response**: JSON object with success message
 
-##### Get Event Registrations
+#### Get Event Registrations
+
 - **Endpoint**: `GET /events/<eventID>/registered-students`
 - **Description**: View all students registered for a specific event
 - **Example**: `GET /events/12/registered-students`
 - **Response**: JSON array of registered student objects with contact information
-
-### Streamlit Pages
-
-The following Streamlit pages are located in `app/src/pages/`:
 
 ### Streamlit Pages
 
@@ -388,6 +395,8 @@ curl http://localhost:4000/events/12/registered-students
 ### Accessing E-Board Pages
 
 The e-board pages can be accessed directly via URL or through the Streamlit app navigation. All pages include proper error handling, confirmation dialogs for sensitive operations, and user feedback for successful actions and errors.
+
+---
 
 ---
 ---
