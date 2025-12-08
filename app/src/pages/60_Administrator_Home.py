@@ -42,7 +42,7 @@ with col4:
     if st.button('Create Notification', 
                  type='primary',
                  use_container_width=True):
-        st.switch_page('pages/67_create_notification.py')
+        st.switch_page('pages/67_create_notifications.py')
 
 st.write('#### Error Management')
 col5, col6 = st.columns(2)

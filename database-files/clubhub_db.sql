@@ -2121,7 +2121,7 @@ insert into searchFilters (searchID, filter) values (3, 'Undergraduate Level');
 insert into updateNotifications (notification, updateID) values ('New update initiated for security patches', 7);
 insert into updateNotifications (notification, updateID) values ('New update initiated for security patches', 3);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 5);
-insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 8);
+
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 5);
 insert into updateNotifications (notification, updateID) values ('Update process started for bug fixes', 1);
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 3);
@@ -2130,13 +2130,13 @@ insert into updateNotifications (notification, updateID) values ('New version up
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 4);
 insert into updateNotifications (notification, updateID) values ('Software upgrade scheduled for next week', 10);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 1);
-insert into updateNotifications (notification, updateID) values ('System update scheduled for tomorrow at 3pm', 3);
+
 insert into updateNotifications (notification, updateID) values ('New update initiated for security patches', 9);
 insert into updateNotifications (notification, updateID) values ('System maintenance update scheduled for tonight', 1);
 insert into updateNotifications (notification, updateID) values ('Update process started for bug fixes', 4);
 
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 8);
-insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 5);
+
 
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 10);
 insert into updateNotifications (notification, updateID) values ('Update started for software version 2.0', 1);
@@ -2148,18 +2148,17 @@ insert into updateNotifications (notification, updateID) values ('Update process
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 2);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 6);
 
-insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 10);
-insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 8);
+
+
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 6);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 6);
-insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 9);
 insert into updateNotifications (notification, updateID) values ('System update scheduled for tomorrow at 3pm', 3);
 
 insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 8);
-insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 6);
-insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 6);
+
+
 insert into updateNotifications (notification, updateID) values ('Update process in queue for server enhancements', 9);
->>>>>>> 493f520038da5d8b893e05902931c3c1c7882c72
+
 insert into updateNotifications (notification, updateID) values ('Software update scheduled for the weekend', 5);
 insert into updateNotifications (notification, updateID) values ('Update in progress for latest features', 3);
 insert into updateNotifications (notification, updateID) values ('New version update initiated for performance improvements', 9);
@@ -2176,7 +2175,6 @@ insert into errorAdmin (adminID, errorID) values (13, 8);
 insert into errorAdmin (adminID, errorID) values (9, 2);
 insert into errorAdmin (adminID, errorID) values (18, 1);
 insert into errorAdmin (adminID, errorID) values (3, 1);
-insert into errorAdmin (adminID, errorID) values (17, 1);
 insert into errorAdmin (adminID, errorID) values (7, 5);
 insert into errorAdmin (adminID, errorID) values (10, 5);
 insert into errorAdmin (adminID, errorID) values (16, 6);
@@ -2184,7 +2182,6 @@ insert into errorAdmin (adminID, errorID) values (20, 2);
 insert into errorAdmin (adminID, errorID) values (20, 1);
 insert into errorAdmin (adminID, errorID) values (8, 6);
 insert into errorAdmin (adminID, errorID) values (6, 5);
-insert into errorAdmin (adminID, errorID) values (4, 8);
 insert into errorAdmin (adminID, errorID) values (9, 4);
 insert into errorAdmin (adminID, errorID) values (6, 9);
 insert into errorAdmin (adminID, errorID) values (2, 5);

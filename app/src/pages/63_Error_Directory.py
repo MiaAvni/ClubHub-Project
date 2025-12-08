@@ -9,7 +9,7 @@ SideBarLinks()
 st.title("Error Directory")
 
 # API endpoint
-API_URL = "http://web-api:4000/error"
+API_URL = "http://api:4000/Elizabeth/error"
 
 # Create filter columns
 col1, col2 = st.columns(2)

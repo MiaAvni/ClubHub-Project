@@ -9,7 +9,7 @@ SideBarLinks()
 st.title("E-board Contact Directory")
 
 # API endpoint
-API_URL = "http://web-api:4000/adminContact"
+API_URL = "http://api:4000/Elizabeth/adminContact"
 
 # Get all E-board contacts from the API
 try:
@@ -38,14 +38,14 @@ try:
                 button_col1, button_col2 = st.columns(2)
                 
                 with button_col1:
-                    if st.button(f"View E-board Details", key=f"eboard_{contact['eboardID']}"):
+                    if st.button(f"View E-board Details", key=f"eboard_{contact['eboardID']}_{contact['adminID']}"):
                         st.session_state["selected_eboard_id"] = contact["eboardID"]
-                        st.switch_page("pages/Eboard_Profile.py")
+                        st.switch_page("pages/20_EBoard_Home.py")
                 
                 with button_col2:
-                    if st.button(f"View Admin Details", key=f"admin_{contact['adminID']}"):
+                    if st.button(f"View Admin Details", key=f"admin_{contact['adminID']}_{contact['eboardID']}"):
                         st.session_state["selected_admin_id"] = contact["adminID"]
-                        st.switch_page("pages/Admin_Profile.py")
+                        st.switch_page("pages/60_administrator_home.py")
 
     else:
         st.error("Failed to fetch E-board Contact data from the API")

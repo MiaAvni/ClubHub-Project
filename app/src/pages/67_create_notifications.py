@@ -31,7 +31,7 @@ def show_success_dialog(notification_text):
         if st.button("Return to Updates", use_container_width=True):
             st.session_state.show_success_modal = False
             st.session_state.success_notification_text = ""
-            st.switch_page("pages/update_directory.py") 
+            st.switch_page("pages/62_update_directory.py") 
     with col2:
         if st.button("Add Another Notification", use_container_width=True):
             st.session_state.show_success_modal = False
@@ -45,7 +45,7 @@ if st.session_state.reset_form:
     st.session_state.reset_form = False
 
 # API endpoint
-API_URL = "http://web-api:4000/updateNotifications/notification"
+API_URL = "http://api:4000/Elizabeth/updateNotifications/notification"
 
 # Create a form for notification details with dynamic key to force reset
 with st.form(f"add_notification_form_{st.session_state.form_key_counter}"):
@@ -91,6 +91,6 @@ with st.form(f"add_notification_form_{st.session_state.form_key_counter}"):
 if st.session_state.show_success_modal:
     show_success_dialog(st.session_state.success_notification_text)
 
-# Add a button to return to the Notifications page
-if st.button("Return to Notifications"):
-    st.switch_page("pages/Notifications_Page.py")  
+# Add a button to return to the Home page
+if st.button("Return to Home"):
+    st.switch_page("pages/60_administrator_home.py")  
